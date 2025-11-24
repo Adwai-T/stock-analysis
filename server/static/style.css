@@ -1,0 +1,89 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b1020;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #151a2c;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#last20Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#last20Table th,
+#last20Table td {
+  border: 1px solid #2a3045;
+  padding: 6px 8px;
+  text-align: right;
+  font-size: 13px;
+}
+
+#last20Table th {
+  background: #20263a;
+}
+
+#last20Table td:first-child,
+#last20Table th:first-child {
+  text-align: left;
+}
+
+#todayBox, #predictionBox {
+  font-size: 14px;
+  line-height: 1.5;
+  background: #20263a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.symbol-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+#symbolInput {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #333a55;
+  background: #101529;
+  color: #f5f5f5;
+}
+
+#searchButton {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #2f80ed;
+  color: white;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background: #2563c5;
+}
+
+#statusMessage {
+  font-size: 13px;
+  color: #aab4ff;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stock Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Stock Dashboard</h1>
+
+    <div class="symbol-search">
+      <input
+        type="text"
+        id="symbolInput"
+        placeholder="Enter symbol, e.g. CIPLA"
+        autocomplete="off"
+      />
+      <button id="searchButton">Search</button>
+      <span id="statusMessage"></span>
+    </div>
+
+    <section>
+      <h2>Price Chart (Last 2 Years)</h2>
+      <canvas id="priceChart" height="120"></canvas>
+    </section>
+
+    <section>
+      <h2>Last 20 Days (Daily OHLCV)</h2>
+      <table id="last20Table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Today</h2>
+      <div id="todayBox"></div>
+    </section>
+
+    <section>
+      <h2>Prediction</h2>
+      <div id="predictionBox"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
