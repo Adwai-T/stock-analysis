@@ -16,10 +16,15 @@ async function fetchJSON(url) {
 
 async function loadSymbol(symbol) {
   const status = document.getElementById("statusMessage");
+  const model = document.getElementById("modelSelect").value;
   status.textContent = `Loading ${symbol}...`;
 
+  console.log('SENT DATA - ', model);
+
   try {
-    const payload = await fetchJSON(`/api/symbol/${encodeURIComponent(symbol)}`);
+    const url = `/api/symbol/${encodeURIComponent(symbol)}?model=${encodeURIComponent(model)}`;
+    console.log('URL - ', url);
+    const payload = await fetchJSON(url);
 
     document.getElementById("title").textContent =
       `Stock Dashboard – ${payload.symbol}`;
@@ -84,6 +89,45 @@ function renderChart(data) {
   });
 }
 
+function renderPrediction(pred) {
+  console.log('PREDICTION - ', pred);
+  const box = document.getElementById("predictionBox");
+  if (!pred || pred.next_close == null) {
+    box.innerHTML = `<em>Global model prediction unavailable.</em>`;
+  } else {
+    box.innerHTML = `
+      <strong>Model:</strong> ${pred.model || "N/A"}<br>
+      <strong>Next Date:</strong> ${pred.next_date}<br>
+      <strong>Predicted Close:</strong> ${Number(pred.next_close).toFixed(2)}
+    `;
+  }
+
+  const localBox = document.getElementById("localPredictionBox");
+  if (!localBox) return;
+
+  if (pred.per_symbol_lstm == null && pred.per_symbol_gru == null) {
+    if (pred.per_symbol_error) {
+      localBox.innerHTML = `<em>Error: ${pred.per_symbol_error}</em>`;
+    } else {
+      localBox.innerHTML = `<em>No per-symbol predictions available.</em>`;
+    }
+    return;
+  }
+
+  let html = "";
+  if (pred.per_symbol_lstm != null) {
+    html += `<strong>LSTM (this symbol only):</strong> ${Number(pred.per_symbol_lstm).toFixed(2)}<br>`;
+  }
+  if (pred.per_symbol_gru != null) {
+    html += `<strong>GRU (this symbol only):</strong> ${Number(pred.per_symbol_gru).toFixed(2)}<br>`;
+  }
+  if (pred.per_symbol_error) {
+    html += `<br><em>Note: ${pred.per_symbol_error}</em>`;
+  }
+  localBox.innerHTML = html;
+}
+
+
 function renderLast20Table(rows) {
   const tbody = document.querySelector("#last20Table tbody");
   tbody.innerHTML = "";
@@ -127,22 +171,15 @@ function renderToday(row) {
   `;
 }
 
-function renderPrediction(pred) {
-  const box = document.getElementById("predictionBox");
-  if (!pred || pred.next_close == null) {
-    box.innerHTML = `<em>Prediction unavailable.</em>`;
-    return;
-  }
-
-  box.innerHTML = `
-    <strong>Next Date:</strong> ${pred.next_date}<br>
-    <strong>Predicted Close:</strong> ${Number(pred.next_close).toFixed(2)}
-  `;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  setupSearch();
+});
 
 function setupSearch() {
+  console.log('SETUP SEARCH');
   const input = document.getElementById("symbolInput");
   const button = document.getElementById("searchButton");
+  const modelSelect = document.getElementById("modelSelect");
 
   button.addEventListener("click", () => {
     const sym = input.value.trim().toUpperCase();
@@ -156,11 +193,14 @@ function setupSearch() {
     }
   });
 
-  // Optional: load a default symbol on first load
+  modelSelect.addEventListener("change", () => {
+    const sym = input.value.trim().toUpperCase();
+    if (sym) {
+      loadSymbol(sym); // reload same symbol with new model
+    }
+  });
+
+  // Default
   input.value = "CIPLA";
   loadSymbol("CIPLA");
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupSearch();
-});

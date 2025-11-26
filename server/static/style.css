@@ -12,16 +12,24 @@ body {
   padding: 20px;
 }
 
+.price_container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-self: center;
+}
+
 h1, h2 {
   margin-bottom: 10px;
 }
 
 section {
   margin-bottom: 30px;
-  padding: 15px;
+  padding: 30px;
   background: #151a2c;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  margin: 20px;
 }
 
 #last20Table {
@@ -60,18 +68,24 @@ section {
   align-items: center;
   gap: 8px;
   margin-bottom: 15px;
+  justify-content: center;
+  padding: 20px;
 }
 
 #symbolInput {
-  padding: 6px 8px;
+  padding: 20px;
   border-radius: 4px;
   border: 1px solid #333a55;
   background: #101529;
   color: #f5f5f5;
 }
 
+#modelSelect {
+  padding: 20px;
+}
+
 #searchButton {
-  padding: 6px 12px;
+  padding: 20px;
   border: none;
   border-radius: 4px;
   background: #2f80ed;

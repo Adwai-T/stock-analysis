@@ -9,6 +9,9 @@ def main():
 
     api_key = c["API_KEY"]
     api_secret = c["API_SECRET"]
+    
+    print(api_key)
+    print(api_secret)
 
     kite = KiteConnect(api_key=api_key)
 

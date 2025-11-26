@@ -1,11 +1,15 @@
 from pathlib import Path
 from datetime import timedelta
 
+import json
 import numpy as np
 import pandas as pd
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
+from kiteconnect import KiteConnect
 
 from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.layers import LSTM, GRU, Dense
 
 # ---------- PATHS / CONFIG ----------
 
@@ -13,8 +17,13 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 ALLDATA_DIR = ROOT_DIR / "data" / "allData"
 MODEL_DIR = ROOT_DIR / "model"
 
-MODEL_PATH = MODEL_DIR / "lstm_nifty200.h5"
-SCALER_PATH = MODEL_DIR / "lstm_nifty200_scaler.npz"
+# Load Kite credentials
+CREDS_PATH = ROOT_DIR / "credentials.json"
+with open(CREDS_PATH, "r") as f:
+    c = json.load(f)
+
+kite = KiteConnect(api_key=c["API_KEY"])
+kite.set_access_token(c["ACCESS_TOKEN"])
 
 SEQ_LEN = 30
 FEAT_COLS = ["open", "high", "low", "close", "volume"]
@@ -25,20 +34,13 @@ app = Flask(
     static_url_path=""
 )
 
-# ---------- LOAD MODEL & SCALER ONCE ----------
+MODEL_DIR = ROOT_DIR / "model"
 
-print("Loading LSTM model...")
-model = load_model(MODEL_PATH.as_posix(), compile=False)
-print("Model loaded from", MODEL_PATH)
+SEQ_LEN = 30
+FEAT_COLS = ["open", "high", "low", "close", "volume"]
 
-print("Loading scaler...")
-scaler = np.load(SCALER_PATH)
-feat_min = scaler["feat_min"]
-feat_max = scaler["feat_max"]
-denom = feat_max - feat_min
-denom[denom == 0] = 1.0
-print("Scaler loaded from", SCALER_PATH)
-
+# Cache: model_name -> (model, feat_min, feat_max, denom)
+_model_cache = {}
 
 # ---------- HELPERS ----------
 
@@ -70,10 +72,12 @@ def load_symbol_df(symbol: str) -> pd.DataFrame:
     return df
 
 
-def predict_next_close(df: pd.DataFrame) -> float | None:
+def predict_next_close(df: pd.DataFrame, model_name: str) -> float | None:
     """
-    Given a df of last 2 years (with FEAT_COLS), predict next day's closing price.
+    Given a df and a model_name, predict next day's closing price.
     """
+    model, feat_min, feat_max, denom = get_model_bundle(model_name)
+
     feats = df[FEAT_COLS].values.astype("float32")
     feats_norm = (feats - feat_min) / denom
 
@@ -81,11 +85,10 @@ def predict_next_close(df: pd.DataFrame) -> float | None:
         return None
 
     window = feats_norm[-SEQ_LEN:]
-    x = np.expand_dims(window, axis=0)  # (1, SEQ_LEN, num_features)
+    x = np.expand_dims(window, axis=0)
 
     pred_norm = model.predict(x, verbose=0)[0, 0]
 
-    # denormalize using close's min/max (index 3)
     close_min = feat_min[3]
     close_max = feat_max[3]
     close_denom = close_max - close_min if close_max > close_min else 1.0
@@ -106,10 +109,55 @@ def df_to_records(df: pd.DataFrame):
 def index():
     return send_from_directory(app.static_folder, "index.html")
 
+def get_model_bundle(model_name: str):
+    """
+    Load model + scaler for the given model_name (with caching).
+    Expects files:
+      ./model/<model_name>.h5
+      ./model/<model_name>_scaler.npz
+    """
+    model_name = model_name.strip()
+    if model_name in _model_cache:
+        return _model_cache[model_name]
+
+    model_path = MODEL_DIR / f"{model_name}.h5"
+    scaler_path = MODEL_DIR / f"{model_name}_scaler.npz"
+
+    if not model_path.exists():
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+    if not scaler_path.exists():
+        raise FileNotFoundError(f"Scaler file not found: {scaler_path}")
+
+    print(f"Loading model: {model_path}")
+    model = load_model(model_path.as_posix(), compile=False)
+
+    print(f"Loading scaler: {scaler_path}")
+    scaler = np.load(scaler_path)
+    feat_min = scaler["feat_min"]
+    feat_max = scaler["feat_max"]
+    denom = feat_max - feat_min
+    denom[denom == 0] = 1.0
+
+    bundle = (model, feat_min, feat_max, denom)
+    _model_cache[model_name] = bundle
+    return bundle
+
 
 @app.route("/api/symbol/<symbol>")
 def symbol_data(symbol):
     symbol = symbol.upper().strip()
+    model_name = request.args.get("model", "lstm_nifty200")  # default model
+    
+    print("DEBUG_REQUEST_ARGS:", dict(request.args))
+    print("DEBUG_MODEL:", model_name)
+    
+    # 1) Update local CSV using kite
+    try:
+        update_symbol_from_kite(symbol)
+    except Exception as e:
+        print("Kite update failed:", e)
+        # allow fallback to local file even if update fails
+    
     try:
         df = load_symbol_df(symbol)
     except FileNotFoundError as e:
@@ -130,22 +178,41 @@ def symbol_data(symbol):
     today_row = df.iloc[-1:].copy()
     today_rec = df_to_records(today_row)[0]
 
-    # Prediction
+    # Global model prediction
     try:
-        next_close = predict_next_close(df)
+        next_close = predict_next_close(df, model_name)
+        global_error = None
     except Exception as e:
         next_close = None
-        print("Prediction error for", symbol, ":", e)
-
+        global_error = str(e)
+        print(f"Prediction error for {symbol} with model {model_name}:", e)
+        
+    # Per-symbol real-time LSTM + GRU training
+    per_lstm = None
+    per_gru = None
+    per_error = None
+    
+    try:
+        per_lstm, per_gru = train_per_symbol_models(df)
+    except Exception as e:
+        per_error = str(e)
+        print(f"Per-symbol training error for {symbol}:", e)
+        
     # Next date (just next calendar day after last date; not handling weekends specially)
     last_date = df["date"].max()
     next_date = (last_date + timedelta(days=1)).strftime("%Y-%m-%d")
 
+    # Next date ...
     prediction = {
         "next_close": next_close,
         "next_date": next_date,
+        "model": model_name,
+        "per_symbol_lstm": per_lstm,
+        "per_symbol_gru": per_gru,
+        "global_error": global_error,
+        "per_symbol_error": per_error,
     }
-
+    
     return jsonify({
         "symbol": symbol,
         "data": full_records,
@@ -153,6 +220,144 @@ def symbol_data(symbol):
         "today": today_rec,
         "prediction": prediction
     })
+    
+def update_symbol_from_kite(symbol: str):
+    """
+    Fetch last 2 years daily data from Kite for the symbol
+    and overwrite data/allData/<symbol>.csv
+    """
+    symbol = symbol.upper()
+    out_path = ALLDATA_DIR / f"{symbol}.csv"
+
+    # Find token in NSE instruments
+    instruments = kite.instruments("NSE")
+    token = None
+    for inst in instruments:
+        if (
+            inst["tradingsymbol"].upper() == symbol
+            and inst["segment"] == "NSE"
+            and inst["instrument_type"] == "EQ"
+        ):
+            token = inst["instrument_token"]
+            break
+
+    if token is None:
+        raise ValueError(f"Symbol {symbol} not found in kite instruments")
+
+    # Fetch 2-year history
+    end_d = pd.Timestamp.now().date()
+    start_d = end_d - pd.Timedelta(days=365 * 2)
+
+    candles = kite.historical_data(
+        instrument_token=token,
+        from_date=start_d,
+        to_date=end_d,
+        interval="day",
+        oi=True,
+    )
+
+    if not candles:
+        raise RuntimeError(f"No data returned for {symbol}")
+
+    df = pd.DataFrame(candles)
+    df["date"] = pd.to_datetime(df["date"])
+    df = df.sort_values("date").reset_index(drop=True)
+
+    df.to_csv(out_path, index=False)
+    print(f"Updated file: {out_path}")
+
+def train_per_symbol_models(df: pd.DataFrame, epochs: int = 5, batch_size: int = 32):
+    """
+    Train a small LSTM and GRU on this symbol's last 2 years of data only,
+    then return their next-day closing price predictions (denormalized).
+    """
+    feats = df[FEAT_COLS].values.astype("float32")
+
+    # Need enough rows to build sequences
+    n = len(feats)
+    if n < SEQ_LEN + 5:  # a bit more forgiving
+        raise ValueError(f"Not enough data for per-symbol training (n={n}, need>{SEQ_LEN+5})")
+
+    # Per-symbol min/max scaling
+    feat_min = feats.min(axis=0)
+    feat_max = feats.max(axis=0)
+    denom = feat_max - feat_min
+    denom[denom == 0] = 1.0
+    feats_norm = (feats - feat_min) / denom
+
+    X_list, y_list = [], []
+    close_idx = 3  # open, high, low, close, volume
+
+    for i in range(n - SEQ_LEN - 1):
+        window = feats_norm[i:i + SEQ_LEN]
+        target = feats_norm[i + SEQ_LEN, close_idx]
+        X_list.append(window)
+        y_list.append(target)
+
+    X = np.stack(X_list)
+    y = np.array(y_list, dtype="float32")
+
+    # Simple time-based split
+    split = max(int(len(X) * 0.8), 1)
+    X_train, X_val = X[:split], X[split:]
+    y_train, y_val = y[:split], y[split:]
+
+    num_features = X.shape[-1]
+
+    def make_lstm():
+        m = Sequential([
+            LSTM(32, input_shape=(SEQ_LEN, num_features)),
+            Dense(16, activation="relu"),
+            Dense(1)
+        ])
+        m.compile(optimizer="adam", loss="mse")
+        return m
+
+    def make_gru():
+        m = Sequential([
+            GRU(32, input_shape=(SEQ_LEN, num_features)),
+            Dense(16, activation="relu"),
+            Dense(1)
+        ])
+        m.compile(optimizer="adam", loss="mse")
+        return m
+
+    # Train LSTM
+    lstm_model = make_lstm()
+    lstm_model.fit(
+        X_train, y_train,
+        validation_data=(X_val, y_val) if len(X_val) > 0 else None,
+        epochs=epochs,
+        batch_size=batch_size,
+        verbose=0  # change to 1 if you want console output
+    )
+
+    # Train GRU
+    gru_model = make_gru()
+    gru_model.fit(
+        X_train, y_train,
+        validation_data=(X_val, y_val) if len(X_val) > 0 else None,
+        epochs=epochs,
+        batch_size=batch_size,
+        verbose=0
+    )
+
+    # Prepare last window for prediction
+    last_window = feats_norm[-SEQ_LEN:]
+    x_pred = np.expand_dims(last_window, axis=0)
+
+    lstm_pred_norm = lstm_model.predict(x_pred, verbose=0)[0, 0]
+    gru_pred_norm = gru_model.predict(x_pred, verbose=0)[0, 0]
+
+    # Denormalize using this symbol's close min/max
+    close_min = feat_min[close_idx]
+    close_max = feat_max[close_idx]
+    close_denom = close_max - close_min if close_max > close_min else 1.0
+
+    lstm_pred = lstm_pred_norm * close_denom + close_min
+    gru_pred = gru_pred_norm * close_denom + close_min
+
+    return float(lstm_pred), float(gru_pred)
 
 
 if __name__ == "__main__":
