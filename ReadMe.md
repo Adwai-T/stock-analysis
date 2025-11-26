@@ -32,3 +32,16 @@ Use URL initially - `https://kite.trade/connect/login?api_key=YOUR_API_KEY`.
 This will give the request token.
 
 `ACCESS_TOKEN` is recieved in the Url and needs to be update when login in is completed.
+
+## Feature Engineering
+
+`scripts/feature_engineering.py`
+
+| Category            | Features                                 |
+| ------------------- | ---------------------------------------- |
+| Returns             | Log return, % change                     |
+| Trend Indicators    | SMA (5, 10, 20), EMA                     |
+| Momentum Indicators | RSI, Stochastic %                        |
+| Volatility          | ATR, Rolling volatility                  |
+| Statistical         | Lag features (1-day, 2-day, 5-day shift) |
+

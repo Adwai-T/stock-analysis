@@ -74,11 +74,32 @@ def load_symbol_df(symbol: str) -> pd.DataFrame:
 
 def predict_next_close(df: pd.DataFrame, model_name: str) -> float | None:
     """
-    Given a df and a model_name, predict next day's closing price.
+    Predict next close using global model.
+    - If model uses 5 features -> use raw OHLCV (FEAT_COLS)
+    - If model uses more (e.g. 19) -> recompute engineered features and
+      use all numeric columns except date.
     """
     model, feat_min, feat_max, denom = get_model_bundle(model_name)
 
-    feats = df[FEAT_COLS].values.astype("float32")
+    # Decide if this is a "simple" or "feature" model based on feature count
+    num_features = len(feat_min)
+
+    if num_features == len(FEAT_COLS):
+        # Old/simple model: just OHLCV
+        working_df = df.copy()
+        feature_cols = FEAT_COLS
+    else:
+        # Feature model: recompute engineered features
+        working_df = add_features(df)
+        feature_cols = [c for c in working_df.columns if c != "date"]
+
+        if len(feature_cols) != num_features:
+            raise ValueError(
+                f"Model expects {num_features} features, "
+                f"but engineered df has {len(feature_cols)}"
+            )
+
+    feats = working_df[feature_cols].values.astype("float32")
     feats_norm = (feats - feat_min) / denom
 
     if len(feats_norm) < SEQ_LEN:
@@ -87,14 +108,20 @@ def predict_next_close(df: pd.DataFrame, model_name: str) -> float | None:
     window = feats_norm[-SEQ_LEN:]
     x = np.expand_dims(window, axis=0)
 
+    # index of 'close' among feature columns
+    try:
+        close_idx = feature_cols.index("close")
+    except ValueError:
+        raise RuntimeError("'close' not found in feature columns")
+
     pred_norm = model.predict(x, verbose=0)[0, 0]
 
-    close_min = feat_min[3]
-    close_max = feat_max[3]
+    close_min = feat_min[close_idx]
+    close_max = feat_max[close_idx]
     close_denom = close_max - close_min if close_max > close_min else 1.0
     pred_close = pred_norm * close_denom + close_min
-    return float(pred_close)
 
+    return float(pred_close)
 
 def df_to_records(df: pd.DataFrame):
     """Convert df to list of dicts with date as YYYY-MM-DD strings."""
@@ -192,6 +219,13 @@ def symbol_data(symbol):
     per_gru = None
     per_error = None
     
+    # Test-set predictions for last ~3 months using selected model
+    test_points = []
+    try:
+        test_points = build_test_predictions(df, model_name)
+    except Exception as e:
+        print(f"Test-set prediction error for {symbol} with model {model_name}:", e)
+    
     try:
         per_lstm, per_gru = train_per_symbol_models(df)
     except Exception as e:
@@ -218,7 +252,10 @@ def symbol_data(symbol):
         "data": full_records,
         "last20": last20_records,
         "today": today_rec,
-        "prediction": prediction
+        "prediction": prediction,
+        "test_set": {
+            "points": test_points
+        }
     })
     
 def update_symbol_from_kite(symbol: str):
@@ -358,6 +395,122 @@ def train_per_symbol_models(df: pd.DataFrame, epochs: int = 5, batch_size: int =
     gru_pred = gru_pred_norm * close_denom + close_min
 
     return float(lstm_pred), float(gru_pred)
+
+def build_test_predictions(df: pd.DataFrame, model_name: str):
+    """
+    Use the selected model to predict close for the last ~3 months.
+    Handles both simple (OHLCV) and feature-based models.
+    """
+    model, feat_min, feat_max, denom = get_model_bundle(model_name)
+    num_features = len(feat_min)
+
+    # Decide which features to use (simple vs feature model)
+    if num_features == len(FEAT_COLS):
+        # Simple model: OHLCV only
+        working_df = df.copy()
+        feature_cols = FEAT_COLS
+    else:
+        # Feature model: recompute engineered features
+        working_df = add_features(df)
+        feature_cols = [c for c in working_df.columns if c != "date"]
+        if len(feature_cols) != num_features:
+            raise ValueError(
+                f"Model expects {num_features} features, "
+                f"but engineered df has {len(feature_cols)}"
+            )
+
+    feats = working_df[feature_cols].values.astype("float32")
+    # ❗ THIS WAS MISSING BEFORE — scale features using training scaler
+    feats_norm = (feats - feat_min) / denom
+
+    dates = working_df["date"].reset_index(drop=True)
+    closes = working_df["close"].reset_index(drop=True)
+
+    if len(feats_norm) < SEQ_LEN + 5:
+        return []
+
+    max_date = dates.max()
+    cutoff = max_date - pd.Timedelta(days=90)  # ~3 months
+
+    try:
+        close_idx = feature_cols.index("close")
+    except ValueError:
+        raise RuntimeError("'close' not found in feature columns")
+
+    records = []
+    n = len(feats_norm)
+
+    for i in range(n - SEQ_LEN - 1):
+        target_idx = i + SEQ_LEN
+        if dates.iloc[target_idx] < cutoff:
+            continue
+
+        window = feats_norm[i:i + SEQ_LEN]
+        x = np.expand_dims(window, axis=0)
+
+        pred_norm = model.predict(x, verbose=0)[0, 0]
+
+        # Denormalize using global close min/max from training
+        close_min = feat_min[close_idx]
+        close_max = feat_max[close_idx]
+        close_denom = close_max - close_min if close_max > close_min else 1.0
+        pred_close = pred_norm * close_denom + close_min
+
+        records.append({
+            "date": dates.iloc[target_idx].strftime("%Y-%m-%d"),
+            "actual": float(closes.iloc[target_idx]),
+            "predicted": float(pred_close),
+        })
+
+    return records
+
+def add_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Same feature engineering used in training.
+    Input df must have: date, open, high, low, close, volume.
+    """
+    df = df.copy()
+    df = df.sort_values("date").reset_index(drop=True)
+
+    # ---- Returns ----
+    df["pct_change"] = df["close"].pct_change()
+    df["log_return"] = np.log(df["close"] / df["close"].shift(1))
+
+    # ---- Moving Averages ----
+    df["sma_5"] = df["close"].rolling(5).mean()
+    df["sma_10"] = df["close"].rolling(10).mean()
+    df["sma_20"] = df["close"].rolling(20).mean()
+
+    # ---- EMA ----
+    df["ema_10"] = df["close"].ewm(span=10, adjust=False).mean()
+    df["ema_20"] = df["close"].ewm(span=20, adjust=False).mean()
+
+    # ---- RSI (14) ----
+    delta = df["close"].diff()
+    gain = (delta.where(delta > 0, 0)).ewm(span=14, adjust=False).mean()
+    loss = (-delta.where(delta < 0, 0)).ewm(span=14, adjust=False).mean()
+    rs = gain / loss
+    df["rsi_14"] = 100 - (100 / (1 + rs))
+
+    # ---- ATR (14) ----
+    prev_close = df["close"].shift(1)
+    tr = np.maximum(df["high"] - df["low"],
+                    np.maximum((df["high"] - prev_close).abs(),
+                               (df["low"] - prev_close).abs()))
+    df["tr"] = tr
+    df["atr_14"] = df["tr"].rolling(14).mean()
+
+    # ---- Volatility (20) ----
+    df["volatility_20"] = df["log_return"].rolling(20).std()
+
+    # ---- Lag features ----
+    df["lag_1"] = df["close"].shift(1)
+    df["lag_2"] = df["close"].shift(2)
+    df["lag_5"] = df["close"].shift(5)
+
+    # Drop rows with NaNs introduced by rolling/shift
+    df = df.dropna().reset_index(drop=True)
+    return df
 
 
 if __name__ == "__main__":

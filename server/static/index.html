@@ -20,6 +20,8 @@
         <select id="modelSelect">
           <option value="lstm_nifty200">LSTM NIFTY 200</option>
           <option value="lstm_nifty50">LSTM NIFTY 50</option>
+          <option value="lstm_nifty200_feature">LSTM NIFTY 200 with Features</option>
+          <option value="lstm_nifty50_feature">LSTM NIFTY 50 with Features</option>
           <!-- add more models here -->
           <!-- <option value="lstm_alt">Alternative LSTM</option> -->
         </select>
@@ -32,16 +34,33 @@
         <div id="todayBox"></div>
       </section>
 
-      <div class="price_container">
+      <div>
+        <div class="price_container">
+          <section>
+            <h2>Prediction</h2>
+            <div id="predictionBox"></div>
+          </section>
+
+          <section>
+            <h2>Per-Symbol Training (LSTM & GRU)</h2>
+            <div id="localPredictionBox"></div>
+          </section>
+        </div>
 
         <section>
-          <h2>Prediction</h2>
-          <div id="predictionBox"></div>
-        </section>
+          <h2>Last 3 Months – Actual vs Predicted (Selected Model)</h2>
+          <canvas id="testChart" height="120"></canvas>
 
-        <section>
-          <h2>Per-Symbol Training (LSTM & GRU)</h2>
-          <div id="localPredictionBox"></div>
+          <!-- <table id="testTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Actual Close</th>
+                <th>Predicted Close</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table> -->
         </section>
       </div>
 

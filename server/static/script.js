@@ -1,4 +1,5 @@
 let priceChart = null;
+let testChart = null;
 
 async function fetchJSON(url) {
   const res = await fetch(url);
@@ -33,6 +34,7 @@ async function loadSymbol(symbol) {
     renderLast20Table(payload.last20);
     renderToday(payload.today);
     renderPrediction(payload.prediction);
+    renderTestSet(payload.test_set);
 
     status.textContent = `Loaded ${payload.symbol}`;
   } catch (err) {
@@ -50,6 +52,15 @@ function clearDisplay() {
   document.querySelector("#last20Table tbody").innerHTML = "";
   document.getElementById("todayBox").innerHTML = "";
   document.getElementById("predictionBox").innerHTML = "";
+
+  if (testChart) {
+    testChart.destroy();
+    testChart = null;
+  }
+  // const testBody = document.querySelector("#testTable tbody");
+  // if (testBody) {
+  //   testBody.innerHTML = "";
+  // }
 }
 
 function renderChart(data) {
@@ -204,3 +215,79 @@ function setupSearch() {
   input.value = "CIPLA";
   loadSymbol("CIPLA");
 }
+
+function renderTestSet(testSet) {
+  const rows = (testSet && testSet.points) || [];
+
+  // Table
+  // const tbody = document.querySelector("#testTable tbody");
+  // if (!tbody) return;
+  // tbody.innerHTML = "";
+
+  // if (!rows.length) {
+  //   const tr = document.createElement("tr");
+  //   const td = document.createElement("td");
+  //   td.colSpan = 3;
+  //   td.innerHTML = "<em>No test data available.</em>";
+  //   tr.appendChild(td);
+  //   tbody.appendChild(tr);
+  // } else {
+  //   rows.forEach(r => {
+  //     const tr = document.createElement("tr");
+  //     const cells = [
+  //       r.date,
+  //       Number(r.actual).toFixed(2),
+  //       Number(r.predicted).toFixed(2),
+  //     ];
+  //     cells.forEach(val => {
+  //       const td = document.createElement("td");
+  //       td.textContent = val;
+  //       tr.appendChild(td);
+  //     });
+  //     tbody.appendChild(tr);
+  //   });
+  // }
+
+  // Test Data Predictions Chart
+  const canvas = document.getElementById("testChart");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  if (testChart) {
+    testChart.destroy();
+    testChart = null;
+  }
+
+  if (!rows.length) return;
+
+  const labels = rows.map(r => r.date);
+  const actual = rows.map(r => r.actual);
+  const predicted = rows.map(r => r.predicted);
+
+  testChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Actual",
+          data: actual,
+          tension: 0.1
+        },
+        {
+          label: "Predicted",
+          data: predicted,
+          tension: 0.1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: "index", intersect: false },
+      scales: {
+        x: { ticks: { maxTicksLimit: 10 } }
+      }
+    }
+  });
+}
+
