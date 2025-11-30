@@ -39,27 +39,27 @@ Historical stock data is collected using the Kite Connect API, which provides da
 
 \begin{table}[htbp]
 \centering
+\caption{Dataset Categorization Based on Usage and Scope}
+\label{tab:dataset_types}
 \small
-\begin{tabular}{p{3.2cm} p{5cm} p{5cm}}
+\begin{tabular}{|p{3cm}|p{5cm}|p{4.8cm}|}
 \hline
 \textbf{Dataset Type} & \textbf{Usage} & \textbf{Scope} \\
 \hline
-
+\hline
 Company-specific dataset &
 LSTM \& GRU individual models &
 Single company, 2-year window \\
-
+\hline
 NIFTY-based dataset &
 CNN--LSTM and baseline analysis &
 NIFTY 50 and NIFTY 200 constituents \\
-
+\hline
 Full-market dataset &
 Transformer-based architecture and cross-learning &
 All available NSE-listed companies \\
 \hline
 \end{tabular}
-\caption{Dataset categorization based on usage and scope.}
-\label{tab:dataset_types}
 \end{table}
 
 All datasets use two years of historical records, sampled at one trading day frequency. Missing trading days (holidays, suspensions) are handled by forward-fill as part of preprocessing.

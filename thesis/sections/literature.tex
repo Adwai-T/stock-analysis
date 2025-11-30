@@ -123,51 +123,50 @@ Additionally, many studies report performance solely through predictive accuracy
 \FloatBarrier
 \begin{table}[htbp]
 \centering
+\caption{Comparison of machine learning and hybrid deep learning approaches for stock market prediction.}
+\label{tab:ml_approaches_summary}
 \small
-\begin{tabular}{p{3cm} p{4cm} p{3.2cm} p{5cm}}
+\begin{tabular}{|p{2.2cm}|p{3.8cm}|p{2.2cm}|p{4.8cm}|}
 \hline
 \textbf{Study / Approach} & \textbf{Technical Indicators Used} & \textbf{Algorithm / Model} & \textbf{Key Results / Findings} \\
 \hline
-
+\hline
 LSTM-Based Forecasting &
 RSI, MACD, KD, BIAS, Williams \%R + OHLC &
 4-layer LSTM &
 Achieved \textbf{83.6\%} accuracy; MACD alone gave \textbf{76\%} accuracy. \\
-
+\hline
 SVM-Based Trading &
 MA, Bollinger Bands, RSI, Stochastic Oscillator, Aroon &
 Support Vector Machine (SVM) &
 Highest accuracy: \textbf{77.8\%}, best on volatile stocks. \\
-
+\hline
 Decision Tree Feature Model &
 Trend, momentum, volume, volatility indicators &
 Decision Tree, Random Forest, Na\"ive Bayes &
 Decision Tree achieved \textbf{80.08\%}, outperforming RF (78.8\%). \\
-
+\hline
 CNN--LSTM Hybrid &
 OHLCV + technical indicators &
 CNN--LSTM hybrid model &
 Outperformed standalone CNN and LSTM models. \\
-
+\hline
 SCLE Hybrid Model &
 87 indicators + sentiment data &
 Stacked CNN--LSTM + Attention + Bi-LSTM &
 Accuracy improved \textbf{30\%} over sentiment-only system. \\
-
+\hline
 RL for Trading &
 Price + technical indicators &
 A2C and DDPG (Reinforcement Learning) &
 Delivered \textbf{positive Sharpe ratio (0.13)} vs negative baseline. \\
-
+\hline
 CNN Pattern Model for HFT &
 Price-derived feature set (130 features) &
 1D CNN &
 Demonstrated high efficiency and effective classification performance. \\
-
 \hline
 \end{tabular}
-\caption{Comparison of machine learning and hybrid deep learning approaches for stock market prediction.}
-\label{tab:ml_approaches_summary}
 \end{table}
 \FloatBarrier
 \clearpage

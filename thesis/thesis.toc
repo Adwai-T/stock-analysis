@@ -59,24 +59,59 @@
 \contentsline {subsection}{\numberline {4.8.3}Transformer Model}{28}{subsection.4.8.3}%
 \contentsline {section}{\numberline {4.9}Evaluation Metrics}{28}{section.4.9}%
 \contentsline {section}{\numberline {4.10}Deployment Testing}{28}{section.4.10}%
-\contentsline {chapter}{\numberline {5}Results and Analysis}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Results And Analysis - Bullets}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Overview}{30}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Training and Validation Behavior}{30}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Quantitative Evaluation Results}{32}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Effect of Feature Engineering vs. Raw OHLCV Inputs}{33}{section.5.5}%
-\contentsline {section}{\numberline {5.6}CNN-LSTM Feature Set Performance}{33}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Generalization vs. Specialization Behavior}{34}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Deployment and Practical Evaluation}{35}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Discussion of Results}{35}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}GRU Results}{35}{subsection.5.9.1}%
-\contentsline {subsection}{\numberline {5.9.2}LSTM Results}{35}{subsection.5.9.2}%
-\contentsline {subsection}{\numberline {5.9.3}CNN-LSTM Results}{35}{subsection.5.9.3}%
-\contentsline {subsection}{\numberline {5.9.4}Transformer Results}{35}{subsection.5.9.4}%
-\contentsline {chapter}{\numberline {6}Summary and Conclusions}{36}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary of Work and Key Contributions}{36}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Problem Statement and Solution}{36}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Major Findings and Significance}{37}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Limitations of the Study}{38}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Future Work}{38}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Conclusion}{39}{section.6.6}%
+\contentsline {chapter}{\numberline {5}Model Details}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gated Recurrent Unit (GRU) Models}{30}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Introduction to GRU Architecture}{30}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Why GRUs Are Used in Time-Series Forecasting}{30}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Advantages and Disadvantages of GRUs Category Details}{31}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Role of GRU in This Project}{32}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Trained GRU Model Configurations}{32}{subsection.5.1.5}%
+\contentsline {subsubsection}{Model 1 — GRU with Only Stock Data (No Indicators)}{32}{section*.22}%
+\contentsline {subsubsection}{Model 2 — GRU with Technical Indicators}{32}{section*.24}%
+\contentsline {subsection}{\numberline {5.1.6}Summary of GRU Model Performance}{33}{subsection.5.1.6}%
+\contentsline {section}{\numberline {5.2}Long Short-Term Memory (LSTM) Model}{34}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Introduction to LSTM Architecture}{34}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Why LSTM Is Used for Time-Series Forecasting}{34}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Advantages and Disadvantages of LSTM}{34}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Role of LSTM in This Project}{34}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Trained LSTM Model Configurations}{36}{subsection.5.2.5}%
+\contentsline {subsubsection}{LSTM Model Without Indicators}{36}{section*.28}%
+\contentsline {subsubsection}{LSTM Model With Indicators}{36}{section*.30}%
+\contentsline {subsection}{\numberline {5.2.6}Performance Summary}{37}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}Transformer Model}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Introduction to the Transformer Architecture}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Motivation for Using Transformers in Time-Series Forecasting}{38}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Advantages and Disadvantages of Transformers}{38}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Role of Transformers in This Project}{38}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Trained Transformer Model Configurations Transformer Model Without Indicators}{39}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Performance Summary}{40}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}Conv1D + LSTM Hybrid Model}{42}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Introduction to the Hybrid Architecture}{42}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Motivation for Using a Hybrid Model in Time-Series Forecasting}{42}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Advantages and Disadvantages of the Hybrid Model}{43}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Role of the Hybrid Model in This Project}{43}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Trained Configurations of the Hybrid Model}{43}{subsection.5.4.5}%
+\contentsline {subsubsection}{Hybrid Model Without Indicators}{44}{section*.39}%
+\contentsline {subsubsection}{Hybrid Model With Indicators}{44}{section*.41}%
+\contentsline {subsection}{\numberline {5.4.6}Performance Summary}{45}{subsection.5.4.6}%
+\contentsline {chapter}{\numberline {6}Results and Analysis}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Overview}{46}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Training and Validation Behavior}{46}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Single Company Data Used}{46}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Quantitative Evaluation Results}{52}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Effect of Feature Engineering vs. Raw OHLCV Inputs}{53}{section.6.5}%
+\contentsline {section}{\numberline {6.6}CNN-LSTM Feature Set Performance}{53}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Generalization vs. Specialization Behavior}{59}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Deployment and Practical Evaluation}{60}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Discussion of Results}{60}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}GRU Results}{60}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}LSTM Results}{60}{subsection.6.9.2}%
+\contentsline {subsection}{\numberline {6.9.3}CNN-LSTM Results}{60}{subsection.6.9.3}%
+\contentsline {subsection}{\numberline {6.9.4}Transformer Results}{60}{subsection.6.9.4}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{61}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Work and Key Contributions}{61}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Problem Statement and Solution}{61}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Major Findings and Significance}{62}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Limitations of the Study}{63}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Future Work}{63}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Conclusion}{64}{section.7.6}%

@@ -1,5 +1,3 @@
-\section{Results And Analysis - Bullets}
-
 \section{Overview}
 
 This chapter presents the results obtained from evaluating multiple machine learning architectures for forecasting next-day closing prices of Indian stock market equities. The models were assessed on both single-company datasets and broader market-level datasets to understand how input size, model complexity, and feature engineering influence predictive accuracy. Evaluation includes quantitative error metrics, visual prediction comparison, convergence behavior, and model generalization characteristics.
@@ -9,22 +7,77 @@ This chapter presents the results obtained from evaluating multiple machine lear
 
 Across experiments, all models showed decreasing loss curves during training, confirming the ability to learn meaningful temporal dependencies. However, their learning dynamics differed based on dataset scope and model capacity.
 
-TODO - Insert Graphs for Training and validation
+Even when just using the closing price overtime of the stocks shows great learning potential and thus confirms the ability of models to give insight on market movement.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/closeOnlySingleCompany.png} 
-    \caption{When Close Only data is consiedered}
-    \label{fig:Close Only}
+    \caption{Close price data is Consiedered}
+    \label{fig:Closing price data Only}
 \end{figure}
 
-Key findings from convergence analysis include:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/GRUdirectTvVLoss.png} 
+    \caption{GRU Validation Behaviour}
+    \label{fig:GRU Validation Behaviour}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/GRUIndicatorsTvVLoss.png} 
+    \caption{GRU with Indicators Validation Behaviour}
+    \label{fig:GRU with Indicators Validation Behaviour}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/LSTMdirectTvVLoss.png} 
+    \caption{LSTM with Indicators Validation Behaviour}
+    \label{fig:LSTM with Indicators Validation Behaviour}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/TransformersIndicatorsTvVLoss.png} 
+    \caption{Transformers with Indicators Validation Behaviour}
+    \label{fig:Transformers with Indicators Validation Behaviour}
+\end{figure}
+
+\section{Single Company Data Used}
+
+Key findings from training Models with Single Compnay data and it's analysis include:
 
 \begin{itemize}
     \item For single-company datasets, \textbf{GRU and LSTM models} converged fastest and most consistently, likely due to their lower parameter count relative to Transformers and CNN-LSTM networks.
     \item When only the \textbf{closing price} was used as the input feature, models fit extremely well and often achieved very low training loss, indicating possible \textbf{overfitting}.
     \item Larger architectures such as \textbf{Transformer and CNN-LSTM} demonstrated slower convergence and required significantly more data to avoid underfitting.
+    \item Models like Transformers and CNN-LSTM when used for single company data showed significantly worse performance than simpler algorithm like GRU, LSTM and even classic algorithms like linear regression.
+    \item This shows a significant disadvantage in using such algorithms there, when the data-set is smaller.
 \end{itemize}
+
+Following figures demonstrate the above findings
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png} 
+    \caption{Regression Models on Single Company Data}
+    \label{fig:Regression Models on Single Company Data}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png} 
+    \caption{Regression Models on Single Company Data With Indicators Included}
+    \label{fig:Regression Models on Single Company Data With Indicators Included}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/SingleCompanyDatapredictionError.png} 
+    \caption{Prediction Errors for Regression Models on Single Company Data}
+    \label{fig:Prediction Errors for Regression Models on Single Company Data}
+\end{figure}
 
 \FloatBarrier
 
@@ -71,7 +124,40 @@ Key conclusions:
   \item For broader training datasets (NIFTY50, NIFTY200, or all NSE companies), adding indicators improved generalization and reduced error variance.
 \end{itemize}
 
-TODO - Insert Graphs Prediction vs Actual: LSTM vs GRU vs Indicator-Enhanced Variants
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/GRUdirect.png} 
+    \caption{GRU with stock data}
+    \label{fig:GRU with stock data}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/GRUIndicators.png} 
+    \caption{GRU with stock data}
+    \label{fig:GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/LSTMdirect.png} 
+    \caption{LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}
+    \label{fig:LSTM with Indicators}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/TransformersIndicators.png} 
+    \caption{Transformers with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}
+    \label{fig:Transformers with Indicators}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicators.png} 
+    \caption{CNN-LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}
+    \label{fig:CNN-LSTM with Indicators}
+\end{figure}
 
 \section{CNN-LSTM Feature Set Performance}
 
@@ -96,8 +182,68 @@ For the CNN-LSTM architecture, three engineered feature combinations were tested
 
 This indicates that simple, trend-focused moving averages outperform more volatile or mathematically dense indicators in deep hybrid models.
 
-TODO  CNN-LSTM Prediction Comparison Across Feature Sets
-TODO  Validation Loss Comparison Across CNN-LSTM Feature Sets
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicatorsMA20.png} 
+    \caption{CNN-LSTM with Indicators (Close, MA5, MA20)}
+    \label{fig:CNN-LSTM with Indicators Close, MA5, MA20}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicatorsSTD5.png} 
+    \caption{CNN-LSTM with Indicators (Close, EMA10, STD5)}
+    \label{fig:CNN-LSTM with Indicators Close, EMA10, STD5}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicatorsSTD20.png} 
+    \caption{CNN-LSTM with Indicators (Close, Return, STD20)}
+    \label{fig:CNN-LSTM with Indicators Close, Return, STD20}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicatorsValidationLossComparison.png} 
+    \caption{CNN-LSTM with Indicators Validation Loss Comparisons}
+    \label{fig:CNN-LSTM with Indicators Validation Loss Comparisons}
+\end{figure}
+
+\begin{table}[h!]
+    \centering
+    \caption{Strengths and Measures of Technical Indicator Sets}
+    \label{tab:indicator_strengths}
+    \begin{tabular}{|l|p{4cm}|p{6.5cm}|}
+        \hline
+        \textbf{Indicator Set} & \textbf{What it Measures} & \textbf{Strengths} \\
+        \hline
+        1. Close, MA5, MA20 & Price trend over short (5-day) and medium (20-day) periods & Simple, easy to interpret; captures short- and medium-term momentum; identifies trend changes (crossovers) \\
+        \hline
+        2. Close, EMA10, STD & EMA10: weighted short-term trend; STD: \textbf{price volatility} & EMA reacts faster than simple MA; STD captures volatility (\textbf{risk}) \\
+        \hline
+        3. Close Return, STD20 & Return captures \textbf{percentage change}, STD20 measures volatility of returns & Focuses on \textbf{percentage movement} rather than absolute price; STD20 captures medium-term volatility trends \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \caption{Summary of Technical Indicator Sets}
+    \label{tab:indicator_sets_summary}
+    \begin{tabular}{|l|p{4cm}|p{6cm}|}
+        \hline
+        \textbf{Indicator Set} & \textbf{What it Measures} & \textbf{Usefulness in Stock Modeling} \\
+        \hline
+        1. Close, MA5, MA20 & Price trend over short (5-day) and medium (20-day) periods & Helps capture \textbf{trend direction} and \textbf{short-term momentum}, useful for regression or classification of up/down movement. \\
+        \hline
+        2. Close, EMA10, STD & EMA10: weighted short-term trend; STD: \textbf{price volatility}. & Useful to detect \textbf{price momentum + risk}; volatility helps the model understand uncertainty and potential extreme moves. \\
+        \hline
+        3. Close Return, STD20 & Return captures \textbf{percentage change}; STD20 measures \textbf{volatility of returns}. & Good for \textbf{risk-sensitive models} and detecting \textbf{high-volatility periods}, can improve direction prediction. \\
+        \hline
+    \end{tabular}
+\end{table}
+
 \FloatBarrier
 
 \clearpage

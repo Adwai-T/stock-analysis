@@ -48,8 +48,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Overview}{16}{section.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}System Workflow}{17}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Data Acquisition}{17}{section.3.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset categorization based on usage and scope.}}{17}{table.caption.9}\protected@file@percent }
-\newlabel{tab:dataset_types}{{3.1}{17}{Dataset categorization based on usage and scope}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset Categorization Based on Usage and Scope}}{17}{table.caption.9}\protected@file@percent }
+\newlabel{tab:dataset_types}{{3.1}{17}{Dataset Categorization Based on Usage and Scope}{table.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Data Preprocessing}{17}{section.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Handling Missing Values}{17}{subsection.3.5.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Normalization}{18}{subsection.3.5.2}\protected@file@percent }
@@ -102,36 +102,141 @@
 \@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Model Evaluation Metrics}}{28}{table.caption.20}\protected@file@percent }
 \newlabel{tab:metrics}{{4.5}{28}{Model Evaluation Metrics}{table.caption.20}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.10}Deployment Testing}{28}{section.4.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results and Analysis}{30}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Model Details}{30}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Results And Analysis - Bullets}{30}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Overview}{30}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Training and Validation Behavior}{30}{section.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces When Close Only data is consiedered}}{31}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:Close Only}{{5.1}{31}{When Close Only data is consiedered}{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Quantitative Evaluation Results}{32}{section.5.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Comparative Model Performance Across Datasets}}{32}{table.caption.22}\protected@file@percent }
-\newlabel{tab:model_comparison}{{5.1}{32}{Comparative Model Performance Across Datasets}{table.caption.22}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Effect of Feature Engineering vs. Raw OHLCV Inputs}{33}{section.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}CNN-LSTM Feature Set Performance}{33}{section.5.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Feature Set Performance Comparison}}{33}{table.caption.23}\protected@file@percent }
-\newlabel{tab:feature_performance}{{5.2}{33}{Feature Set Performance Comparison}{table.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Generalization vs. Specialization Behavior}{34}{section.5.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.8}Deployment and Practical Evaluation}{35}{section.5.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.9}Discussion of Results}{35}{section.5.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.1}GRU Results}{35}{subsection.5.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.2}LSTM Results}{35}{subsection.5.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.3}CNN-LSTM Results}{35}{subsection.5.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.4}Transformer Results}{35}{subsection.5.9.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Summary and Conclusions}{36}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Gated Recurrent Unit (GRU) Models}{30}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Introduction to GRU Architecture}{30}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Why GRUs Are Used in Time-Series Forecasting}{30}{subsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Advantages and Disadvantages of GRUs Category Details}{31}{subsection.5.1.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Assessment of Model Characteristics (likely GRU/Simple RNN variant)}}{31}{table.caption.21}\protected@file@percent }
+\newlabel{tab:model_assessment}{{5.1}{31}{Assessment of Model Characteristics (likely GRU/Simple RNN variant)}{table.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Role of GRU in This Project}{32}{subsection.5.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}Trained GRU Model Configurations}{32}{subsection.5.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model 1 — GRU with Only Stock Data (No Indicators)}{32}{section*.22}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Model Architecture Summary}}{32}{table.caption.23}\protected@file@percent }
+\newlabel{tab:model_summary}{{5.2}{32}{Model Architecture Summary}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Model 2 — GRU with Technical Indicators}{32}{section*.24}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Summary of Technical Indicators}}{33}{table.caption.25}\protected@file@percent }
+\newlabel{tab:tech_indicators}{{5.3}{33}{Summary of Technical Indicators}{table.caption.25}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Stacked GRU Model Architecture Summary}}{33}{table.caption.26}\protected@file@percent }
+\newlabel{tab:stacked_gru_summary}{{5.4}{33}{Stacked GRU Model Architecture Summary}{table.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.6}Summary of GRU Model Performance}{33}{subsection.5.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Long Short-Term Memory (LSTM) Model}{34}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Introduction to LSTM Architecture}{34}{subsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Why LSTM Is Used for Time-Series Forecasting}{34}{subsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Advantages and Disadvantages of LSTM}{34}{subsection.5.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Role of LSTM in This Project}{34}{subsection.5.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Assessment of LSTM Model Characteristics}}{35}{table.caption.27}\protected@file@percent }
+\newlabel{tab:lstm_assessment}{{5.5}{35}{Assessment of LSTM Model Characteristics}{table.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Trained LSTM Model Configurations}{36}{subsection.5.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{LSTM Model Without Indicators}{36}{section*.28}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Stacked LSTM Model Architecture Summary}}{36}{table.caption.29}\protected@file@percent }
+\newlabel{tab:stacked_lstm_summary}{{5.6}{36}{Stacked LSTM Model Architecture Summary}{table.caption.29}{}}
+\@writefile{toc}{\contentsline {subsubsection}{LSTM Model With Indicators}{36}{section*.30}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Comparison of GRU vs. LSTM Architectures}}{36}{table.caption.31}\protected@file@percent }
+\newlabel{tab:gru_lstm_comparison}{{5.7}{36}{Comparison of GRU vs. LSTM Architectures}{table.caption.31}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Stacked LSTM Model Architecture Summary}}{37}{table.caption.32}\protected@file@percent }
+\newlabel{tab:lstm_architecture_3}{{5.8}{37}{Stacked LSTM Model Architecture Summary}{table.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Performance Summary}{37}{subsection.5.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Transformer Model}{38}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Introduction to the Transformer Architecture}{38}{subsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Motivation for Using Transformers in Time-Series Forecasting}{38}{subsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Advantages and Disadvantages of Transformers}{38}{subsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Role of Transformers in This Project}{38}{subsection.5.3.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Analysis of a Deep Learning Model (Likely Transformer/Self-Attention-based) for Time Series Prediction}}{39}{table.caption.33}\protected@file@percent }
+\newlabel{tab:model_analysis}{{5.9}{39}{Analysis of a Deep Learning Model (Likely Transformer/Self-Attention-based) for Time Series Prediction}{table.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Trained Transformer Model Configurations Transformer Model Without Indicators}{39}{subsection.5.3.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Model Architecture Summary}}{40}{table.caption.34}\protected@file@percent }
+\newlabel{tab:model_summary}{{5.10}{40}{Model Architecture Summary}{table.caption.34}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Model Architecture Summary}}{40}{table.caption.35}\protected@file@percent }
+\newlabel{tab:model_summary_2}{{5.11}{40}{Model Architecture Summary}{table.caption.35}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.6}Performance Summary}{40}{subsection.5.3.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of Recurrent Neural Network (RNN) Architectures}}{41}{table.caption.36}\protected@file@percent }
+\newlabel{tab:rnn_comparison}{{5.12}{41}{Comparison of Recurrent Neural Network (RNN) Architectures}{table.caption.36}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Conv1D + LSTM Hybrid Model}{42}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Introduction to the Hybrid Architecture}{42}{subsection.5.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Motivation for Using a Hybrid Model in Time-Series Forecasting}{42}{subsection.5.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces Analysis of a Hybrid Deep Learning Model (Likely CNN-LSTM)}}{43}{table.caption.37}\protected@file@percent }
+\newlabel{tab:hybrid_model_analysis}{{5.13}{43}{Analysis of a Hybrid Deep Learning Model (Likely CNN-LSTM)}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Advantages and Disadvantages of the Hybrid Model}{43}{subsection.5.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.4}Role of the Hybrid Model in This Project}{43}{subsection.5.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.5}Trained Configurations of the Hybrid Model}{43}{subsection.5.4.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Conceptual Diagram of a CNN-LSTM Model Architecture}}{44}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:cnn_lstm_architecture}{{5.1}{44}{Conceptual Diagram of a CNN-LSTM Model Architecture}{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Hybrid Model Without Indicators}{44}{section*.39}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces Model Architecture Summary}}{44}{table.caption.40}\protected@file@percent }
+\newlabel{tab:cnn_lstm_summary}{{5.14}{44}{Model Architecture Summary}{table.caption.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Hybrid Model With Indicators}{44}{section*.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces Model Architecture Summary (Likely CNN-LSTM)}}{45}{table.caption.42}\protected@file@percent }
+\newlabel{tab:cnn_lstm_summary_2}{{5.15}{45}{Model Architecture Summary (Likely CNN-LSTM)}{table.caption.42}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.6}Performance Summary}{45}{subsection.5.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Results and Analysis}{46}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary of Work and Key Contributions}{36}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Problem Statement and Solution}{36}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Major Findings and Significance}{37}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Limitations of the Study}{38}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Future Work}{38}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Conclusion}{39}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Overview}{46}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Training and Validation Behavior}{46}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Single Company Data Used}{46}{section.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Close price data is Consiedered}}{47}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:Closing price data Only}{{6.1}{47}{Close price data is Consiedered}{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces GRU Validation Behaviour}}{47}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:GRU Validation Behaviour}{{6.2}{47}{GRU Validation Behaviour}{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces GRU with Indicators Validation Behaviour}}{48}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:GRU with Indicators Validation Behaviour}{{6.3}{48}{GRU with Indicators Validation Behaviour}{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces LSTM with Indicators Validation Behaviour}}{48}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:LSTM with Indicators Validation Behaviour}{{6.4}{48}{LSTM with Indicators Validation Behaviour}{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Transformers with Indicators Validation Behaviour}}{49}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:Transformers with Indicators Validation Behaviour}{{6.5}{49}{Transformers with Indicators Validation Behaviour}{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Regression Models on Single Company Data}}{50}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:Regression Models on Single Company Data}{{6.6}{50}{Regression Models on Single Company Data}{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Regression Models on Single Company Data With Indicators Included}}{50}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:Regression Models on Single Company Data With Indicators Included}{{6.7}{50}{Regression Models on Single Company Data With Indicators Included}{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Prediction Errors for Regression Models on Single Company Data}}{51}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:Prediction Errors for Regression Models on Single Company Data}{{6.8}{51}{Prediction Errors for Regression Models on Single Company Data}{figure.caption.50}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Quantitative Evaluation Results}{52}{section.6.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Comparative Model Performance Across Datasets}}{52}{table.caption.51}\protected@file@percent }
+\newlabel{tab:model_comparison}{{6.1}{52}{Comparative Model Performance Across Datasets}{table.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Effect of Feature Engineering vs. Raw OHLCV Inputs}{53}{section.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces GRU with stock data}}{53}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:GRU with stock data}{{6.9}{53}{GRU with stock data}{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}CNN-LSTM Feature Set Performance}{53}{section.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces GRU with stock data}}{54}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}{{6.10}{54}{GRU with stock data}{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{54}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:LSTM with Indicators}{{6.11}{54}{LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}{figure.caption.54}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Feature Set Performance Comparison}}{54}{table.caption.57}\protected@file@percent }
+\newlabel{tab:feature_performance}{{6.2}{54}{Feature Set Performance Comparison}{table.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Transformers with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{55}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:Transformers with Indicators}{{6.12}{55}{Transformers with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces CNN-LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{55}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:CNN-LSTM with Indicators}{{6.13}{55}{CNN-LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces CNN-LSTM with Indicators (Close, MA5, MA20)}}{56}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:CNN-LSTM with Indicators Close, MA5, MA20}{{6.14}{56}{CNN-LSTM with Indicators (Close, MA5, MA20)}{figure.caption.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces CNN-LSTM with Indicators (Close, EMA10, STD5)}}{56}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:CNN-LSTM with Indicators Close, EMA10, STD5}{{6.15}{56}{CNN-LSTM with Indicators (Close, EMA10, STD5)}{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces CNN-LSTM with Indicators (Close, Return, STD20)}}{56}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:CNN-LSTM with Indicators Close, Return, STD20}{{6.16}{56}{CNN-LSTM with Indicators (Close, Return, STD20)}{figure.caption.60}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces CNN-LSTM with Indicators Validation Loss Comparisons}}{57}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:CNN-LSTM with Indicators Validation Loss Comparisons}{{6.17}{57}{CNN-LSTM with Indicators Validation Loss Comparisons}{figure.caption.61}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Strengths and Measures of Technical Indicator Sets}}{57}{table.caption.62}\protected@file@percent }
+\newlabel{tab:indicator_strengths}{{6.3}{57}{Strengths and Measures of Technical Indicator Sets}{table.caption.62}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Summary of Technical Indicator Sets}}{58}{table.caption.63}\protected@file@percent }
+\newlabel{tab:indicator_sets_summary}{{6.4}{58}{Summary of Technical Indicator Sets}{table.caption.63}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Generalization vs. Specialization Behavior}{59}{section.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Deployment and Practical Evaluation}{60}{section.6.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.9}Discussion of Results}{60}{section.6.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.9.1}GRU Results}{60}{subsection.6.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.9.2}LSTM Results}{60}{subsection.6.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.9.3}CNN-LSTM Results}{60}{subsection.6.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.9.4}Transformer Results}{60}{subsection.6.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Summary and Conclusions}{61}{chapter.7}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Work and Key Contributions}{61}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Problem Statement and Solution}{61}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Major Findings and Significance}{62}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Limitations of the Study}{63}{section.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Future Work}{63}{section.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.6}Conclusion}{64}{section.7.6}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{5D0D039BF84E4F45A7144D280F172F5D}
-\gdef \@abspage@last{49}
+\gdef \@abspage@last{76}

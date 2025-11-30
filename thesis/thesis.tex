@@ -37,6 +37,7 @@
     notlof
 ]{tocbibind} % Includes TOC, LOF, LOT in the TOC
 \usepackage{wrapfig} % For wrapping text around figures
+\usepackage{multirow} % make a cell span across multiple rows in a table
 
 % --- Bibliography ---
 \usepackage[
@@ -117,6 +118,10 @@
 
 \chapter{Experimental Setup}
 \input{sections/experimentalSetup.tex}
+\cleardoublepage
+
+\chapter{Model Details}
+\input{sections/modelDetails.tex}
 \cleardoublepage
 
 \chapter{Results and Analysis}
