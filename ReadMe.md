@@ -45,3 +45,19 @@ This will give the request token.
 | Volatility          | ATR, Rolling volatility                  |
 | Statistical         | Lag features (1-day, 2-day, 5-day shift) |
 
+## Thesis Compile
+
+Software - `MikTex`
+
+Plugins - `LaTeX Workshop`
+
+### Compile
+
+Use VS Code
+
+```cmd
+pdflatex thesis
+biber thesis
+pdflatex thesis
+pdflatex thesis
+```
