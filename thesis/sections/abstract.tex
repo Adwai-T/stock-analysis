@@ -1,0 +1,16 @@
+\begin{center}
+    \LARGE
+    \textbf{Abstract}
+    
+    \vspace{2cm}
+\end{center}
+
+Accurately forecasting short-term stock price movement remains a challenging problem due to the nonlinear, volatile, and dynamic nature of financial markets. Traditional forecasting approaches such as statistical models and manually applied technical analysis often struggle to adapt to changing market behavior and cannot fully capture relationships across time. With advancements in artificial intelligence, machine learning techniques now offer the potential to learn complex temporal patterns directly from historical data and improve predictive performance. This study applies machine learning and deep learning models to predict next-day closing prices for Indian stock market equities using technical analysis features.
+
+Two years of daily historical stock data were collected through the Kite Connect API for companies listed in the NIFTY50, NIFTY200, and broader NSE universe. Each dataset includes OHLCV (Open, High, Low, Close, Volume) values and selected technical indicators such as RSI, MACD, Bollinger Bands, and Moving Averages. A sliding 20-day window is used as model input to predict the following day’s closing value. The models implemented include LSTM, GRU, a hybrid CNN-LSTM, and a Transformer-based architecture. These models were trained and evaluated using a time-series split to preserve chronological integrity.
+
+Performance was assessed using regression metrics including Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE). A deployment interface was also developed to retrieve live data, generate predictions, and visualize model output over recent chart history, providing a practical layer for user interaction and lightweight backtesting.
+
+Findings from the study indicate that deep learning architectures, particularly the CNN-LSTM and Transformer models, deliver improved prediction accuracy compared to single-sequence models, especially when trained on diverse, multi-stock datasets. Stock-specific LSTM and GRU models also performed well when aligned with individual price behavior. Overall, the research demonstrates that combining technical indicators with contemporary machine learning architectures can meaningfully enhance short-term forecasting performance and provide a foundation for future automated trading applications.
+
+\clearpage

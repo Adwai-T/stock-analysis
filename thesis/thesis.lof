@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture of the LSTM block.}}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture of the GRU block.}}{21}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of the CNN + LSTM block.}}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of the Transformer block.}}{23}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of Data Flow.}}{24}{figure.caption.15}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces When Close Only data is consiedered}}{31}{figure.caption.21}%
+\addvspace {10\p@ }

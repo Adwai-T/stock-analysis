@@ -1,0 +1,269 @@
+\section{Methodology - Bullets}
+
+Describe the dataset: stock names, timeframe, granularity, and data sources.
+
+Explain preprocessing steps: missing values, normalization, outlier handling.
+
+Define your sliding window approach (e.g., using last 20 days to predict next day).
+
+List and explain all technical indicators used along with their formulas.
+
+Describe feature engineering (combining raw OHLC + indicators).
+
+Present the machine learning models selected (e.g., Linear Regression, XGBoost, LSTM).
+
+Explain the architecture of deep models (LSTM layers, neurons, dropout).
+
+Mention the hyperparameters considered for tuning.
+
+Outline the algorithmic workflow from raw data to prediction.
+
+Include system architecture or flowchart explaining your pipeline.
+
+\section{Overview}
+
+This chapter describes the methodological framework used to build, train, and evaluate machine learning models for predicting next-day closing prices of Indian stocks. The approach includes data acquisition, preprocessing, feature engineering using technical indicators, model architecture design, training procedures, and the final prediction and deployment pipeline. The modelling strategy includes both single-stock models and generalized multi-stock architectures to evaluate how model scope influences predictive performance.
+
+\section{System Workflow}
+
+The overall methodology follows the structured workflow below:
+
+Data Acquisition → Preprocessing → Feature Engineering → Windowing →
+Model Training → Model Evaluation → Deployment and Prediction
+
+A detailed workflow diagram will be inserted later.
+
+\section{Data Acquisition}
+
+Historical stock data is collected using the Kite Connect API, which provides daily OHLCV (Open, High, Low, Close, Volume) records for Indian equity markets. Three data scopes are utilized:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{3.2cm} p{5cm} p{5cm}}
+\hline
+\textbf{Dataset Type} & \textbf{Usage} & \textbf{Scope} \\
+\hline
+
+Company-specific dataset &
+LSTM \& GRU individual models &
+Single company, 2-year window \\
+
+NIFTY-based dataset &
+CNN--LSTM and baseline analysis &
+NIFTY 50 and NIFTY 200 constituents \\
+
+Full-market dataset &
+Transformer-based architecture and cross-learning &
+All available NSE-listed companies \\
+\hline
+\end{tabular}
+\caption{Dataset categorization based on usage and scope.}
+\label{tab:dataset_types}
+\end{table}
+
+All datasets use two years of historical records, sampled at one trading day frequency. Missing trading days (holidays, suspensions) are handled by forward-fill as part of preprocessing.
+
+\section{Data Preprocessing}
+
+Preprocessing ensures consistency, numeric uniformity, and suitability for machine learning. Key steps include:
+
+\subsection{Handling Missing Values}
+
+Non-trading days → forward fill
+
+Missing Volume → replaced with rolling mean over previous 7 days
+
+Any incomplete feature rows after indicator computation are removed
+
+\subsection{Normalization}
+
+Since machine learning models operate more effectively on normalized sequences, the following scaling methods are used:
+
+Min-Max scaling for time-dependent features:
+
+\begin{equation}
+x_{\text{scaled}} = \frac{x - \min(x)}{\max(x) - \min(x)}
+\end{equation}
+
+Target variable (next closing price) scaled using the same transformer to maintain data consistency.
+
+Each company's scaling parameters are stored individually to allow inverse transformation during inference.
+
+\section{Feature Engineering}
+
+To capture price behavior, the model uses both raw market features (OHLCV) and derived technical indicators.
+
+\subsection{Raw Features}
+
+\begin{itemize}
+    \item Open
+    \item High
+    \item Low
+    \item Close
+    \item Volume
+\end{itemize}
+
+\subsection{Technical Indicators}
+
+A selected set of commonly used technical indicators are computed to enhance model-level signal extraction. Indicators include:
+
+Category	Indicators Used
+
+\begin{table}[h!]
+    \centering
+    \caption{Technical Indicator and Categories}
+    \label{tab:indicators}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Category} & \textbf{Indicators Used} \\
+        \hline
+        Trend & SMA, EMA \\
+        \hline
+        Momentum & RSI, Stochastic \%K, Williams \%R \\
+        \hline
+        Volatility & Bollinger Bands (Upper, Lower, \%B) \\
+        \hline
+        Composite & MACD, Signal Line, Histogram \\
+        \hline
+    \end{tabular}
+\end{table}
+
+All indicators are computed using rolling windows of 14-26 days depending on indicator specification.
+
+This structure allows the model to learn not only raw patterns but momentum changes, volatility behavior, and trend pressure.
+
+\section{Windowing Strategy}
+
+Since predictions are based on sequential input, a sliding window approach is applied:
+
+Input window: 20 most recent trading days
+
+Output horizon: Next-day closing price (single-step forecasting)
+
+This creates training pairs of the form:
+
+\begin{align*}
+    X &= [\text{features for days } t-19 \text{ to } t] \\
+    y &= \text{closing price at day } t+1
+\end{align*}
+
+This ensures the model learns short-term memory patterns relevant to near-term forecasting.
+
+\clearpage
+\FloatBarrier
+\section{Model Architectures}
+
+Multiple deep learning architectures are used to compare predictive capability.
+
+\subsection{LSTM Model}
+
+The LSTM model is designed for company-specific forecasting.
+
+Architecture outline:
+
+\begin{itemize}
+    \item \textbf{Loss:} Mean Squared Error (MSE)
+    \item \textbf{Optimizer:} Adam
+    \item \textbf{Batch size:} 32--64 (depending on stock volatility)
+    \item \textbf{Epochs:} 50--200 (early stopping applied)
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/lstmBlk.png} 
+    \caption{Architecture of the LSTM block.}
+    \label{fig:lstmBlock}
+\end{figure}
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+
+\subsection{GRU Model}
+
+The GRU baseline shares structure with LSTM but uses GRU cells for computational efficiency.
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/gru.png} 
+    \caption{Architecture of the GRU block.}
+    \label{fig:GRU}
+\end{figure}
+
+GRUs help evaluate whether simplified gating can achieve comparable performance while reducing training time.
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+
+\subsection{CNN-LSTM Hybrid}
+
+Used for NIFTY-wide datasets.
+
+Architecture:
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/cnnLstm.png} 
+    \caption{Architecture of the CNN + LSTM block.}
+    \label{fig:CNN-LSTM}
+\end{figure}
+
+The CNN component extracts local trend structure, while the LSTM learns sequential dependencies, making this architecture suitable for learning market-wide structural behavior.
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+
+\subsection{Transformer Model}
+
+A generalized model trained on the entire market dataset.
+
+Block structure:
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/transformer.png} 
+    \caption{Architecture of the Transformer block.}
+    \label{fig:Transformer}
+\end{figure}
+
+Transformers help evaluate whether attention-based learning is more effective than recurrent models for financial time series.
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+
+\section{Model Training and Validation}
+
+Training is carried out with:
+
+Train/Test split: 80\% / 20\%
+
+Validation method: time-series split (no shuffling)
+
+Callbacks: early stopping and learning rate reduction
+
+Loss curves and prediction visualizations are generated for model comparison.
+
+\section{Prediction and Deployment Pipeline}
+
+Once trained, models are exported and integrated into a lightweight prediction service.
+
+Deployment flow:
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/dataFlow.png} 
+    \caption{Architecture of Data Flow.}
+    \label{fig:Data Flow}
+\end{figure}
+
+Predictions are plotted alongside the last 3 months of market data for visual validation.
+

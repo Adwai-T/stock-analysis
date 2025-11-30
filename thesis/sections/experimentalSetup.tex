@@ -1,0 +1,202 @@
+\section{Experimental Setup - Bullets}
+
+Describe hardware used for training (CPU/GPU, RAM, environment).
+
+Provide software stack details: Python version, libraries (Pandas, Scikit-Learn, TensorFlow).
+
+Explain how training/validation/testing datasets were split.
+
+Detail training configurations (batch size, learning rate, epochs).
+
+Describe evaluation metrics such as RMSE, MAE, MAPE, and directional accuracy.
+
+Mention how hyperparameters were chosen (grid search, manual tuning).
+
+Explain any regularization or early stopping methods used.
+
+Describe repetition for reliability (multiple runs, averaging metrics).
+
+\section{Overview}
+
+This chapter presents the experimental setup used to train, evaluate, and compare the machine learning models designed for next-day stock closing price prediction. It includes details about the computing environment, software dependencies, dataset configuration, training parameters, performance metrics, and model validation strategy. The goal of the experimental setup is to ensure consistency across all experiments and provide a reproducible framework for future extensions.
+
+\section{Hardware Configuration}
+
+All experiments were conducted on a system equipped with the following hardware:
+
+\begin{table}[h!]
+    \centering
+    \caption{Recommended Hardware Specifications}
+    \label{tab:hardware_specs}
+    \begin{tabular}{|l|p{8cm}|} % The 'p{8cm}' allows for a wide, justified column for the specification text
+        \hline
+        \textbf{Component} & \textbf{Specification} \\
+        \hline
+        Processor & AMD Ryzen 5600G or equivalent multi-core CPU \\
+        \hline
+        RAM & 16 GB DDR4 \\
+        \hline
+        Storage & SSD (for faster dataset access and training runs) \\
+        \hline
+        GPU (optional) & AMD RX580 (Limited training Support) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+While basic models such as LSTM and GRU can run efficiently on CPU, GPU acceleration significantly reduced training time for larger models such as the Transformer and CNN-LSTM hybrid.
+
+\section{Software Stack}
+
+The implementation was performed using the following software tools:
+
+\begin{table}[h!]
+    \centering
+    \caption{Project Technology Stack}
+    \label{tab:tech_stack}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Category} & \textbf{Libraries / Tools} \\
+        \hline
+        Programming Language & Python \\
+        \hline
+        Data Processing & Pandas, NumPy \\
+        \hline
+        Visualization & Matplotlib, Seaborn, Plotly \\
+        \hline
+        Machine Learning & scikit-learn \\
+        \hline
+        Deep Learning & TensorFlow / Keras \\
+        \hline
+        API Data Access & Kite Connect API \\
+        \hline
+        Deployment & Custom front-end interface for visualization \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Dataset Preparation}
+
+The dataset consists of two years of daily historical stock data for companies included in the NIFTY50, NIFTY200, and broader NSE universe. Data preprocessing steps included:
+
+\begin{itemize}
+    \item Forward-filling missing values for non-trading days
+    \item Normalizing features using Min-Max scaling
+    \item Computing technical indicators
+    \item Structuring the final dataset into supervised learning format
+\end{itemize}
+
+A sliding window of the previous 20 trading days was used as input to predict the next day closing value.
+
+\section{Train-Test Split Strategy}
+
+To preserve chronological order and prevent data leakage, random shuffling was avoided.
+
+\begin{table}[h!]
+    \centering
+    \caption{Dataset Splitting Strategy}
+    \label{tab:data_split}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Dataset Type} & \textbf{Split} \\
+        \hline
+        Training Set & 80\% of historical sequence \\
+        \hline
+        Testing Set & Remaining 20\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Validation was managed via a time-series validation approach rather than k-fold cross validation.
+
+\section{Hyperparameter Configuration}
+
+Multiple models were trained using consistent baseline hyperparameters with fine-tuning performed through iterative experimentation. The following table summarizes the core parameters:
+
+\begin{table}[h!]
+    \centering
+    \caption{Model Hyperparameters}
+    \label{tab:hyperparameters}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Parameter} & \textbf{Value / Range} \\
+        \hline
+        Epochs & 50--200 (early stopping applied) \\
+        \hline
+        Batch Size & 32--64 \\
+        \hline
+        Optimizer & Adam \\
+        \hline
+        Learning Rate & 0.001 (adaptive reduction on plateau) \\
+        \hline
+        Loss Function & Mean Squared Error (MSE) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Activation functions consisted of ReLU for hidden dense layers and linear activation for the output layer.
+
+\section{Model-Specific Training Setup}
+
+Each model required additional configuration:
+
+\subsection{LSTM And GRU Models}
+
+\begin{itemize}
+  \item Sequential input with shape (20 timesteps * features)
+  \item Single hidden recurrent layer with dropout to reduce overfitting
+\end{itemize}
+
+\subsection{CNN-LSTM Model}
+
+\begin{itemize}
+  \item Initial convolution layer for local pattern extraction
+  \item LSTM layer for temporal sequence learning
+\end{itemize}
+
+\subsection{Transformer Model}
+
+\begin{itemize}
+  \item Multi-head self-attention layers
+  \item Positional encoding to preserve temporal structure
+\end{itemize}
+
+Transformer models required the longest training time due to complexity.
+
+\section{Evaluation Metrics}
+
+The following regression metrics were used to evaluate model performance:
+
+\begin{table}[h!]
+    \centering
+    \caption{Model Evaluation Metrics}
+    \label{tab:metrics}
+    \begin{tabular}{|l|p{7cm}|}
+        \hline
+        \textbf{Metric} & \textbf{Description} \\
+        \hline
+        MAE & Measures average magnitude of error (Mean Absolute Error) \\
+        \hline
+        RMSE & Penalizes larger errors more heavily (Root Mean Squared Error) \\
+        \hline
+        MAPE & Expresses prediction error as a percentage (Mean Absolute Percentage Error) \\
+        \hline
+        R$^2$ Score & Measures goodness of fit (Coefficient of Determination) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Additionally, prediction plots were generated to visually compare predicted vs. actual closing prices.
+
+\section{Deployment Testing}
+
+After training, the best-performing models were integrated into a lightweight deployment pipeline. Real-time prediction testing involved:
+
+\begin{itemize}
+  \item Fetching latest daily closing values through Kite API
+  \item Preprocessing the data using stored scaling and feature generation
+  \item rules
+  \item Running inference using trained models
+  \item Overlaying predictions on front-end interactive charts
+\end{itemize}
+
+A rolling evaluation over the last three months of data was also performed to simulate real-world model behavior.

@@ -1,0 +1,199 @@
+\section{Introduction}
+
+Stock market forecasting has evolved from traditional rule-based technical analysis into a data-driven scientific process powered by machine learning and deep learning. While technical indicators have historically guided trading decisions, recent advancements demonstrate the superior capability of computational models to identify hidden relationships, reduce noise, and generate more consistent predictions. Research in this domain reveals a shift from classical time-series forecasting models to hybrid intelligent systems that combine technical indicators with machine learning architectures.
+
+Traditional technical analysis relies on price and volume behavioral patterns to predict market direction, yet the non-linear and non-stationary characteristics of financial markets limit its reliability when used alone. Machine learning has emerged as a solution capable of uncovering complex, hidden patterns beyond human interpretive capacity. The uploaded literature demonstrates a clear trend toward automated forecasting systems that combine technical indicators with advanced ML architectures to produce predictive, interpretable, and profitable trading models
+
+\section{Classical Forecasting Techniques}
+
+Early quantitative forecasting relied heavily on linear statistical models such as Moving Averages, ARIMA, and Holt-Winters exponential smoothing. Moving Averages provided baseline signals for trend reversals and smoothing market fluctuations, but lacked adaptability to rapid market regime changes. Likewise, ARIMA and Holt-Winters introduced seasonality and trend modeling but struggled with the non-stationary nature of real-world financial time series. These techniques assumed stable statistical properties and linear relationships, making them insufficient for modeling complex market behaviors driven by volatility, sentiment, and external events. 
+
+\section{Technical Indicators and Their Role}
+
+Technical indicators emerged as an important feature engineering method for forecasting. Studies confirm the usefulness of indicators such as SMA, EMA, MACD, Bollinger Bands, RSI, Williams \%R, and Stochastic Oscillator in identifying momentum, volatility, and price patterns. These indicators transform raw price and volume into meaningful signals, filtering noise and exposing underlying patterns. Research consistently finds that using multiple indicators enhances prediction reliability compared to relying on a single indicator. Indicators act as domain-expert feature extraction rather than raw input, making them widely adopted across modern ML-based forecasting systems.
+
+Trend indicators (SMA, EMA, MACD), momentum indicators (RSI, Williams \%R, Stochastic Oscillator), and volatility indicators (ATR, Bollinger Bands) form the dominant feature set in current research. ML-driven systems increasingly incorporate multiple categories of indicators to improve generalization and predictive robustness in volatile markets.
+
+\section{Traditional Machine Learning Models in Stock Forecasting}
+
+The first significant improvements beyond statistical forecasting came from traditional machine learning models such as Support Vector Machines (SVM), Decision Trees, and Random Forests. These models addressed non-linearity and pattern complexity more effectively. For example, SVM-based trading systems using combinations of Bollinger Bands, MA, RSI, and Stochastic Oscillator achieved prediction accuracy as high as 77.8\% and performed particularly well in volatile stocks.
+
+Support Vector Machine models remain widely used due to their ability to classify non-linear patterns effectively using kernel transformations. One referenced study applying SVM with Bollinger Bands, RSI, MA, Stochastic, and Aroon Oscillator across Indonesian market equities achieved accuracy values up to 77.8\%, demonstrating strong performance especially on highly fluctuating stocks. 
+
+Decision Tree-based models have also shown competitive results. A study applying Decision Trees to National Stock Exchange (NSE) equities with multiple indicators reported an accuracy of 80.08\%, outperforming both Random Forest (78.8\%) and Naïve Bayes (73.8\%), showing that simple models can outperform more complex ones when interpretability and rule-based behavior align with market conditions.
+
+The persistence of these models in research and industry reflects a trade-off between interpretability and predictive power  a critical factor in regulated environments such as finance.
+
+Decision Tree-based methods also showed strong results, with onestudy reporting 80.08\% accuracy  surprisingly outperforming RandomForests and Naive Bayes. 
+
+These approaches remain relevant due to their interpretability, an important factor in regulated financial systems. While not always achieving the highest accuracy, their transparency ensures practical decision-making accountability.
+
+\section{Deep Learning Approaches}
+
+Deep learning models have become dominant due to their ability to capture temporal dependencies, non-linear relationships, and high-dimensional feature interactions. Among recurrent neural networks, LSTM architectures are the most widely adopted because they retain long-term memory and mitigate vanishing gradient issues. A study applying a four-layer LSTM on OHLC data combined with MACD, KD, RSI, and Williams \%R demonstrated 83.6\% prediction accuracy, with MACD performing best as an individual indicator at 76\%. 
+
+CNN-based financial forecasting is also gaining traction, especially for pattern extraction and high-frequency trading. Referenced study used a one-dimensional CNN trained on 130 features for intraday classification and demonstrated competitive efficiency and predictive power.
+
+Convolutional Neural Networks (CNNs), although originally designed for spatial pattern recognition, have been successfully adapted using 1-D filters to detect short-term sequence features. Research from Stanford applied CNNs to high-frequency intraday trading using 130 input features and demonstrated strong computational efficiency and predictive capability
+
+These findings highlight that deep learning outperforms traditional ML methods when sequence behavior and long-term dependencies are critical.
+
+\section{Hybrid Models Combining Technical Indicators and ML}
+
+A notable trend in the literature is the shift toward hybrid models that combine multiple ML or DL architectures. Hybrid CNN-LSTM models are the most prevalent approach, as they capture both short-term localized price movements (via CNN) and long-term sequential behavior (via LSTM). These hybrid models consistently outperform stand-alone LSTM or CNN architectures. 
+
+Research pushes hybrid integration further, incorporating additional layers such as bidirectional LSTM, attention mechanisms, and ensemble stacking. One cited Stacked CNN-LSTM Ensemble (SCLE) integrated 87 technical indicators with sentiment-based input and achieved 30\% improved prediction accuracy over sentiment-only systems, showing strong evidence that multimodal approaches yield superior results. 
+
+Reinforcement learning adds another dimension by focusing not onprediction accuracy but on portfolio profitability and Sharpe ratiooptimization.
+
+\section{Reinforcement Learning Approaches}
+
+Reinforcement Learning (RL) presents a fundamentally different approach by learning optimal trading strategies (buy/sell/hold) instead of predicting future prices. RL models are explicitly rewarded for profit-maximization under volatility and transaction constraints.
+
+A referenced study using Advantage Actor-Critic (A2C) demonstrated improved risk-adjusted performance with a Sharpe ratio of 0.13, outperforming the DJI index baseline with a negative Sharpe ratio. 
+
+Such results suggest that RL may resolve the disconnect between high statistical forecasting accuracy and actual trading profitability  one of the most critical challenges in ML-based stock prediction.
+
+\clearpage
+\section{Comparison Between different Model and research}
+
+\FloatBarrier
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{|p{2.4cm}|p{4cm}|p{7.5cm}|}
+\hline
+\textbf{Paper/Study} & \textbf{Technical Indicators Used} & \textbf{Main Findings / ML Method Applied} \\ \hline
+
+A Hybrid Stock Trading Framework &
+Technical indicators as referenced in the paper &
+Uses CEFLANN model. Proposed a novel framework improving trading decision efficiency. \\ \hline
+
+Combining News and Technical Indicators &
+Seven indicators derived from past five days’ prices &
+Applied SVM. Achieved higher accuracy and return than single-source input. Hit ratio: 61.7\%. \\ \hline
+
+A Hierarchical Decision Tree Model &
+SMA, EMA, WMA, MACD, ADX, Aroon, Stochastic, RSI, SMI, WPR, CCI, BBands, ATR, OBV, MFI, CMF &
+Decision Tree, Random Forest, and Naïve Bayes tested. Decision Tree achieved highest accuracy: 80.08\%. \\ \hline
+
+Exploring Deep Neural Networks &
+KD, RSI, BIAS, Williams \%R, MACD + OHLC features &
+Used a 4-layer LSTM. Achieved 83.6\% accuracy for 3-class prediction; MACD best standalone at 76\%. \\ \hline
+
+A Hybrid CNN-LSTM Model &
+OHLCV + adjusted prices + technical indicators &
+Hybrid CNN-LSTM outperformed standalone CNN and LSTM, capturing short-term fluctuations and long-term patterns. \\ \hline
+
+Stacked CNN-LSTM Ensemble &
+87+ technical indicators + sentiment data &
+Stacked CNN-LSTM with Bidirectional LSTM + Attention. Improved accuracy by ~30\% over news-only models. \\ \hline
+
+SVM for Indonesian Stocks &
+MA, Bollinger Bands, RSI, Stochastic, Aroon Oscillator &
+SVM achieved up to 77.8\% accuracy, performing best on volatile stocks. \\ \hline
+
+A Multifaceted Reinforcement Learning Approach &
+Historical price data + technical indicators &
+Applied A2C and DDPG. A2C delivered better risk-adjusted returns (Sharpe 0.13) than baseline (-0.10). \\ \hline
+
+CNN-LSTM Model for Prediction &
+EMA and ROC &
+CNN-LSTM, LSTM, RF, KNN, and Linear Regression tested. Best accuracy: 56.5\%. Sharpe Ratio: 1.73 (INTC). \\ \hline
+
+\end{tabular}
+\caption{Summary of Machine Learning and Deep Learning Approaches in Stock Market Prediction}
+\label{tab:relatedwork}
+\end{table}
+\FloatBarrier
+\clearpage
+
+\section{Key Findings, Strengths, and Limitations}
+
+Across surveyed research, key themes emerge:
+
+Dimension	Findings - Strengths	ML/DL models outperform statistical models, hybrid approaches produce superior results
+
+Insights	Technical indicators significantly enhance ML performance, multimodal data boosts accuracy
+
+Limitations -	Models often lack interpretability; accuracy does not always equate to profitability
+
+Additionally, many studies report performance solely through predictive accuracy, which does not account for slippage, transaction costs, or real-market risk exposure. Researchers now argue for financial evaluation metrics such as Sharpe ratio, max drawdown, and ROI.
+
+\FloatBarrier
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{3cm} p{4cm} p{3.2cm} p{5cm}}
+\hline
+\textbf{Study / Approach} & \textbf{Technical Indicators Used} & \textbf{Algorithm / Model} & \textbf{Key Results / Findings} \\
+\hline
+
+LSTM-Based Forecasting &
+RSI, MACD, KD, BIAS, Williams \%R + OHLC &
+4-layer LSTM &
+Achieved \textbf{83.6\%} accuracy; MACD alone gave \textbf{76\%} accuracy. \\
+
+SVM-Based Trading &
+MA, Bollinger Bands, RSI, Stochastic Oscillator, Aroon &
+Support Vector Machine (SVM) &
+Highest accuracy: \textbf{77.8\%}, best on volatile stocks. \\
+
+Decision Tree Feature Model &
+Trend, momentum, volume, volatility indicators &
+Decision Tree, Random Forest, Na\"ive Bayes &
+Decision Tree achieved \textbf{80.08\%}, outperforming RF (78.8\%). \\
+
+CNN--LSTM Hybrid &
+OHLCV + technical indicators &
+CNN--LSTM hybrid model &
+Outperformed standalone CNN and LSTM models. \\
+
+SCLE Hybrid Model &
+87 indicators + sentiment data &
+Stacked CNN--LSTM + Attention + Bi-LSTM &
+Accuracy improved \textbf{30\%} over sentiment-only system. \\
+
+RL for Trading &
+Price + technical indicators &
+A2C and DDPG (Reinforcement Learning) &
+Delivered \textbf{positive Sharpe ratio (0.13)} vs negative baseline. \\
+
+CNN Pattern Model for HFT &
+Price-derived feature set (130 features) &
+1D CNN &
+Demonstrated high efficiency and effective classification performance. \\
+
+\hline
+\end{tabular}
+\caption{Comparison of machine learning and hybrid deep learning approaches for stock market prediction.}
+\label{tab:ml_approaches_summary}
+\end{table}
+\FloatBarrier
+\clearpage
+
+\section{Evaluation Challenges, Research Gaps and Inconsistencies}
+
+Across reviewed studies, accuracy is the most reported metric; however, accuracy alone does not reliably reflect trading profitability. Multiple studies highlight the need for more holistic metrics such as annualized return, max drawdown, and Sharpe ratio to reflect real-world trading quality.
+
+Interpretability remains another challenge, especially in regulated sectors where explainable decision-making is critical. The literature emphasizes that opaque deep learning models face adoption barriers when their behavior cannot be justified. 
+
+Finally, overfitting remains persistent due to the chaotic and non-stationary properties of financial data, requiring adaptive retraining, rolling validation, and multi-market testing strategies.
+
+Despite progress, several gaps remain:
+
+\begin{itemize}
+    \item Overfitting persists due to non-stationary data.
+    \item Limited generalizability across markets, time periods, and asset classes.
+    \item Few models evaluate real trading performance rather than classification accuracy.
+    \item Indian markets remain underexplored relative to U.S.\ and Chinese datasets.
+    \item RL-based approaches are promising but still sparse and experimental.
+\end{itemize}
+
+\section{Alignment with the Present Research}
+
+The literature demonstrates a clear progression from classical technical analysis toward machine learning-driven forecasting systems. Traditional ML models offer interpretability, while deep learning models  especially hybrid CNN-LSTM architectures  provide superior predictive capability by capturing multi-dimensional patterns in historical price signals. Reinforcement learning represents the next frontier, enabling models not just to predict markets but to act intelligently within them.
+
+The works reviewed confirm that machine learning methods especially hybrid and deep learning-based approaches yield superior results when combined with carefully engineered technical indicators. However, the gap in generalizable, explainable, and India-focused ML-based forecasting highlights the need for a model specifically designed to work with Indian market behavior.
+
+This thesis positions itself at this intersection: applying modern ML techniques integrated with technical indicators, evaluating not only accuracy but also potential trading practicality on Indian market securities.

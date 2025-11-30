@@ -1,0 +1,149 @@
+\section{Results And Analysis - Bullets}
+
+\section{Overview}
+
+This chapter presents the results obtained from evaluating multiple machine learning architectures for forecasting next-day closing prices of Indian stock market equities. The models were assessed on both single-company datasets and broader market-level datasets to understand how input size, model complexity, and feature engineering influence predictive accuracy. Evaluation includes quantitative error metrics, visual prediction comparison, convergence behavior, and model generalization characteristics.
+
+\FloatBarrier
+\section{Training and Validation Behavior}
+
+Across experiments, all models showed decreasing loss curves during training, confirming the ability to learn meaningful temporal dependencies. However, their learning dynamics differed based on dataset scope and model capacity.
+
+TODO - Insert Graphs for Training and validation
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/closeOnlySingleCompany.png} 
+    \caption{When Close Only data is consiedered}
+    \label{fig:Close Only}
+\end{figure}
+
+Key findings from convergence analysis include:
+
+\begin{itemize}
+    \item For single-company datasets, \textbf{GRU and LSTM models} converged fastest and most consistently, likely due to their lower parameter count relative to Transformers and CNN-LSTM networks.
+    \item When only the \textbf{closing price} was used as the input feature, models fit extremely well and often achieved very low training loss, indicating possible \textbf{overfitting}.
+    \item Larger architectures such as \textbf{Transformer and CNN-LSTM} demonstrated slower convergence and required significantly more data to avoid underfitting.
+\end{itemize}
+
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+\section{Quantitative Evaluation Results}
+
+Performance was evaluated using RMSE, MAE, and MAPE metrics. The trends observed are summarized below:
+
+TODO - Graph for Final Error Metrics Per Model
+
+\begin{table}[h!]
+    \centering
+    \caption{Comparative Model Performance Across Datasets}
+    \label{tab:model_comparison}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Model Type} & \textbf{Single-Company Data} & \textbf{NIFTY50/200 Dataset} & \textbf{Full NSE Dataset} \\
+        \hline
+        GRU & Best (fastest + accurate) & Poor generalization & Moderate \\
+        \hline
+        LSTM & Very good & Best generalization & Very good \\
+        \hline
+        CNN-LSTM & Underfits (small dataset) & Underfits (still limited) & Performs well, close to LSTM \\
+        \hline
+        Transformer & Underfits heavily & Weak performance & Performs well but not better than LSTM \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The results clearly indicate that model complexity must match dataset size. Simpler recurrent models outperform complex architectures when data availability is limited.
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+\section{Effect of Feature Engineering vs. Raw OHLCV Inputs}
+
+An important discovery in these experiments is that feature engineering did not always improve model performance.
+
+Key conclusions:
+
+\begin{itemize}
+  \item For single-company models, using only Close, Open, High, Low, Volume produced better results than using technical indicators, likely due to overfitting and noise sensitivity introduced by engineered features.
+  \item For broader training datasets (NIFTY50, NIFTY200, or all NSE companies), adding indicators improved generalization and reduced error variance.
+\end{itemize}
+
+TODO - Insert Graphs Prediction vs Actual: LSTM vs GRU vs Indicator-Enhanced Variants
+
+\section{CNN-LSTM Feature Set Performance}
+
+For the CNN-LSTM architecture, three engineered feature combinations were tested:
+
+\begin{table}[h!]
+    \centering
+    \caption{Feature Set Performance Comparison}
+    \label{tab:feature_performance}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Feature Set} & \textbf{Result} \\
+        \hline
+        Close, MA5, MA20 & Best performance \\
+        \hline
+        Close, EMA10, Standard Deviation & Moderate \\
+        \hline
+        Close return + STD20 & Least consistent \\
+        \hline
+    \end{tabular}
+\end{table}
+
+This indicates that simple, trend-focused moving averages outperform more volatile or mathematically dense indicators in deep hybrid models.
+
+TODO  CNN-LSTM Prediction Comparison Across Feature Sets
+TODO  Validation Loss Comparison Across CNN-LSTM Feature Sets
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+\section{Generalization vs. Specialization Behavior}
+
+Another major insight from these experiments is that:
+
+\begin{itemize}
+  \item Models trained on a single company become highly specialized, fitting well to patterns unique to that stock but failing to generalize across companies.
+  \item Models trained on larger aggregated datasets show better generalization, but require feature engineering and larger architectures to extract meaningful predictive structure.
+\end{itemize}
+
+This reflects a trade-off:
+
+\begin{itemize}
+  \item Single-company models = accuracy in isolation
+  \item Multi-stock models = robustness and scalability
+\end{itemize}
+\FloatBarrier
+
+\clearpage
+\FloatBarrier
+\section{Deployment and Practical Evaluation}
+
+When deployed into live prediction with recent 3-month price windows:
+
+\begin{itemize}
+  \item LSTM and GRU showed stable point-wise forecasts suitable for short-term use.
+  \item Transformer and CNN-LSTM predictions improved only when trained on very large multi-company datasets.
+  \item Simpler models responded more smoothly, while complex architectures reacted more sharply to volatility.
+\end{itemize}
+
+TODO - Live Prediction Overlay (Last 3 Months)
+
+\section{Discussion of Results}
+
+\subsection{GRU Results}
+GRU is the best candidate model for rapid real-world deployment when working with limited data per stock.
+
+\subsection{LSTM Results}
+LSTM is the most reliable model overall, balancing performance, generalization, and robustness across
+dataset sizes.
+
+\subsection{CNN-LSTM Results}
+CNN-LSTM architecture requires significantly larger datasets to outperform recurrent models, and in this specific context did not surpass LSTM performance.
+
+\subsection{Transformer Results}
+Transformer architecture requires significantly larger datasets to outperform recurrent models, and in this specific context did not surpass LSTM performance.

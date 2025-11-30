@@ -18,8 +18,8 @@ SEQ_LEN = 30          # days in input sequence
 BATCH_SIZE = 64
 EPOCHS = 25
 
-MODEL_PATH = MODEL_DIR / "cnn_lstm_all_nifty200.h5"
-SCALER_PATH = MODEL_DIR / "cnn_lstm_all_nifty200_scaler.npz"
+MODEL_PATH = MODEL_DIR / "cnn_lstm_all.h5"
+SCALER_PATH = MODEL_DIR / "cnn_lstm_all_scaler.npz"
 
 REQUIRED_COLS = ["date", "open", "high", "low", "close", "volume"]
 
