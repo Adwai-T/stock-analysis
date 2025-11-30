@@ -2,25 +2,19 @@
 
 This chapter presents the results obtained from evaluating multiple machine learning architectures for forecasting next-day closing prices of Indian stock market equities. The models were assessed on both single-company datasets and broader market-level datasets to understand how input size, model complexity, and feature engineering influence predictive accuracy. Evaluation includes quantitative error metrics, visual prediction comparison, convergence behavior, and model generalization characteristics.
 
-\FloatBarrier
 \section{Training and Validation Behavior}
 
 Across experiments, all models showed decreasing loss curves during training, confirming the ability to learn meaningful temporal dependencies. However, their learning dynamics differed based on dataset scope and model capacity.
 
 Even when just using the closing price overtime of the stocks shows great learning potential and thus confirms the ability of models to give insight on market movement.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{Images/results/closeOnlySingleCompany.png} 
-    \caption{Close price data is Consiedered}
-    \label{fig:Closing price data Only}
-\end{figure}
+\FloatBarrier
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/GRUdirectTvVLoss.png} 
-    \caption{GRU Validation Behaviour}
-    \label{fig:GRU Validation Behaviour}
+    \caption{GRU without Indicators}
+    \label{fig:GRU without Indicators}
 \end{figure}
 
 \begin{figure}[h!]
@@ -33,8 +27,22 @@ Even when just using the closing price overtime of the stocks shows great learni
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/LSTMdirectTvVLoss.png} 
+    \caption{LSTM without Indicators Validation Behaviour}
+    \label{fig:LSTM without Indicators Validation Behaviour}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/LSTMindicatorsTvVLoss.png} 
     \caption{LSTM with Indicators Validation Behaviour}
     \label{fig:LSTM with Indicators Validation Behaviour}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/TransformerdirectTvVLoss.png} 
+    \caption{Transformers without Indicators Validation Behaviour}
+    \label{fig:Transformers without Indicators Validation Behaviour}
 \end{figure}
 
 \begin{figure}[h!]
@@ -43,7 +51,10 @@ Even when just using the closing price overtime of the stocks shows great learni
     \caption{Transformers with Indicators Validation Behaviour}
     \label{fig:Transformers with Indicators Validation Behaviour}
 \end{figure}
+\FloatBarrier
 
+
+\FloatBarrier
 \section{Single Company Data Used}
 
 Key findings from training Models with Single Compnay data and it's analysis include:
@@ -68,8 +79,22 @@ Following figures demonstrate the above findings
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png} 
-    \caption{Regression Models on Single Company Data With Indicators Included}
-    \label{fig:Regression Models on Single Company Data With Indicators Included}
+    \caption{Regression Models on Single Company Data With Indicators}
+    \label{fig:Regression Models on Single Company Data With Indicators}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/NoIndicatorsRegressionmodelsCompared.png} 
+    \caption{Regression Models Compared Without Indicators Included}
+    \label{fig:Regression Models Compared Without Indicators Included}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/RegressionmodelsCompared.png} 
+    \caption{Regression Models Compared with Indicators Included}
+    \label{fig:Regression Models Compared with Indicators Included}
 \end{figure}
 
 \begin{figure}[h!]
@@ -79,21 +104,15 @@ Following figures demonstrate the above findings
     \label{fig:Prediction Errors for Regression Models on Single Company Data}
 \end{figure}
 
+
 \FloatBarrier
-
-\clearpage
-\FloatBarrier
-\section{Quantitative Evaluation Results}
-
-Performance was evaluated using RMSE, MAE, and MAPE metrics. The trends observed are summarized below:
-
-TODO - Graph for Final Error Metrics Per Model
+\subsection{Quantitative Evaluation Results}
 
 \begin{table}[h!]
     \centering
     \caption{Comparative Model Performance Across Datasets}
     \label{tab:model_comparison}
-    \begin{tabular}{|l|c|c|c|}
+    \begin{tabular}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
         \hline
         \textbf{Model Type} & \textbf{Single-Company Data} & \textbf{NIFTY50/200 Dataset} & \textbf{Full NSE Dataset} \\
         \hline
@@ -111,7 +130,6 @@ TODO - Graph for Final Error Metrics Per Model
 The results clearly indicate that model complexity must match dataset size. Simpler recurrent models outperform complex architectures when data availability is limited.
 \FloatBarrier
 
-\clearpage
 \FloatBarrier
 \section{Effect of Feature Engineering vs. Raw OHLCV Inputs}
 
@@ -124,6 +142,8 @@ Key conclusions:
   \item For broader training datasets (NIFTY50, NIFTY200, or all NSE companies), adding indicators improved generalization and reduced error variance.
 \end{itemize}
 
+\clearpage
+\FloatBarrier
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/GRUdirect.png} 
@@ -134,15 +154,31 @@ Key conclusions:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/GRUIndicators.png} 
-    \caption{GRU with stock data}
+    \caption{GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}
     \label{fig:GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/LSTMdirect.png} 
+    \caption{LSTM with stock data}
+    \label{fig:LSTM with stock data}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/LSTMIndicators.png} 
     \caption{LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}
     \label{fig:LSTM with Indicators}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/Transformerdirect.png} 
+    \caption{Transformers with stock data}
+    \label{fig:Transformers with stock data}
 \end{figure}
 
 \begin{figure}[h!]
@@ -152,6 +188,14 @@ Key conclusions:
     \label{fig:Transformers with Indicators}
 \end{figure}
 
+\FloatBarrier
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/results/CNNLSTMWithoutIndicators.png} 
+    \caption{CNN-LSTM with stock data}
+    \label{fig:CNN-LSTM with stock data}
+\end{figure}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{Images/results/CNNLSTMIndicators.png} 
@@ -159,6 +203,10 @@ Key conclusions:
     \label{fig:CNN-LSTM with Indicators}
 \end{figure}
 
+\FloatBarrier
+
+\FloatBarrier
+\clearpage
 \section{CNN-LSTM Feature Set Performance}
 
 For the CNN-LSTM architecture, three engineered feature combinations were tested:
@@ -179,7 +227,9 @@ For the CNN-LSTM architecture, three engineered feature combinations were tested
         \hline
     \end{tabular}
 \end{table}
+\FloatBarrier
 
+\FloatBarrier
 This indicates that simple, trend-focused moving averages outperform more volatile or mathematically dense indicators in deep hybrid models.
 
 \begin{figure}[h!]
@@ -209,6 +259,10 @@ This indicates that simple, trend-focused moving averages outperform more volati
     \caption{CNN-LSTM with Indicators Validation Loss Comparisons}
     \label{fig:CNN-LSTM with Indicators Validation Loss Comparisons}
 \end{figure}
+
+\FloatBarrier
+\clearpage
+\subsection{Indicators tested and their purpose}
 
 \begin{table}[h!]
     \centering
@@ -276,8 +330,6 @@ When deployed into live prediction with recent 3-month price windows:
   \item Transformer and CNN-LSTM predictions improved only when trained on very large multi-company datasets.
   \item Simpler models responded more smoothly, while complex architectures reacted more sharply to volatility.
 \end{itemize}
-
-TODO - Live Prediction Overlay (Last 3 Months)
 
 \section{Discussion of Results}
 

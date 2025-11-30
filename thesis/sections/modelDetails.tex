@@ -1,8 +1,18 @@
 \section{Gated Recurrent Unit (GRU) Models}
 
+\FloatBarrier
 \subsection{Introduction to GRU Architecture}
 
 The Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) designed to process sequential or time-dependent data by retaining useful temporal patterns during training. Unlike feed-forward neural networks, GRUs maintain memory across input steps, making them suitable for tasks where the past influences the future—such as financial time-series forecasting. GRUs achieve this by using gating mechanisms that determine how much historical information should be retained or forgotten during sequence processing.
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/gru.png} 
+    \caption{Architecture of the GRU block.}
+    \label{fig:GRU}
+\end{figure}
+\FloatBarrier
 
 GRUs contain two primary gates:
 
@@ -160,6 +170,7 @@ Key takeaways from the GRU experimentation include:
 \end{itemize}
 
 \clearpage
+\FloatBarrier
 \section{Long Short-Term Memory (LSTM) Model}
 
 \subsection{Introduction to LSTM Architecture}
@@ -167,6 +178,15 @@ Key takeaways from the GRU experimentation include:
 The Long Short-Term Memory (LSTM) network is an extension of recurrent neural networks designed to effectively learn patterns in sequential data while avoiding the vanishing and exploding gradient limitations present in standard RNNs. LSTMs achieve this through a gated structure consisting of input, forget, and output gates, which regulate how information flows forward through time and how much past information is retained.
 
 The LSTM cell introduces an internal memory state (cell state) that stores useful information across longer time spans than traditional RNNs or even GRUs in some cases. This makes LSTM particularly suitable for financial time-series forecasting, where historical patterns and gradual momentum shifts can influence short-term price outcomes.
+
+\begin{figure}[h!]
+    \centering
+    % Only need the internal path now:
+    \includegraphics[width=\textwidth]{Images/methodology/lstmBlk.png} 
+    \caption{Architecture of the LSTM block.}
+    \label{fig:lstmBlock}
+\end{figure}
+\FloatBarrier
 
 \subsection{Why LSTM Is Used for Time-Series Forecasting}
 
@@ -314,7 +334,7 @@ The evaluation results demonstrated that the LSTM architecture provided a consis
 Overall, LSTM forms a key component of the modelling framework explored in this project and serves as a high-performing baseline against which more complex architectures such as CNN-LSTM and Transformer models were assessed.
 
 \clearpage
-
+\FloatBarrier
 \section{Transformer Model}
 
 \subsection{Introduction to the Transformer Architecture}
@@ -322,6 +342,14 @@ Overall, LSTM forms a key component of the modelling framework explored in this 
 The Transformer architecture was originally introduced for sequence-to-sequence learning tasks in natural language processing, where capturing complex contextual relationships and long-range dependencies is essential. Unlike traditional recurrent neural network architectures, Transformers do not rely on sequential processing. Instead, they use self-attention mechanisms that allow the model to evaluate the importance of different time steps relative to one another within the input sequence.
 
 This mechanism enables the network to weigh which portions of the historical sequence are most relevant to the prediction task at any given time. Because attention is computed in parallel rather than iteratively, Transformers are computationally efficient at scale and capable of modeling longer temporal patterns than recurrent models without degradation in memory retention.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/methodology/transformer.png} 
+    \caption{Architecture of the Transformer block.}
+    \label{fig:Transformer}
+\end{figure}
+\FloatBarrier
 
 \subsection{Motivation for Using Transformers in Time-Series Forecasting}
 
@@ -354,7 +382,7 @@ Stock movement patterns often depend on trends that evolve gradually, followed b
 & $\bullet$ More computationally demanding during both training and tuning \\
 & $\bullet$ Prone to underfitting on small datasets due to model complexity \\
 \hline
-\multirow{4}{*}{\textbf{Contextual Limitations in This Project}} & $\bullet$ Underperformed when trained only on NIFTY50 or NIFTY200 datasets \\
+\multirow{4}{*}{\textbf{Contextual Limitation}} & $\bullet$ Underperformed when trained only on NIFTY50 or NIFTY200 datasets \\
 & $\bullet$ Required full multi-stock data to achieve stable prediction patterns \\
 & $\bullet$ Less effective compared to LSTM when only OHLCV inputs were available \\
 \hline
@@ -466,7 +494,7 @@ The performance evaluation showed that Transformers demonstrated potential when 
 These outcomes suggest that the Transformer architecture is viable for stock forecasting when sufficient data is available and can serve as a strong model candidate as future iterations incorporate sentiment analysis, intraday signals, or larger multi-stock sequencing.
 
 \clearpage
-
+\FloatBarrier
 \section{Conv1D + LSTM Hybrid Model}
 
 \subsection{Introduction to the Hybrid Architecture}
@@ -474,6 +502,14 @@ These outcomes suggest that the Transformer architecture is viable for stock for
 The Conv1D + LSTM hybrid model combines the strengths of convolutional neural networks (CNNs) and recurrent architectures to model temporal structure in financial time-series data. The 1-Dimensional Convolutional layers act as feature extractors that identify local temporal patterns, such as small waveforms, trend shifts, or repeating microstructures found in price movements. These extracted temporal feature maps are then passed to an LSTM layer, which processes them sequentially to learn longer-term dependencies and temporal relationships.
 
 This layered design allows the model to benefit from both local pattern detection offered by CNNs and sequence-level learning achieved through recurrent memory. The architecture is well-suited for forecasting scenarios where short-term fluctuations accumulate into broader directional trends, a behavior frequently observed in equity price movement.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/methodology/cnnLstm.png} 
+    \caption{Architecture of the CNN + LSTM block.}
+    \label{fig:CNN-LSTM}
+\end{figure}
+\FloatBarrier
 
 \subsection{Motivation for Using a Hybrid Model in Time-Series Forecasting}
 
@@ -522,8 +558,6 @@ The experiments showed that the hybrid architecture performed better when traine
 \subsection{Trained Configurations of the Hybrid Model}
 
 The hybrid model followed the structure:
-
-Input → Conv1D(64) → Conv1D(64) → LSTM(64) → Dense(32) → Dropout(0.2) → Dense(1)
 
 \begin{figure}[h]
     \centering

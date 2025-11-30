@@ -2362,6 +2362,18 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">Huang2022PredictiveModeling</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Jin2024CNNStockMarket</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">Balasubramanian2024StockMarketAnalysis</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Khanpuri2024SentimentAnalysis</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">Cilingiroglu2025SentimentChangingPrice</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Cao2024LLMStock</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Huang2025DeepLearning</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Zhu2025StockPredictionReview</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Smarte2021ReviewOfMachineLearning</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Gupta2024RoleOfAI</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Mokhtari2021ImpactOfAI</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Lu2024FinancialArchitecture</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
