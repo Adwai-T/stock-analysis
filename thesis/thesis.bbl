@@ -19,6 +19,327 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{Brock1992TA}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0f3ac5d44c465ad9f8613ca90efc0d4a}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=7067481189aa7a7f3a9cff920faef611}{%
+           family={Lakonishok},
+           familyi={L\bibinitperiod},
+           given={Josef},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4c0d2cc98d93d965730044412a65944d}{%
+           family={LeBaron},
+           familyi={L\bibinitperiod},
+           given={Blake},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{d381b1cad9b0ae0a62cd841a44d0d628}
+      \strng{fullhash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{bibnamehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authorbibnamehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authornamehash}{d381b1cad9b0ae0a62cd841a44d0d628}
+      \strng{authorfullhash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{title}{Simple Technical Trading Rules and the Stochastic Properties of Stock Returns}
+      \field{year}{1992}
+    \endentry
+    \entry{Lo2000AdaptiveMarkets}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3991aad95c3885c82267fa604f5bbe20}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Andrew\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{3991aad95c3885c82267fa604f5bbe20}
+      \strng{fullhash}{3991aad95c3885c82267fa604f5bbe20}
+      \strng{bibnamehash}{3991aad95c3885c82267fa604f5bbe20}
+      \strng{authorbibnamehash}{3991aad95c3885c82267fa604f5bbe20}
+      \strng{authornamehash}{3991aad95c3885c82267fa604f5bbe20}
+      \strng{authorfullhash}{3991aad95c3885c82267fa604f5bbe20}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Portfolio Management}
+      \field{title}{The Adaptive Markets Hypothesis}
+      \field{year}{2004}
+    \endentry
+    \entry{Fama1970EMH}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cf1dad75742cba1f00261a0ee70e7ba2}{%
+           family={Fama},
+           familyi={F\bibinitperiod},
+           given={Eugene\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \strng{fullhash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \strng{bibnamehash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \strng{authorbibnamehash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \strng{authornamehash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \strng{authorfullhash}{cf1dad75742cba1f00261a0ee70e7ba2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{number}{2}
+      \field{title}{Efficient Capital Markets: A Review of Theory and Empirical Work}
+      \field{volume}{25}
+      \field{year}{1970}
+      \field{pages}{383\bibrangedash 417}
+      \range{pages}{35}
+    \endentry
+    \entry{Tsitsiklis2004StochasticControl}{book}{}
+      \name{author}{2}{}{%
+        {{hash=c68e0327319b548306afacf417d06ebf}{%
+           family={Tsitsiklis},
+           familyi={T\bibinitperiod},
+           given={John\bibnamedelima N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=9d82cb170e490607a367aba73aa5668c}{%
+           family={Bertsekas},
+           familyi={B\bibinitperiod},
+           given={Dimitri\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Athena Scientific}%
+      }
+      \strng{namehash}{c017a95fa86311493a40e6cbb5163919}
+      \strng{fullhash}{c017a95fa86311493a40e6cbb5163919}
+      \strng{bibnamehash}{c017a95fa86311493a40e6cbb5163919}
+      \strng{authorbibnamehash}{c017a95fa86311493a40e6cbb5163919}
+      \strng{authornamehash}{c017a95fa86311493a40e6cbb5163919}
+      \strng{authorfullhash}{c017a95fa86311493a40e6cbb5163919}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Referenced widely for stochastic modelling foundations in finance}
+      \field{title}{Introduction to Probability}
+      \field{year}{2002}
+    \endentry
+    \entry{BoxJenkins1970ARIMA}{book}{}
+      \name{author}{2}{}{%
+        {{hash=beeaf743dc5d4fb9bbe34e165a1de434}{%
+           family={Box},
+           familyi={B\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=674c1b52682cc956c2a1bf8e0a106c4e}{%
+           family={Jenkins},
+           familyi={J\bibinitperiod},
+           given={Gwilym},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \strng{fullhash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \strng{bibnamehash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \strng{authorbibnamehash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \strng{authornamehash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \strng{authorfullhash}{b338ae6447c77f4df3f4f860775aa5ec}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Time Series Analysis: Forecasting and Control}
+      \field{year}{1970}
+    \endentry
+    \entry{Tsay2010Analysis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a10ec178d031d2e8ccfadd70714bf9cc}{%
+           family={Tsay},
+           familyi={T\bibinitperiod},
+           given={Ruey\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \strng{fullhash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \strng{bibnamehash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \strng{authorbibnamehash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \strng{authornamehash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \strng{authorfullhash}{a10ec178d031d2e8ccfadd70714bf9cc}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd Edition}
+      \field{title}{Analysis of Financial Time Series}
+      \field{year}{2010}
+    \endentry
+    \entry{Engle1982ARCH}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e26a28d48dace74af17a9f7ae9246e64}{%
+           family={Engle},
+           familyi={E\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e26a28d48dace74af17a9f7ae9246e64}
+      \strng{fullhash}{e26a28d48dace74af17a9f7ae9246e64}
+      \strng{bibnamehash}{e26a28d48dace74af17a9f7ae9246e64}
+      \strng{authorbibnamehash}{e26a28d48dace74af17a9f7ae9246e64}
+      \strng{authornamehash}{e26a28d48dace74af17a9f7ae9246e64}
+      \strng{authorfullhash}{e26a28d48dace74af17a9f7ae9246e64}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{title}{Autoregressive Conditional Heteroscedasticity with Estimates of UK Inflation}
+      \field{year}{1982}
+    \endentry
+    \entry{Chatfield1989Forecasting}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7060a66f87c89de0ed44bff8e3124265}{%
+           family={Chatfield},
+           familyi={C\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Chapman}%
+        {Hall}%
+      }
+      \strng{namehash}{7060a66f87c89de0ed44bff8e3124265}
+      \strng{fullhash}{7060a66f87c89de0ed44bff8e3124265}
+      \strng{bibnamehash}{7060a66f87c89de0ed44bff8e3124265}
+      \strng{authorbibnamehash}{7060a66f87c89de0ed44bff8e3124265}
+      \strng{authornamehash}{7060a66f87c89de0ed44bff8e3124265}
+      \strng{authorfullhash}{7060a66f87c89de0ed44bff8e3124265}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4th Edition}
+      \field{title}{The Analysis of Time Series: An Introduction}
+      \field{year}{1989}
+    \endentry
+    \entry{Murphy1999TechnicalAnalysis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6057c95fca1e19549d2c6728b7292ee2}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {New York Institute of Finance}%
+      }
+      \strng{namehash}{6057c95fca1e19549d2c6728b7292ee2}
+      \strng{fullhash}{6057c95fca1e19549d2c6728b7292ee2}
+      \strng{bibnamehash}{6057c95fca1e19549d2c6728b7292ee2}
+      \strng{authorbibnamehash}{6057c95fca1e19549d2c6728b7292ee2}
+      \strng{authornamehash}{6057c95fca1e19549d2c6728b7292ee2}
+      \strng{authorfullhash}{6057c95fca1e19549d2c6728b7292ee2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Technical Analysis of the Financial Markets}
+      \field{year}{1999}
+    \endentry
+    \entry{Achelis2001TA}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8ffa52444fa672aa4cd389cfeb09004d}{%
+           family={Achelis},
+           familyi={A\bibinitperiod},
+           given={Steven\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \strng{fullhash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \strng{bibnamehash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \strng{authorbibnamehash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \strng{authornamehash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \strng{authorfullhash}{8ffa52444fa672aa4cd389cfeb09004d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Technical Analysis from A to Z}
+      \field{year}{2001}
+    \endentry
+    \entry{Neely2014TAandExchange}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c00a1a83faee60215b6abdede62a5324}{%
+           family={Neely},
+           familyi={N\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7d5029cfa4e9ac08bccf50b74d30486e}{%
+           family={Rapach},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f941e0c836cc15127c03e60ed33a2b0c}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=48c5d58238a4a65bb6148eb299a7ba3f}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Guofu},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a63048f5d09c7ba57bc359785722336}
+      \strng{fullhash}{de0fb3e288eeddfa5f09b490567d6497}
+      \strng{bibnamehash}{de0fb3e288eeddfa5f09b490567d6497}
+      \strng{authorbibnamehash}{de0fb3e288eeddfa5f09b490567d6497}
+      \strng{authornamehash}{2a63048f5d09c7ba57bc359785722336}
+      \strng{authorfullhash}{de0fb3e288eeddfa5f09b490567d6497}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Management Science}
+      \field{title}{Forecasting the Equity Risk Premium: The Role of Technical Indicators}
+      \field{year}{2014}
+    \endentry
+    \entry{ParkIrwin2007Review}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a5e71d862ef28b0c831d45c6cb793e21}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Cheol-Ho},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=48b9c0d081d8fa8453f500c854adcc70}{%
+           family={Irwin},
+           familyi={I\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \strng{fullhash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \strng{bibnamehash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \strng{authorbibnamehash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \strng{authornamehash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \strng{authorfullhash}{1a6a957026bd8c7c5e8ef1adaecb8a29}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Surveys}
+      \field{title}{What Do We Know About the Profitability of Technical Analysis?}
+      \field{year}{2007}
+    \endentry
     \entry{Huang2022PredictiveModeling}{article}{}
       \name{author}{3}{}{%
         {{hash=1d68b58c42a71daec925b58412e7e5be}{%
@@ -52,6 +373,162 @@
       \field{title}{Predictive Modeling of the Global Stock Markets Using Machine Learning}
       \field{year}{2022}
     \endentry
+    \entry{Smarte2021ReviewOfMachineLearning}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0d3e659a51b54c5a00f5c7d16f0f999e}{%
+           family={Smarte},
+           familyi={S\bibinitperiod},
+           given={Yuxuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=325ceccb2ed9ad5693f84e12e675babc}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Gabriel\bibnamedelima Danniy},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \strng{fullhash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \strng{bibnamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \strng{authorbibnamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \strng{authornamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \strng{authorfullhash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on …}
+      \field{title}{Review of Machine Learning for Stock Prediction Based on Technical Analysis}
+      \field{year}{2021}
+    \endentry
+    \entry{Hochreiter1997LSTM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{8}
+      \field{title}{Long Short-Term Memory}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{pages}{1735\bibrangedash 1780}
+      \range{pages}{46}
+    \endentry
+    \entry{Cho2014GRU}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=3da7501a79d9346572c7fd6e41b615df}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Kyunghyun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d27fe3f9898ba01eeca28e3bd205f9ea}{%
+           family={Merrienboer},
+           familyi={M\bibinitperiod},
+           given={Bart},
+           giveni={B\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=6d80adec79a13a33e73215c5f46f1605}{%
+           family={Bahdanau},
+           familyi={B\bibinitperiod},
+           given={Dzmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{fullhash}{2b512caaa9756b9174a0d4bede4107b7}
+      \strng{bibnamehash}{2b512caaa9756b9174a0d4bede4107b7}
+      \strng{authorbibnamehash}{2b512caaa9756b9174a0d4bede4107b7}
+      \strng{authornamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authorfullhash}{2b512caaa9756b9174a0d4bede4107b7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of EMNLP}
+      \field{title}{Learning Phrase Representations using RNN Encoder--Decoder for Statistical Machine Translation}
+      \field{year}{2014}
+    \endentry
+    \entry{Zhu2025StockPredictionReview}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9f451a1dea1186082ac43eb7b03558f2}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={He},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f451a1dea1186082ac43eb7b03558f2}
+      \strng{fullhash}{9f451a1dea1186082ac43eb7b03558f2}
+      \strng{bibnamehash}{9f451a1dea1186082ac43eb7b03558f2}
+      \strng{authorbibnamehash}{9f451a1dea1186082ac43eb7b03558f2}
+      \strng{authornamehash}{9f451a1dea1186082ac43eb7b03558f2}
+      \strng{authorfullhash}{9f451a1dea1186082ac43eb7b03558f2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{ResearchGate}
+      \field{title}{Stock Prediction Using Artificial Intelligence Technology: A Review}
+      \field{year}{2025}
+    \endentry
+    \entry{LeCun1998CNN}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ac762f2592005edf6bad58f566967c6c}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={Léon},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=844e183692f08a63f99285330fcf90cc}{%
+           family={Haffner},
+           familyi={H\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{fullhash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{bibnamehash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{authorbibnamehash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{authornamehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{authorfullhash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{title}{Gradient-Based Learning Applied to Document Recognition}
+      \field{year}{1998}
+    \endentry
     \entry{Jin2024CNNStockMarket}{article}{}
       \name{author}{1}{}{%
         {{hash=9ba9398c00cb1215d00586d332ac28ed}{%
@@ -72,6 +549,258 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on …}
       \field{title}{CNN Prediction of the Stock Market Indicators Using a Hybrid Deep Learning System}
+      \field{year}{2024}
+    \endentry
+    \entry{Vaswani2017Attention}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=f2bc899b1160163417da7bf510f15d33}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Lukasz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{bibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorbibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of NIPS}
+      \field{title}{Attention Is All You Need}
+      \field{year}{2017}
+    \endentry
+    \entry{Khanpuri2024SentimentAnalysis}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a7a1645ee9f53e218bf4e374e6c2e39c}{%
+           family={Khanpuri},
+           familyi={K\bibinitperiod},
+           given={FirstAuthorOne},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6f0e882fb00f1233b068286836e54927}{%
+           family={Khanpuri},
+           familyi={K\bibinitperiod},
+           given={SecondAuthor},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1db25af36104d0bdd8f95713db4058eb}{%
+           family={Khanpuri},
+           familyi={K\bibinitperiod},
+           given={AnotherAuthor},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e4ee8158ed42ab8d9b7657574673f4c9}
+      \strng{fullhash}{c92e25fe2510a293e5adf437e9703df3}
+      \strng{bibnamehash}{c92e25fe2510a293e5adf437e9703df3}
+      \strng{authorbibnamehash}{c92e25fe2510a293e5adf437e9703df3}
+      \strng{authornamehash}{e4ee8158ed42ab8d9b7657574673f4c9}
+      \strng{authorfullhash}{c92e25fe2510a293e5adf437e9703df3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EAI Endorsed Transactions on AI and Robotics}
+      \field{title}{Sentiment Analysis on Fundamental Data to Predict Stock Prices}
+      \field{year}{2024}
+    \endentry
+    \entry{Huang2025DeepLearning}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1d68b58c42a71daec925b58412e7e5be}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={FirstAuthorOne},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c5a63e1fe1a87e102a52ef0cfead69f9}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={SecondAuthor},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c6bc98579894dbd44488093ac6e86656}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={AnotherAuthor},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{16509071c865549b0a067aba77bc1a5b}
+      \strng{fullhash}{ac988a3acfaf17b50b0bb567de8142d9}
+      \strng{bibnamehash}{ac988a3acfaf17b50b0bb567de8142d9}
+      \strng{authorbibnamehash}{ac988a3acfaf17b50b0bb567de8142d9}
+      \strng{authornamehash}{16509071c865549b0a067aba77bc1a5b}
+      \strng{authorfullhash}{ac988a3acfaf17b50b0bb567de8142d9}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on …}
+      \field{title}{Deep Learning to LLMs: A Survey on Quantitative Investment}
+      \field{year}{2025}
+    \endentry
+    \entry{Cao2024LLMStock}{article}{}
+      \name{author}{3}{}{%
+        {{hash=83e11672a7ad46f3bf41a4d02900a315}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={FirstAuthorOne},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c4d7206515a4488d37b75057b50a8ecf}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={SecondAuthor},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e2fd6bceba581f2f91e2289c2292b5a8}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={AnotherAuthor},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f16062edf5ad29fb8459e23729f3803a}
+      \strng{fullhash}{938be5e995c32401740339bc42b591a5}
+      \strng{bibnamehash}{938be5e995c32401740339bc42b591a5}
+      \strng{authorbibnamehash}{938be5e995c32401740339bc42b591a5}
+      \strng{authornamehash}{f16062edf5ad29fb8459e23729f3803a}
+      \strng{authorfullhash}{938be5e995c32401740339bc42b591a5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of ICAIF '24}
+      \field{title}{Applying LLMs for Stock Forecasting}
+      \field{year}{2024}
+    \endentry
+    \entry{Cilingiroglu2025SentimentChangingPrice}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2f48bd46b6588a11f53ab15535e6f911}{%
+           family={Cilingiroglu},
+           familyi={C\bibinitperiod},
+           given={FirstName},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f48bd46b6588a11f53ab15535e6f911}
+      \strng{fullhash}{2f48bd46b6588a11f53ab15535e6f911}
+      \strng{bibnamehash}{2f48bd46b6588a11f53ab15535e6f911}
+      \strng{authorbibnamehash}{2f48bd46b6588a11f53ab15535e6f911}
+      \strng{authornamehash}{2f48bd46b6588a11f53ab15535e6f911}
+      \strng{authorfullhash}{2f48bd46b6588a11f53ab15535e6f911}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Forbes}
+      \field{title}{How Sentiment is Changing the Stock Price Prediction Market}
+      \field{year}{2025}
+    \endentry
+    \entry{Gupta2024RoleOfAI}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c0788be7c840685fc03c2001d536406d}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Ayana},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0788be7c840685fc03c2001d536406d}
+      \strng{fullhash}{c0788be7c840685fc03c2001d536406d}
+      \strng{bibnamehash}{c0788be7c840685fc03c2001d536406d}
+      \strng{authorbibnamehash}{c0788be7c840685fc03c2001d536406d}
+      \strng{authornamehash}{c0788be7c840685fc03c2001d536406d}
+      \strng{authorfullhash}{c0788be7c840685fc03c2001d536406d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IJEER}
+      \field{title}{The Role of AI in the Stock Market to Enhance Predictability \& Strategy}
+      \field{year}{2024}
+    \endentry
+    \entry{Mokhtari2021ImpactOfAI}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=96965dacaaa74ba63acfb7020a9b5ad4}{%
+           family={Mokhtari},
+           familyi={M\bibinitperiod},
+           given={FirstAuthorOne},
+           giveni={F\bibinitperiod}}}%
+        {{hash=7bdc3e224f35e8b70cc2d2b3d67242b8}{%
+           family={Mokhtari},
+           familyi={M\bibinitperiod},
+           given={SecondAuthor},
+           giveni={S\bibinitperiod}}}%
+        {{hash=96b42dd977177f0b663317c45d3ae7ec}{%
+           family={Mokhtari},
+           familyi={M\bibinitperiod},
+           given={AnotherAuthor},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8ca73f9eec40854c0dadf1f06f1ab4dd}
+      \strng{fullhash}{b5c51151364d8f717a0da9f2cce970f5}
+      \strng{bibnamehash}{b5c51151364d8f717a0da9f2cce970f5}
+      \strng{authorbibnamehash}{b5c51151364d8f717a0da9f2cce970f5}
+      \strng{authornamehash}{8ca73f9eec40854c0dadf1f06f1ab4dd}
+      \strng{authorfullhash}{b5c51151364d8f717a0da9f2cce970f5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Munich Personal RePEc Archive}
+      \field{title}{The Impact of Artificial Intelligence in Enhancing Predictive Stock Trading}
+      \field{year}{2021}
+    \endentry
+    \entry{Lu2024FinancialArchitecture}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a2d51f2098a4dc42a6b082d9776505a1}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Junhua},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \strng{fullhash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \strng{bibnamehash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \strng{authorbibnamehash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \strng{authornamehash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \strng{authorfullhash}{a2d51f2098a4dc42a6b082d9776505a1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IRIS}
+      \field{title}{The Financial Architecture of Blockchains and Open Services}
       \field{year}{2024}
     \endentry
     \entry{Balasubramanian2024StockMarketAnalysis}{article}{}
@@ -104,250 +833,6 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{SHS Web of Conferences}
       \field{title}{Stock Market Analysis Using Biometric Indicators}
-      \field{year}{2024}
-    \endentry
-    \entry{Khanpuri2024SentimentAnalysis}{article}{}
-      \name{author}{3}{}{%
-        {{hash=a7a1645ee9f53e218bf4e374e6c2e39c}{%
-           family={Khanpuri},
-           familyi={K\bibinitperiod},
-           given={FirstAuthorOne},
-           giveni={F\bibinitperiod}}}%
-        {{hash=6f0e882fb00f1233b068286836e54927}{%
-           family={Khanpuri},
-           familyi={K\bibinitperiod},
-           given={SecondAuthor},
-           giveni={S\bibinitperiod}}}%
-        {{hash=1db25af36104d0bdd8f95713db4058eb}{%
-           family={Khanpuri},
-           familyi={K\bibinitperiod},
-           given={AnotherAuthor},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{e4ee8158ed42ab8d9b7657574673f4c9}
-      \strng{fullhash}{c92e25fe2510a293e5adf437e9703df3}
-      \strng{bibnamehash}{c92e25fe2510a293e5adf437e9703df3}
-      \strng{authorbibnamehash}{c92e25fe2510a293e5adf437e9703df3}
-      \strng{authornamehash}{e4ee8158ed42ab8d9b7657574673f4c9}
-      \strng{authorfullhash}{c92e25fe2510a293e5adf437e9703df3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{EAI Endorsed Transactions on AI and Robotics}
-      \field{title}{Sentiment Analysis on Fundamental Data to Predict Stock Prices}
-      \field{year}{2024}
-    \endentry
-    \entry{Cilingiroglu2025SentimentChangingPrice}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=2f48bd46b6588a11f53ab15535e6f911}{%
-           family={Cilingiroglu},
-           familyi={C\bibinitperiod},
-           given={FirstName},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{2f48bd46b6588a11f53ab15535e6f911}
-      \strng{fullhash}{2f48bd46b6588a11f53ab15535e6f911}
-      \strng{bibnamehash}{2f48bd46b6588a11f53ab15535e6f911}
-      \strng{authorbibnamehash}{2f48bd46b6588a11f53ab15535e6f911}
-      \strng{authornamehash}{2f48bd46b6588a11f53ab15535e6f911}
-      \strng{authorfullhash}{2f48bd46b6588a11f53ab15535e6f911}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Forbes}
-      \field{title}{How Sentiment is Changing the Stock Price Prediction Market}
-      \field{year}{2025}
-    \endentry
-    \entry{Cao2024LLMStock}{article}{}
-      \name{author}{3}{}{%
-        {{hash=83e11672a7ad46f3bf41a4d02900a315}{%
-           family={Cao},
-           familyi={C\bibinitperiod},
-           given={FirstAuthorOne},
-           giveni={F\bibinitperiod}}}%
-        {{hash=c4d7206515a4488d37b75057b50a8ecf}{%
-           family={Cao},
-           familyi={C\bibinitperiod},
-           given={SecondAuthor},
-           giveni={S\bibinitperiod}}}%
-        {{hash=e2fd6bceba581f2f91e2289c2292b5a8}{%
-           family={Cao},
-           familyi={C\bibinitperiod},
-           given={AnotherAuthor},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{f16062edf5ad29fb8459e23729f3803a}
-      \strng{fullhash}{938be5e995c32401740339bc42b591a5}
-      \strng{bibnamehash}{938be5e995c32401740339bc42b591a5}
-      \strng{authorbibnamehash}{938be5e995c32401740339bc42b591a5}
-      \strng{authornamehash}{f16062edf5ad29fb8459e23729f3803a}
-      \strng{authorfullhash}{938be5e995c32401740339bc42b591a5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of ICAIF '24}
-      \field{title}{Applying LLMs for Stock Forecasting}
-      \field{year}{2024}
-    \endentry
-    \entry{Huang2025DeepLearning}{article}{}
-      \name{author}{3}{}{%
-        {{hash=1d68b58c42a71daec925b58412e7e5be}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={FirstAuthorOne},
-           giveni={F\bibinitperiod}}}%
-        {{hash=c5a63e1fe1a87e102a52ef0cfead69f9}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={SecondAuthor},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c6bc98579894dbd44488093ac6e86656}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={AnotherAuthor},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{16509071c865549b0a067aba77bc1a5b}
-      \strng{fullhash}{ac988a3acfaf17b50b0bb567de8142d9}
-      \strng{bibnamehash}{ac988a3acfaf17b50b0bb567de8142d9}
-      \strng{authorbibnamehash}{ac988a3acfaf17b50b0bb567de8142d9}
-      \strng{authornamehash}{16509071c865549b0a067aba77bc1a5b}
-      \strng{authorfullhash}{ac988a3acfaf17b50b0bb567de8142d9}
-      \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on …}
-      \field{title}{Deep Learning to LLMs: A Survey on Quantitative Investment}
-      \field{year}{2025}
-    \endentry
-    \entry{Zhu2025StockPredictionReview}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=9f451a1dea1186082ac43eb7b03558f2}{%
-           family={Zhu},
-           familyi={Z\bibinitperiod},
-           given={He},
-           giveni={H\bibinitperiod}}}%
-      }
-      \strng{namehash}{9f451a1dea1186082ac43eb7b03558f2}
-      \strng{fullhash}{9f451a1dea1186082ac43eb7b03558f2}
-      \strng{bibnamehash}{9f451a1dea1186082ac43eb7b03558f2}
-      \strng{authorbibnamehash}{9f451a1dea1186082ac43eb7b03558f2}
-      \strng{authornamehash}{9f451a1dea1186082ac43eb7b03558f2}
-      \strng{authorfullhash}{9f451a1dea1186082ac43eb7b03558f2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{ResearchGate}
-      \field{title}{Stock Prediction Using Artificial Intelligence Technology: A Review}
-      \field{year}{2025}
-    \endentry
-    \entry{Smarte2021ReviewOfMachineLearning}{article}{}
-      \name{author}{2}{}{%
-        {{hash=0d3e659a51b54c5a00f5c7d16f0f999e}{%
-           family={Smarte},
-           familyi={S\bibinitperiod},
-           given={Yuxuan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=325ceccb2ed9ad5693f84e12e675babc}{%
-           family={Ho},
-           familyi={H\bibinitperiod},
-           given={Gabriel\bibnamedelima Danniy},
-           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \strng{fullhash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \strng{bibnamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \strng{authorbibnamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \strng{authornamehash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \strng{authorfullhash}{536426c6ff58e2b7ecd7a11d64f1a7c5}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on …}
-      \field{title}{Review of Machine Learning for Stock Prediction Based on Technical Analysis}
-      \field{year}{2021}
-    \endentry
-    \entry{Gupta2024RoleOfAI}{article}{}
-      \name{author}{1}{}{%
-        {{hash=c0788be7c840685fc03c2001d536406d}{%
-           family={Gupta},
-           familyi={G\bibinitperiod},
-           given={Ayana},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{c0788be7c840685fc03c2001d536406d}
-      \strng{fullhash}{c0788be7c840685fc03c2001d536406d}
-      \strng{bibnamehash}{c0788be7c840685fc03c2001d536406d}
-      \strng{authorbibnamehash}{c0788be7c840685fc03c2001d536406d}
-      \strng{authornamehash}{c0788be7c840685fc03c2001d536406d}
-      \strng{authorfullhash}{c0788be7c840685fc03c2001d536406d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IJEER}
-      \field{title}{The Role of AI in the Stock Market to Enhance Predictability \& Strategy}
-      \field{year}{2024}
-    \endentry
-    \entry{Mokhtari2021ImpactOfAI}{misc}{}
-      \name{author}{3}{}{%
-        {{hash=96965dacaaa74ba63acfb7020a9b5ad4}{%
-           family={Mokhtari},
-           familyi={M\bibinitperiod},
-           given={FirstAuthorOne},
-           giveni={F\bibinitperiod}}}%
-        {{hash=7bdc3e224f35e8b70cc2d2b3d67242b8}{%
-           family={Mokhtari},
-           familyi={M\bibinitperiod},
-           given={SecondAuthor},
-           giveni={S\bibinitperiod}}}%
-        {{hash=96b42dd977177f0b663317c45d3ae7ec}{%
-           family={Mokhtari},
-           familyi={M\bibinitperiod},
-           given={AnotherAuthor},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{8ca73f9eec40854c0dadf1f06f1ab4dd}
-      \strng{fullhash}{b5c51151364d8f717a0da9f2cce970f5}
-      \strng{bibnamehash}{b5c51151364d8f717a0da9f2cce970f5}
-      \strng{authorbibnamehash}{b5c51151364d8f717a0da9f2cce970f5}
-      \strng{authornamehash}{8ca73f9eec40854c0dadf1f06f1ab4dd}
-      \strng{authorfullhash}{b5c51151364d8f717a0da9f2cce970f5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Munich Personal RePEc Archive}
-      \field{title}{The Impact of Artificial Intelligence in Enhancing Predictive Stock Trading}
-      \field{year}{2021}
-    \endentry
-    \entry{Lu2024FinancialArchitecture}{article}{}
-      \name{author}{1}{}{%
-        {{hash=a2d51f2098a4dc42a6b082d9776505a1}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={Junhua},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \strng{fullhash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \strng{bibnamehash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \strng{authorbibnamehash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \strng{authornamehash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \strng{authorfullhash}{a2d51f2098a4dc42a6b082d9776505a1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IRIS}
-      \field{title}{The Financial Architecture of Blockchains and Open Services}
       \field{year}{2024}
     \endentry
   \enddatalist

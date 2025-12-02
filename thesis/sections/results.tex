@@ -330,18 +330,3 @@ When deployed into live prediction with recent 3-month price windows:
   \item Transformer and CNN-LSTM predictions improved only when trained on very large multi-company datasets.
   \item Simpler models responded more smoothly, while complex architectures reacted more sharply to volatility.
 \end{itemize}
-
-\section{Discussion of Results}
-
-\subsection{GRU Results}
-GRU is the best candidate model for rapid real-world deployment when working with limited data per stock.
-
-\subsection{LSTM Results}
-LSTM is the most reliable model overall, balancing performance, generalization, and robustness across
-dataset sizes.
-
-\subsection{CNN-LSTM Results}
-CNN-LSTM architecture requires significantly larger datasets to outperform recurrent models, and in this specific context did not surpass LSTM performance.
-
-\subsection{Transformer Results}
-Transformer architecture requires significantly larger datasets to outperform recurrent models, and in this specific context did not surpass LSTM performance.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.29)  1 DEC 2025 03:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.29)  2 DEC 2025 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -332,6 +332,24 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@cntb=\count293
 \multirow@dima=\skip59
 \bigstrutjot=\dimen195
+) (H:\MiKTex\tex/latex/tools\longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip60
+\LTright=\skip61
+\LTpre=\skip62
+\LTpost=\skip63
+\LTchunksize=\count294
+\LTcapwidth=\dimen196
+\LT@head=\box60
+\LT@firsthead=\box61
+\LT@foot=\box62
+\LT@lastfoot=\box63
+\LT@gbox=\box64
+\LT@cols=\count295
+\LT@rows=\count296
+\c@LT@tables=\count297
+\c@LT@chunks=\count298
+\LT@p@ftn=\toks31
 ) (H:\MiKTex\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
  (H:\MiKTex\tex/generic/pdftexcmds\pdftexcmds.sty
@@ -350,7 +368,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (H:\MiKTex\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count294
+\lrq@indent=\count299
  (H:\MiKTex\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (H:\MiKTex\tex/latex/base\ifthen.sty
@@ -359,63 +377,63 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count295
-\c@listtotal=\count296
-\c@listcount=\count297
-\c@liststart=\count298
-\c@liststop=\count299
-\c@citecount=\count300
-\c@citetotal=\count301
-\c@multicitecount=\count302
-\c@multicitetotal=\count303
-\c@instcount=\count304
-\c@maxnames=\count305
-\c@minnames=\count306
-\c@maxitems=\count307
-\c@minitems=\count308
-\c@citecounter=\count309
-\c@maxcitecounter=\count310
-\c@savedcitecounter=\count311
-\c@uniquelist=\count312
-\c@uniquename=\count313
-\c@refsection=\count314
-\c@refsegment=\count315
-\c@maxextratitle=\count316
-\c@maxextratitleyear=\count317
-\c@maxextraname=\count318
-\c@maxextradate=\count319
-\c@maxextraalpha=\count320
-\c@abbrvpenalty=\count321
-\c@highnamepenalty=\count322
-\c@lownamepenalty=\count323
-\c@maxparens=\count324
-\c@parenlevel=\count325
-\blx@tempcnta=\count326
-\blx@tempcntb=\count327
-\blx@tempcntc=\count328
-\c@blx@maxsection=\count329
-\blx@maxsegment@0=\count330
-\blx@notetype=\count331
-\blx@parenlevel@text=\count332
-\blx@parenlevel@foot=\count333
-\blx@sectionciteorder@0=\count334
-\blx@sectionciteorderinternal@0=\count335
-\blx@entrysetcounter=\count336
-\blx@biblioinstance=\count337
-\labelnumberwidth=\skip60
-\labelalphawidth=\skip61
-\biblabelsep=\skip62
-\bibitemsep=\skip63
-\bibnamesep=\skip64
-\bibinitsep=\skip65
-\bibparsep=\skip66
-\bibhang=\skip67
+\c@tabx@nest=\count300
+\c@listtotal=\count301
+\c@listcount=\count302
+\c@liststart=\count303
+\c@liststop=\count304
+\c@citecount=\count305
+\c@citetotal=\count306
+\c@multicitecount=\count307
+\c@multicitetotal=\count308
+\c@instcount=\count309
+\c@maxnames=\count310
+\c@minnames=\count311
+\c@maxitems=\count312
+\c@minitems=\count313
+\c@citecounter=\count314
+\c@maxcitecounter=\count315
+\c@savedcitecounter=\count316
+\c@uniquelist=\count317
+\c@uniquename=\count318
+\c@refsection=\count319
+\c@refsegment=\count320
+\c@maxextratitle=\count321
+\c@maxextratitleyear=\count322
+\c@maxextraname=\count323
+\c@maxextradate=\count324
+\c@maxextraalpha=\count325
+\c@abbrvpenalty=\count326
+\c@highnamepenalty=\count327
+\c@lownamepenalty=\count328
+\c@maxparens=\count329
+\c@parenlevel=\count330
+\blx@tempcnta=\count331
+\blx@tempcntb=\count332
+\blx@tempcntc=\count333
+\c@blx@maxsection=\count334
+\blx@maxsegment@0=\count335
+\blx@notetype=\count336
+\blx@parenlevel@text=\count337
+\blx@parenlevel@foot=\count338
+\blx@sectionciteorder@0=\count339
+\blx@sectionciteorderinternal@0=\count340
+\blx@entrysetcounter=\count341
+\blx@biblioinstance=\count342
+\labelnumberwidth=\skip64
+\labelalphawidth=\skip65
+\biblabelsep=\skip66
+\bibitemsep=\skip67
+\bibnamesep=\skip68
+\bibinitsep=\skip69
+\bibparsep=\skip70
+\bibhang=\skip71
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language79
-\c@mincomprange=\count338
-\c@maxcomprange=\count339
-\c@mincompwidth=\count340
+\c@mincomprange=\count343
+\c@maxcomprange=\count344
+\c@mincompwidth=\count345
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (H:\MiKTex\tex/latex/biblatex\blx-dm.def
@@ -425,88 +443,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count341
-\c@savedafterword=\count342
-\c@annotator=\count343
-\c@savedannotator=\count344
-\c@author=\count345
-\c@savedauthor=\count346
-\c@bookauthor=\count347
-\c@savedbookauthor=\count348
-\c@commentator=\count349
-\c@savedcommentator=\count350
-\c@editor=\count351
-\c@savededitor=\count352
-\c@editora=\count353
-\c@savededitora=\count354
-\c@editorb=\count355
-\c@savededitorb=\count356
-\c@editorc=\count357
-\c@savededitorc=\count358
-\c@foreword=\count359
-\c@savedforeword=\count360
-\c@holder=\count361
-\c@savedholder=\count362
-\c@introduction=\count363
-\c@savedintroduction=\count364
-\c@namea=\count365
-\c@savednamea=\count366
-\c@nameb=\count367
-\c@savednameb=\count368
-\c@namec=\count369
-\c@savednamec=\count370
-\c@translator=\count371
-\c@savedtranslator=\count372
-\c@shortauthor=\count373
-\c@savedshortauthor=\count374
-\c@shorteditor=\count375
-\c@savedshorteditor=\count376
-\c@labelname=\count377
-\c@savedlabelname=\count378
-\c@institution=\count379
-\c@savedinstitution=\count380
-\c@lista=\count381
-\c@savedlista=\count382
-\c@listb=\count383
-\c@savedlistb=\count384
-\c@listc=\count385
-\c@savedlistc=\count386
-\c@listd=\count387
-\c@savedlistd=\count388
-\c@liste=\count389
-\c@savedliste=\count390
-\c@listf=\count391
-\c@savedlistf=\count392
-\c@location=\count393
-\c@savedlocation=\count394
-\c@organization=\count395
-\c@savedorganization=\count396
-\c@origlocation=\count397
-\c@savedoriglocation=\count398
-\c@origpublisher=\count399
-\c@savedorigpublisher=\count400
-\c@publisher=\count401
-\c@savedpublisher=\count402
-\c@language=\count403
-\c@savedlanguage=\count404
-\c@origlanguage=\count405
-\c@savedoriglanguage=\count406
-\c@pageref=\count407
-\c@savedpageref=\count408
-\shorthandwidth=\skip68
-\shortjournalwidth=\skip69
-\shortserieswidth=\skip70
-\shorttitlewidth=\skip71
-\shortauthorwidth=\skip72
-\shorteditorwidth=\skip73
-\locallabelnumberwidth=\skip74
-\locallabelalphawidth=\skip75
-\localshorthandwidth=\skip76
-\localshortjournalwidth=\skip77
-\localshortserieswidth=\skip78
-\localshorttitlewidth=\skip79
-\localshortauthorwidth=\skip80
-\localshorteditorwidth=\skip81
+\c@afterword=\count346
+\c@savedafterword=\count347
+\c@annotator=\count348
+\c@savedannotator=\count349
+\c@author=\count350
+\c@savedauthor=\count351
+\c@bookauthor=\count352
+\c@savedbookauthor=\count353
+\c@commentator=\count354
+\c@savedcommentator=\count355
+\c@editor=\count356
+\c@savededitor=\count357
+\c@editora=\count358
+\c@savededitora=\count359
+\c@editorb=\count360
+\c@savededitorb=\count361
+\c@editorc=\count362
+\c@savededitorc=\count363
+\c@foreword=\count364
+\c@savedforeword=\count365
+\c@holder=\count366
+\c@savedholder=\count367
+\c@introduction=\count368
+\c@savedintroduction=\count369
+\c@namea=\count370
+\c@savednamea=\count371
+\c@nameb=\count372
+\c@savednameb=\count373
+\c@namec=\count374
+\c@savednamec=\count375
+\c@translator=\count376
+\c@savedtranslator=\count377
+\c@shortauthor=\count378
+\c@savedshortauthor=\count379
+\c@shorteditor=\count380
+\c@savedshorteditor=\count381
+\c@labelname=\count382
+\c@savedlabelname=\count383
+\c@institution=\count384
+\c@savedinstitution=\count385
+\c@lista=\count386
+\c@savedlista=\count387
+\c@listb=\count388
+\c@savedlistb=\count389
+\c@listc=\count390
+\c@savedlistc=\count391
+\c@listd=\count392
+\c@savedlistd=\count393
+\c@liste=\count394
+\c@savedliste=\count395
+\c@listf=\count396
+\c@savedlistf=\count397
+\c@location=\count398
+\c@savedlocation=\count399
+\c@organization=\count400
+\c@savedorganization=\count401
+\c@origlocation=\count402
+\c@savedoriglocation=\count403
+\c@origpublisher=\count404
+\c@savedorigpublisher=\count405
+\c@publisher=\count406
+\c@savedpublisher=\count407
+\c@language=\count408
+\c@savedlanguage=\count409
+\c@origlanguage=\count410
+\c@savedoriglanguage=\count411
+\c@pageref=\count412
+\c@savedpageref=\count413
+\shorthandwidth=\skip72
+\shortjournalwidth=\skip73
+\shortserieswidth=\skip74
+\shorttitlewidth=\skip75
+\shortauthorwidth=\skip76
+\shorteditorwidth=\skip77
+\locallabelnumberwidth=\skip78
+\locallabelalphawidth=\skip79
+\localshorthandwidth=\skip80
+\localshortjournalwidth=\skip81
+\localshortserieswidth=\skip82
+\localshorttitlewidth=\skip83
+\localshortauthorwidth=\skip84
+\localshorteditorwidth=\skip85
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (H:\MiKTex\tex/latex/biblatex\blx-compat.def
@@ -516,19 +534,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (H:\MiKTex\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count409
-\c@textcitetotal=\count410
-\c@textcitemaxnames=\count411
-\c@biburlbigbreakpenalty=\count412
-\c@biburlbreakpenalty=\count413
-\c@biburlnumpenalty=\count414
-\c@biburlucpenalty=\count415
-\c@biburllcpenalty=\count416
+\c@textcitecount=\count414
+\c@textcitetotal=\count415
+\c@textcitemaxnames=\count416
+\c@biburlbigbreakpenalty=\count417
+\c@biburlbreakpenalty=\count418
+\c@biburlnumpenalty=\count419
+\c@biburlucpenalty=\count420
+\c@biburllcpenalty=\count421
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count417
+\c@smartand=\count422
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
@@ -546,8 +564,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (H:\MiKTex\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count418
-\c@bbx:relatedtotal=\count419
+\c@bbx:relatedcount=\count423
+\c@bbx:relatedtotal=\count424
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
@@ -579,8 +597,8 @@ Package biblatex Info: Document encoding is UTF8 ....
 Package: expl3 2024-01-04 L3 programming layer (loader) 
  (H:\MiKTex\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count420
-\l__pdf_internal_box=\box60
+\l__color_backend_stack_int=\count425
+\l__pdf_internal_box=\box65
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2024-01-04 L3 programming layer (loader) 
@@ -609,11 +627,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (H:\MiKTex\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count421
+\c@section@level=\count426
 )
-\@linkdim=\dimen196
-\Hy@linkcounter=\count422
-\Hy@pagecounter=\count423
+\@linkdim=\dimen197
+\Hy@linkcounter=\count427
+\Hy@pagecounter=\count428
  (H:\MiKTex\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -621,7 +639,7 @@ Now handling font encoding PD1 ...
 ) (H:\MiKTex\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count424
+\Hy@SavedSpaceFactor=\count429
  (H:\MiKTex\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -634,17 +652,17 @@ Package hyperref Info: Plain pages OFF on input line 4196.
 Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4448.
-\c@Hy@tempcnt=\count425
+\c@Hy@tempcnt=\count430
 LaTeX Info: Redefining \url on input line 4786.
-\XeTeXLinkMargin=\dimen197
+\XeTeXLinkMargin=\dimen198
  (H:\MiKTex\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (H:\MiKTex\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count426
-\Field@Width=\dimen198
-\Fld@charsize=\dimen199
+\Fld@menulength=\count431
+\Field@Width=\dimen199
+\Fld@charsize=\dimen256
 Package hyperref Info: Hyper figures OFF on input line 6065.
 Package hyperref Info: Link nesting OFF on input line 6070.
 Package hyperref Info: Hyper index ON on input line 6073.
@@ -656,9 +674,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6095.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count427
-\c@Item=\count428
-\c@Hfootnote=\count429
+\Hy@abspage=\count432
+\c@Item=\count433
+\c@Hfootnote=\count434
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (H:\MiKTex\tex/latex/hyperref\hpdftex.def
@@ -667,8 +685,8 @@ File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count430
-\c@bookmark@seq@number=\count431
+\Fld@listcount=\count435
+\c@bookmark@seq@number=\count436
  (H:\MiKTex\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
  (H:\MiKTex\tex/generic/uniquecounter\uniquecounter.sty
@@ -676,55 +694,51 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
-\Hy@SectionHShift=\skip82
+\Hy@SectionHShift=\skip86
 ) (H:\MiKTex\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-\f@nch@headwidth=\skip83
-\f@nch@offset@elh=\skip84
-\f@nch@offset@erh=\skip85
-\f@nch@offset@olh=\skip86
-\f@nch@offset@orh=\skip87
-\f@nch@offset@elf=\skip88
-\f@nch@offset@erf=\skip89
-\f@nch@offset@olf=\skip90
-\f@nch@offset@orf=\skip91
-\f@nch@height=\skip92
-\f@nch@footalignment=\skip93
-\f@nch@widthL=\skip94
-\f@nch@widthC=\skip95
-\f@nch@widthR=\skip96
-\@temptokenb=\toks31
+\f@nch@headwidth=\skip87
+\f@nch@offset@elh=\skip88
+\f@nch@offset@erh=\skip89
+\f@nch@offset@olh=\skip90
+\f@nch@offset@orh=\skip91
+\f@nch@offset@elf=\skip92
+\f@nch@offset@erf=\skip93
+\f@nch@offset@olf=\skip94
+\f@nch@offset@orf=\skip95
+\f@nch@height=\skip96
+\f@nch@footalignment=\skip97
+\f@nch@widthL=\skip98
+\f@nch@widthC=\skip99
+\f@nch@widthR=\skip100
+\@temptokenb=\toks32
 )
-\@quotelevel=\count432
-\@quotereset=\count433
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 71.
+\@quotelevel=\count437
+\@quotereset=\count438
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 72.
  (H:\MiKTex\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (thesis.aux
-
-LaTeX Warning: Label `tab:model_summary' multiply defined.
-
-)
+) (thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -761,15 +775,15 @@ LaTeX Font Info:    ... okay on input line 71.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package microtype Info: Patching varwidth to enable character protrusion.
-\MT@vwid@leftmargin=\dimen256
-\MT@vwid@rightmargin=\dimen257
-LaTeX Info: Redefining \microtypecontext on input line 71.
-Package microtype Info: Applying patch `item' on input line 71.
-Package microtype Info: Applying patch `toc' on input line 71.
-Package microtype Info: Applying patch `eqnum' on input line 71.
-Package microtype Info: Applying patch `footnote' on input line 71.
-Package microtype Info: Applying patch `verbatim' on input line 71.
-LaTeX Info: Redefining \microtypesetup on input line 71.
+\MT@vwid@leftmargin=\dimen257
+\MT@vwid@rightmargin=\dimen258
+LaTeX Info: Redefining \microtypecontext on input line 72.
+Package microtype Info: Applying patch `item' on input line 72.
+Package microtype Info: Applying patch `toc' on input line 72.
+Package microtype Info: Applying patch `eqnum' on input line 72.
+Package microtype Info: Applying patch `footnote' on input line 72.
+Package microtype Info: Applying patch `verbatim' on input line 72.
+LaTeX Info: Redefining \microtypesetup on input line 72.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -784,17 +798,17 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 ) (H:\MiKTex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count434
-\scratchdimen=\dimen258
-\scratchbox=\box61
-\nofMPsegments=\count435
-\nofMParguments=\count436
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count437
-\MPscratchDim=\dimen259
-\MPnumerator=\count438
-\makeMPintoPDFobject=\count439
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count439
+\scratchdimen=\dimen259
+\scratchbox=\box66
+\nofMPsegments=\count440
+\nofMParguments=\count441
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count442
+\MPscratchDim=\dimen260
+\MPnumerator=\count443
+\makeMPintoPDFobject=\count444
+\everyMPtoPDFconversion=\toks34
 ) (H:\MiKTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -803,6 +817,10 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+ (H:\MiKTex\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
@@ -818,15 +836,15 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
  (thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 71.
-Package biblatex Info: Reference segment=0 on input line 71.
-Package hyperref Info: Link coloring OFF on input line 71.
+Package biblatex Info: Reference section=0 on input line 72.
+Package biblatex Info: Reference segment=0 on input line 72.
+Package hyperref Info: Link coloring OFF on input line 72.
  (thesis.out) (thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
  (titlepage.tex
-<Images/VnitLogo.pdf, id=470, 296.10625pt x 171.64125pt>
+<Images/VnitLogo.pdf, id=466, 296.10625pt x 171.64125pt>
 File: Images/VnitLogo.pdf Graphic file (type pdf)
 <use Images/VnitLogo.pdf>
 Package pdftex.def Info: Images/VnitLogo.pdf  used on input line 62.
@@ -847,7 +865,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
                    \relax 
 l.70 \end{titlepage}
                      [1{H:/MiKTex/fonts/enc/dvips/lm/lm-ts1.enc}]) (declaration.tex
-<Images/vnit.jpg, id=489, 107.65219pt x 117.43875pt>
+<Images/vnit.jpg, id=485, 107.65219pt x 117.43875pt>
 File: Images/vnit.jpg Graphic file (type jpg)
 <use Images/vnit.jpg>
 Package pdftex.def Info: Images/vnit.jpg  used on input line 15.
@@ -950,289 +968,331 @@ Chapter 2.
 (sections/literature.tex [8
 
 
-] [9]
-Overfull \hbox (12.32356pt too wide) in paragraph at lines 35--36
-[]\OT1/lmr/m/n/12 (-20) Deep learn-ing{based sys-tems in-tro-duced im-prove-ments in ex-tract-ing high-dimensional
- []
-
-[10] [11] [12]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 78.
-
-Overfull \hbox (1.80196pt too wide) in paragraph at lines 80--80
-[]\OT1/lmr/bx/n/10.95 (-20) Paper/Study| 
+] [9] [10] [11] [12]
+Underfull \hbox (badness 1454) in paragraph at lines 90--90
+[]|\OT1/lmr/bx/n/10.95 (+20) Study / Ref-er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
-[]\OT1/lmr/m/n/10.95 (+20) A Hy-brid
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]|\OT1/lmr/bx/n/10.95 (+20) Technical In-di-ca-tors
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
-[]\OT1/lmr/m/n/10.95 (+20) Combining
+Overfull \hbox (28.6592pt too wide) in alignment at lines 85--91
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
-\OT1/lmr/m/n/10.95 (+20) News and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
-\OT1/lmr/m/n/10.95 (+20) Tech-ni-cal
- []
-
-
-Underfull \hbox (badness 4739) in paragraph at lines 87--87
-\OT1/lmr/m/n/10.95 (+20) from past five days'
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
-[]\OT1/lmr/m/n/10.95 (+20) SMA, EMA, WMA,
- []
-
-
-Underfull \hbox (badness 1215) in paragraph at lines 91--91
-\OT1/lmr/m/n/10.95 (+20) MACD, ADX, Aroon,
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 91--91
-\OT1/lmr/m/n/10.95 (+20) Stochas-tic, RSI, SMI,
- []
-
-
-Underfull \hbox (badness 5161) in paragraph at lines 91--91
-\OT1/lmr/m/n/10.95 (+20) WPR, CCI, BBands,
+Underfull \hbox (badness 1454) in paragraph at lines 94--94
+[]|\OT1/lmr/bx/n/10.95 (+20) Study / Ref-er-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 94--94
-[]\OT1/lmr/m/n/10.95 (+20) Exploring
+[]|\OT1/lmr/bx/n/10.95 (+20) Technical In-di-ca-tors
  []
 
 
-Underfull \hbox (badness 6559) in paragraph at lines 94--94
-\OT1/lmr/m/n/10.95 (+20) Deep Neu-ral
+Overfull \hbox (28.6592pt too wide) in alignment at lines 91--95
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
-[]\OT1/lmr/m/n/10.95 (+20) KD, RSI, BIAS,
+Underfull \hbox (badness 1112) in paragraph at lines 106--106
+\OT1/lmr/m/n/10.95 (+20) in-di-ca-tors in-clud-ing RSI,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
-[]\OT1/lmr/m/n/10.95 (+20) A Hy-brid
+Underfull \hbox (badness 1867) in paragraph at lines 106--106
+\OT1/lmr/m/n/10.95 (+20) MACD, EMA, Bollinger
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
-\OT1/lmr/m/n/10.95 (+20) CNN-LSTM
+Underfull \hbox (badness 6268) in paragraph at lines 109--109
+[]|\OT1/lmr/m/n/10.95 (+20) Khanpuri et al.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-[]\OT1/lmr/m/n/10.95 (+20) OHLCV + ad-justed
+Underfull \hbox (badness 6300) in paragraph at lines 118--118
+\OT1/lmr/m/n/10.95 (+20) used con-tex-tual em-bed-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-\OT1/lmr/m/n/10.95 (+20) prices + tech-ni-cal
+Underfull \hbox (badness 2903) in paragraph at lines 119--119
+[]|\OT1/lmr/m/n/10.95 (+20) Applied LLMs for mar-ket fore-cast-ing.
  []
 
 
-Underfull \hbox (badness 5316) in paragraph at lines 104--104
-[]\OT1/lmr/m/n/10.95 (+20) Stacked CNN-LSTM with Bidi-rec-tional
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
+[]|\OT1/lmr/m/n/10.95 (+20) Balasubramanian
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]\OT1/lmr/m/n/10.95 (+20) SVM for
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[]|\OT1/lmr/m/n/10.95 (+20) Mokhtari et al.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-\OT1/lmr/m/n/10.95 (+20) In-done-sian
+Overfull \hbox (28.6592pt too wide) in alignment at lines 95--133
+ [] [] [] 
  []
 
-
-Underfull \hbox (badness 1478) in paragraph at lines 107--107
-[]\OT1/lmr/m/n/10.95 (+20) MA, Bollinger Bands,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]\OT1/lmr/m/n/10.95 (+20) A Mul-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-\OT1/lmr/m/n/10.95 (+20) faceted Re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-\OT1/lmr/m/n/10.95 (+20) in-force-ment
- []
-
-
-Underfull \hbox (badness 2253) in paragraph at lines 110--110
-\OT1/lmr/m/n/10.95 (+20) Learn-ing Ap-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-[]\OT1/lmr/m/n/10.95 (+20) CNN-LSTM
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-\OT1/lmr/m/n/10.95 (+20) Model for
- []
-
-[13
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 148--148
-[]\OT1/lmr/m/n/10.95 (+20) LSTM-
- []
-
-
-Underfull \hbox (badness 4899) in paragraph at lines 148--148
-\OT1/lmr/m/n/10.95 (+20) Based Fore-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
-[]\OT1/lmr/m/n/10.95 (+20) RSI, MACD, KD,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
-[]\OT1/lmr/m/n/10.95 (+20) 4-layer
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 151--152
-[]\OT1/lmr/m/n/10.95 (+20) Achieved \OT1/lmr/bx/n/10.95 (+20) 83.6% \OT1/lmr/m/n/10.95 (+20) ac-cu-racy;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--153
-[]\OT1/lmr/m/n/10.95 (+20) SVM-Based
+[13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+[]|\OT1/lmr/bx/n/10.95 (+20) Study /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 158--158
-[]\OT1/lmr/m/n/10.95 (+20) Decision
+[]|\OT1/lmr/bx/n/10.95 (+20) Algorithm /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--160
-[]\OT1/lmr/m/n/10.95 (+20) Decision
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]|\OT1/lmr/bx/n/10.95 (+20) Study /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--160
-\OT1/lmr/m/n/10.95 (+20) Tree, Ran-
- []
-
-
-Underfull \hbox (badness 3942) in paragraph at lines 160--160
-\OT1/lmr/m/n/10.95 (+20) dom For-est,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-[]\OT1/lmr/m/n/10.95 (+20) Decision Tree achieved
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
-[]\OT1/lmr/m/n/10.95 (+20) CNN--LSTM
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]|\OT1/lmr/bx/n/10.95 (+20) Algorithm /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
-[]\OT1/lmr/m/n/10.95 (+20) CNN--LSTM
+[]|\OT1/lmr/m/n/10.95 (+20) Huang et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-[]\OT1/lmr/m/n/10.95 (+20) Outperformed stan-dalone
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
+\OT1/lmr/m/n/10.95 (+20) al., 2022
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
-[]\OT1/lmr/m/n/10.95 (+20) SCLE Hy-
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+[]|\OT1/lmr/m/n/10.95 (+20) Historical price-
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 166--166
+\OT1/lmr/m/n/10.95 (+20) derived in-di-ca-tors
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 166--166
+\OT1/lmr/m/n/10.95 (+20) (gen-eral TA-based
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
+[]|\OT1/lmr/m/n/10.95 (+20) Classical ML
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
+\OT1/lmr/m/n/10.95 (+20) mod-els (SVM,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
+\OT1/lmr/m/n/10.95 (+20) RF, Lo-gis-tic
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 168--168
+[]|\OT1/lmr/m/n/10.95 (+20) Machine learn-ing mod-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 170--170
-[]\OT1/lmr/m/n/10.95 (+20) Stacked
+[]|\OT1/lmr/m/n/10.95 (+20) Jin, 2024
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
-\OT1/lmr/m/n/10.95 (+20) CNN--LSTM
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|\OT1/lmr/m/n/10.95 (+20) Hybrid CNN-
  []
 
 
-Underfull \hbox (badness 2762) in paragraph at lines 170--170
-\OT1/lmr/m/n/10.95 (+20) + At-ten-tion
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+\OT1/lmr/m/n/10.95 (+20) based deep
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
-[]\OT1/lmr/m/n/10.95 (+20) A2C and
- []
-
-
-Underfull \hbox (badness 3724) in paragraph at lines 175--175
-\OT1/lmr/m/n/10.95 (+20) DDPG (Re-
+Underfull \hbox (badness 1867) in paragraph at lines 173--173
+[]|\OT1/lmr/m/n/10.95 (+20) CNN-based fea-ture ex-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 175--175
-\OT1/lmr/m/n/10.95 (+20) in-force-ment
+[]|\OT1/lmr/m/n/10.95 (+20) Smarte &
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 176--177
-\OT1/lmr/bx/n/10.95 (+20) ra-tio (0.13) \OT1/lmr/m/n/10.95 (+20) vs neg-a-tive
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
+\OT1/lmr/m/n/10.95 (+20) Ho, 2021
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+\OT1/lmr/m/n/10.95 (+20) Bollinger Bands,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+\OT1/lmr/m/n/10.95 (+20) ADX (sur-vey
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[]|\OT1/lmr/m/n/10.95 (+20) Comparative
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
-\OT1/lmr/m/n/10.95 (+20) Model for
+[]|\OT1/lmr/m/n/10.95 (+20) Concluded that deep
  []
 
 
-Underfull \hbox (badness 4479) in paragraph at lines 179--179
-[]\OT1/lmr/m/n/10.95 (+20) Price-derived fea-ture
+Underfull \hbox (badness 6110) in paragraph at lines 178--178
+\OT1/lmr/m/n/10.95 (+20) learn-ing (LSTM/GRU)
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 181--182
-\OT1/lmr/m/n/10.95 (+20) and ef-fec-tive clas-si-fi-ca-tion
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\OT1/lmr/m/n/10.95 (+20) SVM/Decision Trees
  []
 
-[14
 
-]) [15
+Underfull \hbox (badness 1028) in paragraph at lines 178--178
+\OT1/lmr/m/n/10.95 (+20) when se-quen-tial de-pen-
+ []
 
-] [16]
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
+[]|\OT1/lmr/m/n/10.95 (+20) Khanpuri
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+[]|\OT1/lmr/m/n/10.95 (+14) Sentiment-based
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 183--183
+\OT1/lmr/m/n/10.95 (+20) ti-ment mod-els out-per-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+[]|\OT1/lmr/m/n/10.95 (+20) Mokhtari
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+\OT1/lmr/m/n/10.95 (+20) technical-analysis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]|\OT1/lmr/m/n/10.95 (+20) Reinforcement
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 187--187
+\OT1/lmr/m/n/10.95 (+20) Learn-ing (A2C,
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 191--191
+\OT1/lmr/m/n/10.95 (+20) based em-bed-dings
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 193--193
+\OT1/lmr/m/n/10.95 (+20) to news-driven volatil-
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 193--193
+\OT1/lmr/m/n/10.95 (+20) ity and show stronger
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]|\OT1/lmr/m/n/10.95 (+20) Huang et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+\OT1/lmr/m/n/10.95 (+20) al., 2025
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
+\OT1/lmr/m/n/10.95 (+20) TA in-di-ca-tors +
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 197.
+
+Underfull \hbox (badness 1931) in paragraph at lines 198--198
+\OT1/lmr/m/n/10.95 (+20) LLM-based frame-works
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 200--200
+[]|\OT1/lmr/m/n/10.95 (+20) Zhu, 2025
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]|\OT1/lmr/m/n/10.95 (+20) Mixed indicator-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/lmr/m/n/10.95 (+20) based fore-cast
+ []
+
+
+Underfull \hbox (badness 8019) in paragraph at lines 202--202
+[]|\OT1/lmr/m/n/10.95 (+20) Review of AI
+ []
+
+
+Underfull \hbox (badness 4479) in paragraph at lines 203--203
+\OT1/lmr/m/n/10.95 (+20) hy-brid pipelines; con-
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 203--203
+\OT1/lmr/m/n/10.95 (+20) cludes com-bined sen-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--206
+[]|\OT1/lmr/m/n/10.95 (+20) Price-driven TA
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 208--208
+\OT1/lmr/m/n/10.95 (+20) and port-fo-lio op-ti-miza-
+ []
+
+[16
+
+] [17{H:/MiKTex/fonts/enc/dvips/lm/lm-mathsy.enc}]) [18
+
+] [19]
 Chapter 3.
 (sections/methodology.tex
-<Images/methodology/MLPipeline.png, id=890, 587.796pt x 207.77625pt>
+<Images/methodology/MLPipeline.png, id=961, 587.796pt x 207.77625pt>
 File: Images/methodology/MLPipeline.png Graphic file (type png)
 <use Images/methodology/MLPipeline.png>
 Package pdftex.def Info: Images/methodology/MLPipeline.png  used on input line 12.
 (pdftex.def)             Requested size: 431.28667pt x 152.4553pt.
- [17
+ [20
 
 
  <./Images/methodology/MLPipeline.png>]
@@ -1255,91 +1315,120 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []\OT1/lmr/m/n/10.95 (+20) Transformer-based ar-chi-tec-
  []
 
-[18
+[21
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 77.
  (H:\MiKTex\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [19{H:/MiKTex/fonts/enc/dvips/lm/lm-mathit.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-mathex.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-mathsy.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}] [20] [21] [22] [23] [24] [25] [26]
-<Images/methodology/dataFlow.png, id=960, 613.69275pt x 175.25475pt>
+) [22{H:/MiKTex/fonts/enc/dvips/lm/lm-mathit.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-mathex.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}] [23] [24] [25] [26] [27] [28] [29]
+<Images/methodology/dataFlow.png, id=1029, 501.67426pt x 107.2005pt>
 File: Images/methodology/dataFlow.png Graphic file (type png)
 <use Images/methodology/dataFlow.png>
 Package pdftex.def Info: Images/methodology/dataFlow.png  used on input line 362.
-(pdftex.def)             Requested size: 431.28667pt x 123.16417pt.
-) [27 <./Images/methodology/dataFlow.png>]
+(pdftex.def)             Requested size: 431.28667pt x 92.16118pt.
+) [30 <./Images/methodology/dataFlow.png>]
 Chapter 4.
-(sections/experimentalSetup.tex
+(sections/experimentalSetup.tex [31
+
+
+]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28
-
-
-] [29] [30] [31]) [32]
+[32] [33]) [34]
 Chapter 5.
 (sections/modelDetails.tex
-<Images/methodology/gru.png, id=987, 616.10175pt x 273.4215pt>
+<Images/methodology/gru.png, id=1051, 578.16pt x 289.08pt>
 File: Images/methodology/gru.png Graphic file (type png)
 <use Images/methodology/gru.png>
-Package pdftex.def Info: Images/methodology/gru.png  used on input line 11.
-(pdftex.def)             Requested size: 431.28667pt x 191.40207pt.
- [33
+Package pdftex.def Info: Images/methodology/gru.png  used on input line 10.
+(pdftex.def)             Requested size: 431.28667pt x 215.64053pt.
+ [35
 
 
- <./Images/methodology/gru.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[34]
+ <./Images/methodology/gru.png>] [36]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35] [36] [37]
-<Images/methodology/lstmBlk.png, id=1012, 614.295pt x 247.52475pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[37]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38] [39] [40
+
+]
+<Images/methodology/lstmBlk.png, id=1082, 963.6pt x 659.46375pt>
 File: Images/methodology/lstmBlk.png Graphic file (type png)
 <use Images/methodology/lstmBlk.png>
-Package pdftex.def Info: Images/methodology/lstmBlk.png  used on input line 185.
-(pdftex.def)             Requested size: 431.28667pt x 173.78357pt.
+Package pdftex.def Info: Images/methodology/lstmBlk.png  used on input line 233.
+(pdftex.def)             Requested size: 431.28667pt x 295.15599pt.
+ [41
 
-Underfull \hbox (badness 1237) in paragraph at lines 208--209
+ <./Images/methodology/lstmBlk.png>] [42]
+Underfull \hbox (badness 1237) in paragraph at lines 311--312
 []\OT1/lmr/m/n/12 (+20) Stable train-ing dy-nam-ics for multi-stock
  []
 
-[38
-
- <./Images/methodology/lstmBlk.png>] [39]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[40] [41]
-<Images/methodology/transformer.png, id=1032, 620.91975pt x 223.43475pt>
+[43] [44] [45] [46]
+<Images/methodology/transformer.png, id=1111, 596.2275pt x 125.268pt>
 File: Images/methodology/transformer.png Graphic file (type png)
 <use Images/methodology/transformer.png>
-Package pdftex.def Info: Images/methodology/transformer.png  used on input line 348.
-(pdftex.def)             Requested size: 431.28667pt x 155.19635pt.
- [42
+Package pdftex.def Info: Images/methodology/transformer.png  used on input line 451.
+(pdftex.def)             Requested size: 431.28667pt x 90.61339pt.
+ [47
 
  <./Images/methodology/transformer.png>]
-Overfull \hbox (2.29198pt too wide) in paragraph at lines 385--385
+Overfull \hbox (0.90921pt too wide) in alignment at lines 502--506
+ [] [] 
+ []
+
+
+Overfull \hbox (0.90921pt too wide) in alignment at lines 506--511
+ [] [] 
+ []
+
+
+Overfull \hbox (0.90921pt too wide) in alignment at lines 511--516
+ [] [] 
+ []
+
+
+Overfull \hbox (0.90921pt too wide) in alignment at lines 516--519
+ [] [] 
+ []
+
+
+Overfull \hbox (0.90921pt too wide) in alignment at lines 519--542
+ [] [] 
+ []
+
+[48] [49]
+Overfull \hbox (2.29198pt too wide) in paragraph at lines 566--566
 [][]| 
  []
 
-[43]
-Overfull \hbox (1.4219pt too wide) in paragraph at lines 399--399
+[50]
+Overfull \hbox (1.4219pt too wide) in paragraph at lines 580--580
 []\OT1/lmr/bx/n/14.4 (-20) Trained Trans-former Model Con-fig-u-ra-tions Trans-former
  []
 
 
-Overfull \hbox (10.77367pt too wide) in paragraph at lines 407--430
+Overfull \hbox (10.77367pt too wide) in paragraph at lines 588--611
  [][] 
  []
 
 
-Overfull \hbox (10.77367pt too wide) in paragraph at lines 442--465
+Overfull \hbox (10.77367pt too wide) in paragraph at lines 623--646
  [][] 
  []
 
@@ -1347,61 +1436,61 @@ Overfull \hbox (10.77367pt too wide) in paragraph at lines 442--465
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--479
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 []\OT1/lmr/m/n/12 (+20) Strong mem-ory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--479
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 []\OT1/lmr/m/n/12 (+20) Slightly slower,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--479
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 \OT1/lmr/m/n/12 (+20) more com-plex
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 481--481
+Underfull \hbox (badness 1005) in paragraph at lines 662--662
 \OT1/lmr/m/n/12 (+20) re-la-tions, scal-able,
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[44] [45]
-<Images/methodology/cnnLstm.png, id=1051, 616.704pt x 237.2865pt>
+[51] [52]
+<Images/methodology/cnnLstm.png, id=1142, 616.704pt x 237.2865pt>
 File: Images/methodology/cnnLstm.png Graphic file (type png)
 <use Images/methodology/cnnLstm.png>
-Package pdftex.def Info: Images/methodology/cnnLstm.png  used on input line 508.
+Package pdftex.def Info: Images/methodology/cnnLstm.png  used on input line 689.
 (pdftex.def)             Requested size: 431.28667pt x 165.94733pt.
- [46
+ [53
 
  <./Images/methodology/cnnLstm.png>]
-Overfull \hbox (7.58363pt too wide) in paragraph at lines 546--546
+Overfull \hbox (7.58363pt too wide) in paragraph at lines 727--727
 [][]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 727--728
 []$\OMS/lmsy/m/n/12 ^^O$ \OT1/lmr/m/n/12 (+20) Un-der-per-formed when trained on only
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 727--728
 \OT1/lmr/m/n/12 (+20) NIFTY50/NIFTY200 datasets due to lim-
  []
 
-[47]
-<Images/methodology/cnn_lstm_model_diagram.jpg, id=1061, 605.26125pt x 101.178pt>
+[54]
+<Images/methodology/cnn_lstm_model_diagram.jpg, id=1153, 605.26125pt x 101.178pt>
 File: Images/methodology/cnn_lstm_model_diagram.jpg Graphic file (type jpg)
 <use Images/methodology/cnn_lstm_model_diagram.jpg>
-Package pdftex.def Info: Images/methodology/cnn_lstm_model_diagram.jpg  used on input line 566.
+Package pdftex.def Info: Images/methodology/cnn_lstm_model_diagram.jpg  used on input line 747.
 (pdftex.def)             Requested size: 431.28667pt x 72.09624pt.
- [48 <./Images/methodology/cnn_lstm_model_diagram.jpg>]) [49]
+ [55 <./Images/methodology/cnn_lstm_model_diagram.jpg>]) [56]
 Chapter 6.
 (sections/results.tex
-<Images/results/GRUdirectTvVLoss.png, id=1073, 505.89pt x 339.669pt>
+<Images/results/GRUdirectTvVLoss.png, id=1164, 505.89pt x 339.669pt>
 File: Images/results/GRUdirectTvVLoss.png Graphic file (type png)
 <use Images/results/GRUdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/GRUdirectTvVLoss.png  used on input line 15.
@@ -1410,7 +1499,7 @@ Package pdftex.def Info: Images/results/GRUdirectTvVLoss.png  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/GRUIndicatorsTvVLoss.png, id=1074, 511.6716pt x 339.669pt>
+<Images/results/GRUIndicatorsTvVLoss.png, id=1165, 511.6716pt x 339.669pt>
 File: Images/results/GRUIndicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/GRUIndicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/GRUIndicatorsTvVLoss.png  used on input line 22.
@@ -1418,7 +1507,7 @@ Package pdftex.def Info: Images/results/GRUIndicatorsTvVLoss.png  used on input 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMdirectTvVLoss.png, id=1075, 623.6901pt x 395.3169pt>
+<Images/results/LSTMdirectTvVLoss.png, id=1166, 623.6901pt x 395.3169pt>
 File: Images/results/LSTMdirectTvVLoss.png Graphic file (type png)
 <use Images/results/LSTMdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/LSTMdirectTvVLoss.png  used on input line 29.
@@ -1426,7 +1515,7 @@ Package pdftex.def Info: Images/results/LSTMdirectTvVLoss.png  used on input lin
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMindicatorsTvVLoss.png, id=1076, 511.6716pt x 339.669pt>
+<Images/results/LSTMindicatorsTvVLoss.png, id=1167, 511.6716pt x 339.669pt>
 File: Images/results/LSTMindicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/LSTMindicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/LSTMindicatorsTvVLoss.png  used on input line 36.
@@ -1434,7 +1523,7 @@ Package pdftex.def Info: Images/results/LSTMindicatorsTvVLoss.png  used on input
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformerdirectTvVLoss.png, id=1077, 617.9085pt x 395.3169pt>
+<Images/results/TransformerdirectTvVLoss.png, id=1168, 617.9085pt x 395.3169pt>
 File: Images/results/TransformerdirectTvVLoss.png Graphic file (type png)
 <use Images/results/TransformerdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/TransformerdirectTvVLoss.png  used on input line 43.
@@ -1442,7 +1531,7 @@ Package pdftex.def Info: Images/results/TransformerdirectTvVLoss.png  used on in
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformersIndicatorsTvVLoss.png, id=1078, 505.89pt x 339.669pt>
+<Images/results/TransformersIndicatorsTvVLoss.png, id=1169, 505.89pt x 339.669pt>
 File: Images/results/TransformersIndicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/TransformersIndicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/TransformersIndicatorsTvVLoss.png  used on input line 50.
@@ -1450,28 +1539,28 @@ Package pdftex.def Info: Images/results/TransformersIndicatorsTvVLoss.png  used 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50
+[57
 
 
 ]
 
-LaTeX Warning: Text page 51 contains only floats.
+LaTeX Warning: Text page 58 contains only floats.
 
-[51 <./Images/results/GRUdirectTvVLoss.png> <./Images/results/GRUIndicatorsTvVLoss.png>]
+[58 <./Images/results/GRUdirectTvVLoss.png> <./Images/results/GRUIndicatorsTvVLoss.png>]
 
-LaTeX Warning: Text page 52 contains only floats.
+LaTeX Warning: Text page 59 contains only floats.
 
-[52 <./Images/results/LSTMdirectTvVLoss.png> <./Images/results/LSTMindicatorsTvVLoss.png>]
+[59 <./Images/results/LSTMdirectTvVLoss.png> <./Images/results/LSTMindicatorsTvVLoss.png>]
 
-LaTeX Warning: Text page 53 contains only floats.
+LaTeX Warning: Text page 60 contains only floats.
 
-[53 <./Images/results/TransformerdirectTvVLoss.png> <./Images/results/TransformersIndicatorsTvVLoss.png>]
-<Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1101, 892.83563pt x 471.26062pt>
+[60 <./Images/results/TransformerdirectTvVLoss.png> <./Images/results/TransformersIndicatorsTvVLoss.png>]
+<Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1193, 892.83563pt x 471.26062pt>
 File: Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png Graphic file (type png)
 <use Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>
 Package pdftex.def Info: Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png  used on input line 74.
 (pdftex.def)             Requested size: 431.28667pt x 227.64789pt.
-<Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1102, 1082.6046pt x 570.933pt>
+<Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1194, 1082.6046pt x 570.933pt>
 File: Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png Graphic file (type png)
 <use Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png>
 Package pdftex.def Info: Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png  used on input line 81.
@@ -1480,7 +1569,7 @@ Package pdftex.def Info: Images/results/DifferentRegressionModelsTrainedOnSingle
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/NoIndicatorsRegressionmodelsCompared.png, id=1103, 630.1944pt x 325.9377pt>
+<Images/results/NoIndicatorsRegressionmodelsCompared.png, id=1195, 630.1944pt x 325.9377pt>
 File: Images/results/NoIndicatorsRegressionmodelsCompared.png Graphic file (type png)
 <use Images/results/NoIndicatorsRegressionmodelsCompared.png>
 Package pdftex.def Info: Images/results/NoIndicatorsRegressionmodelsCompared.png  used on input line 88.
@@ -1488,7 +1577,7 @@ Package pdftex.def Info: Images/results/NoIndicatorsRegressionmodelsCompared.png
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/RegressionmodelsCompared.png, id=1104, 623.6901pt x 325.9377pt>
+<Images/results/RegressionmodelsCompared.png, id=1196, 623.6901pt x 325.9377pt>
 File: Images/results/RegressionmodelsCompared.png Graphic file (type png)
 <use Images/results/RegressionmodelsCompared.png>
 Package pdftex.def Info: Images/results/RegressionmodelsCompared.png  used on input line 95.
@@ -1496,7 +1585,7 @@ Package pdftex.def Info: Images/results/RegressionmodelsCompared.png  used on in
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/SingleCompanyDatapredictionError.png, id=1105, 850.67813pt x 447.92343pt>
+<Images/results/SingleCompanyDatapredictionError.png, id=1197, 850.67813pt x 447.92343pt>
 File: Images/results/SingleCompanyDatapredictionError.png Graphic file (type png)
 <use Images/results/SingleCompanyDatapredictionError.png>
 Package pdftex.def Info: Images/results/SingleCompanyDatapredictionError.png  used on input line 102.
@@ -1504,7 +1593,7 @@ Package pdftex.def Info: Images/results/SingleCompanyDatapredictionError.png  us
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[54 <./Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>] [55 <./Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png> <./Images/results/NoIndicatorsRegressionmodelsCompared.png>] [56 <./Images/results/RegressionmodelsCompared.png> <./Images/results/SingleCompanyDatapredictionError.png>]
+[61 <./Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>] [62 <./Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png> <./Images/results/NoIndicatorsRegressionmodelsCompared.png>] [63 <./Images/results/RegressionmodelsCompared.png> <./Images/results/SingleCompanyDatapredictionError.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 117--117
 []\OT1/lmr/bx/n/12 (+20) Single-Company
  []
@@ -1524,20 +1613,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
 \OT1/lmr/m/n/12 (+20) not bet-ter than
  []
 
-[57
+[64
 
 ]
-<Images/results/GRUdirect.png, id=1128, 628.0263pt x 339.669pt>
+<Images/results/GRUdirect.png, id=1219, 628.0263pt x 339.669pt>
 File: Images/results/GRUdirect.png Graphic file (type png)
 <use Images/results/GRUdirect.png>
 Package pdftex.def Info: Images/results/GRUdirect.png  used on input line 149.
 (pdftex.def)             Requested size: 431.28667pt x 233.2679pt.
-<Images/results/GRUIndicators.png, id=1129, 620.7993pt x 339.669pt>
+<Images/results/GRUIndicators.png, id=1220, 620.7993pt x 339.669pt>
 File: Images/results/GRUIndicators.png Graphic file (type png)
 <use Images/results/GRUIndicators.png>
 Package pdftex.def Info: Images/results/GRUIndicators.png  used on input line 156.
 (pdftex.def)             Requested size: 431.28667pt x 235.98375pt.
-<Images/results/LSTMdirect.png, id=1130, 732.8178pt x 395.3169pt>
+<Images/results/LSTMdirect.png, id=1221, 732.8178pt x 395.3169pt>
 File: Images/results/LSTMdirect.png Graphic file (type png)
 <use Images/results/LSTMdirect.png>
 Package pdftex.def Info: Images/results/LSTMdirect.png  used on input line 164.
@@ -1546,7 +1635,7 @@ Package pdftex.def Info: Images/results/LSTMdirect.png  used on input line 164.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMIndicators.png, id=1131, 620.7993pt x 339.669pt>
+<Images/results/LSTMIndicators.png, id=1222, 620.7993pt x 339.669pt>
 File: Images/results/LSTMIndicators.png Graphic file (type png)
 <use Images/results/LSTMIndicators.png>
 Package pdftex.def Info: Images/results/LSTMIndicators.png  used on input line 171.
@@ -1554,10 +1643,10 @@ Package pdftex.def Info: Images/results/LSTMIndicators.png  used on input line 1
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[58
+[65
 
  <./Images/results/GRUdirect.png> <./Images/results/GRUIndicators.png>]
-<Images/results/Transformerdirect.png, id=1138, 732.8178pt x 395.3169pt>
+<Images/results/Transformerdirect.png, id=1229, 732.8178pt x 395.3169pt>
 File: Images/results/Transformerdirect.png Graphic file (type png)
 <use Images/results/Transformerdirect.png>
 Package pdftex.def Info: Images/results/Transformerdirect.png  used on input line 179.
@@ -1566,7 +1655,7 @@ Package pdftex.def Info: Images/results/Transformerdirect.png  used on input lin
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformersIndicators.png, id=1139, 620.7993pt x 339.669pt>
+<Images/results/TransformersIndicators.png, id=1230, 620.7993pt x 339.669pt>
 File: Images/results/TransformersIndicators.png Graphic file (type png)
 <use Images/results/TransformersIndicators.png>
 Package pdftex.def Info: Images/results/TransformersIndicators.png  used on input line 186.
@@ -1574,31 +1663,31 @@ Package pdftex.def Info: Images/results/TransformersIndicators.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[59 <./Images/results/LSTMdirect.png> <./Images/results/LSTMIndicators.png>] [60 <./Images/results/Transformerdirect.png> <./Images/results/TransformersIndicators.png>]
-<Images/results/CNNLSTMWithoutIndicators.png, id=1153, 859.2903pt x 426.393pt>
+[66 <./Images/results/LSTMdirect.png> <./Images/results/LSTMIndicators.png>] [67 <./Images/results/Transformerdirect.png> <./Images/results/TransformersIndicators.png>]
+<Images/results/CNNLSTMWithoutIndicators.png, id=1244, 859.2903pt x 426.393pt>
 File: Images/results/CNNLSTMWithoutIndicators.png Graphic file (type png)
 <use Images/results/CNNLSTMWithoutIndicators.png>
 Package pdftex.def Info: Images/results/CNNLSTMWithoutIndicators.png  used on input line 194.
 (pdftex.def)             Requested size: 431.28667pt x 214.00925pt.
-<Images/results/CNNLSTMIndicators.png, id=1154, 609.9588pt x 325.9377pt>
+<Images/results/CNNLSTMIndicators.png, id=1245, 609.9588pt x 325.9377pt>
 File: Images/results/CNNLSTMIndicators.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicators.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicators.png  used on input line 201.
 (pdftex.def)             Requested size: 431.28667pt x 230.46745pt.
- [61
+ [68
 
  <./Images/results/CNNLSTMWithoutIndicators.png> <./Images/results/CNNLSTMIndicators.png>]
-<Images/results/CNNLSTMIndicatorsMA20.png, id=1161, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsMA20.png, id=1252, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsMA20.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsMA20.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsMA20.png  used on input line 237.
 (pdftex.def)             Requested size: 431.28667pt x 162.92987pt.
-<Images/results/CNNLSTMIndicatorsSTD5.png, id=1162, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsSTD5.png, id=1253, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsSTD5.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsSTD5.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD5.png  used on input line 244.
 (pdftex.def)             Requested size: 431.28667pt x 162.92987pt.
-<Images/results/CNNLSTMIndicatorsSTD20.png, id=1163, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsSTD20.png, id=1254, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsSTD20.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsSTD20.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD20.png  used on input line 251.
@@ -1607,7 +1696,7 @@ Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD20.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/CNNLSTMIndicatorsValidationLossComparison.png, id=1164, 735.7086pt x 395.3169pt>
+<Images/results/CNNLSTMIndicatorsValidationLossComparison.png, id=1255, 735.7086pt x 395.3169pt>
 File: Images/results/CNNLSTMIndicatorsValidationLossComparison.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsValidationLossComparison.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsValidationLossComparison.png  used on input line 258.
@@ -1615,9 +1704,9 @@ Package pdftex.def Info: Images/results/CNNLSTMIndicatorsValidationLossCompariso
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[62
+[69
 
- <./Images/results/CNNLSTMIndicatorsMA20.png> <./Images/results/CNNLSTMIndicatorsSTD5.png>] [63 <./Images/results/CNNLSTMIndicatorsSTD20.png> <./Images/results/CNNLSTMIndicatorsValidationLossComparison.png>]
+ <./Images/results/CNNLSTMIndicatorsMA20.png> <./Images/results/CNNLSTMIndicatorsSTD5.png>] [70 <./Images/results/CNNLSTMIndicatorsSTD20.png> <./Images/results/CNNLSTMIndicatorsValidationLossComparison.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\OT1/lmr/m/n/12 (+20) EMA10: weighted
  []
@@ -1682,47 +1771,43 @@ Overfull \hbox (13.9824pt too wide) in paragraph at lines 288--299
  [][] 
  []
 
-[64
+[71
 
-] [65
+] [72
 
-]) [66
+]) [73
 
 ]
 Chapter 7.
-(sections/summary.tex [67
+(sections/summary.tex [74
 
 
-] [68]) [69] [70] [71
+] [75]) [76] [77] [78
 
 
-] (thesis.aux)
+] [79] (thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 555B609CA3E9829B69F686D4BE0B08EF;24015.
+(rerunfilecheck)             Checksum: 65D28548446FDDF3691635ABFC50C585;24395.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24540 strings out of 474485
- 430850 string characters out of 5760145
- 1944542 words of memory out of 5000000
- 45908 multiletter control sequences out of 15000+600000
- 653167 words of font info for 217 fonts, out of 8000000 for 9000
+ 24817 strings out of 474485
+ 436797 string characters out of 5760145
+ 1951542 words of memory out of 5000000
+ 46117 multiletter control sequences out of 15000+600000
+ 654781 words of font info for 234 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,12n,131p,1063b,1357s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<H:/MiKTex/fonts/type1/public/lm/lmbx10.pfb><H:/MiKTex/fonts/type1/public/lm/lmbx12.pfb><H:/MiKTex/fonts/type1/public/lm/lmbxi10.pfb><H:/MiKTex/fonts/type1/public/lm/lmex10.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi12.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi8.pfb><H:/MiKTex/fonts/type1/public/lm/lmr10.pfb><H:/MiKTex/fonts/type1/public/lm/lmr12.pfb><H:/MiKTex/fonts/type1/public/lm/lmr8.pfb><H:/MiKTex/fonts/type1/public/lm/lmri12.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy10.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy8.pfb><H:/MiKTex/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (84 pages, 4234743 bytes).
+ 83i,12n,131p,1190b,1670s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<H:/MiKTex/fonts/type1/public/lm/lmbx10.pfb><H:/MiKTex/fonts/type1/public/lm/lmbx12.pfb><H:/MiKTex/fonts/type1/public/lm/lmbxi10.pfb><H:/MiKTex/fonts/type1/public/lm/lmex10.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi12.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi6.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi8.pfb><H:/MiKTex/fonts/type1/public/lm/lmr10.pfb><H:/MiKTex/fonts/type1/public/lm/lmr12.pfb><H:/MiKTex/fonts/type1/public/lm/lmr6.pfb><H:/MiKTex/fonts/type1/public/lm/lmr8.pfb><H:/MiKTex/fonts/type1/public/lm/lmri12.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy10.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy6.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy8.pfb><H:/MiKTex/fonts/type1/public/lm/lmtt12.pfb><H:/MiKTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (92 pages, 2934598 bytes).
 PDF statistics:
- 1345 PDF objects out of 1440 (max. 8388607)
- 322 named destinations out of 1000 (max. 500000)
- 50761 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1463 PDF objects out of 1728 (max. 8388607)
+ 350 named destinations out of 1000 (max. 500000)
+ 50753 words of extra memory for PDF output out of 51595 (max. 10000000)
 
