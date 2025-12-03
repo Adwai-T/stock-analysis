@@ -3,126 +3,126 @@
 \contentsline {chapter}{List of Tables}{vi}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction and Background}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Evolution of Technical Analysis}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Limitations of Classical Forecasting Models}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.2}Evolution of Technical Analysis}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Limitations of Classical Forecasting Models}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Machine Learning as a Solution}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Importance of Technical Indicators}{3}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Need for Hybrid Intelligent Systems}{4}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Identified Research Gap}{4}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Problem Statement}{5}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Research Objectives}{5}{section.1.9}%
+\contentsline {section}{\numberline {1.5}Importance of Technical Indicators}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Need for Hybrid Intelligent Systems}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Identified Research Gap}{5}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Problem Statement}{6}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Research Objectives}{6}{section.1.9}%
 \contentsline {section}{\numberline {1.10}Research Questions}{6}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Scope, Limitations, and Assumptions}{6}{section.1.11}%
-\contentsline {section}{\numberline {1.12}Novelty and Contributions}{7}{section.1.12}%
-\contentsline {chapter}{\numberline {2}Literature Review}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Foundations of Stock Market Forecasting and Technical Analysis}{8}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Introduction}{8}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Classical Forecasting Techniques}{9}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Technical Indicators and Traditional Trading Strategies}{9}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Traditional Machine Learning Models in Stock Forecasting}{10}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Summary}{10}{subsection.2.1.5}%
-\contentsline {section}{\numberline {2.2}Emerging Trends in AI-Driven Stock Forecasting}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Deep Learning Approaches}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Hybrid Models Combining Technical Indicators and ML}{13}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Reinforcement Learning Approaches}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Comparison Between different Model and research}{13}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Key Findings, Strengths, and Limitations}{16}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Evaluation Challenges, Research Gaps and Inconsistencies}{18}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Alignment with the Present Research}{18}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Methodology}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}System Workflow}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Data Acquisition}{21}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Data Preprocessing}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Handling Missing Values}{21}{subsection.3.4.1}%
-\contentsline {subsubsection}{Handling Non-Trading Days}{22}{section*.9}%
-\contentsline {subsubsection}{Missing Volume Replacement}{22}{section*.10}%
-\contentsline {subsubsection}{Indicator-Related Missing Rows}{22}{section*.11}%
-\contentsline {subsubsection}{Rationale for the Missing Data Strategy}{23}{section*.12}%
-\contentsline {subsection}{\numberline {3.4.2}Normalization}{23}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Feature Engineering}{23}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Raw Feature Selection}{24}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Temporal Windowing}{24}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Lagged Variables}{24}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Scaling and Normalization}{25}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Train-Test Structuring}{25}{subsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.5.6}Summary of Feature Engineering Process}{25}{subsection.3.5.6}%
-\contentsline {section}{\numberline {3.6}Technical Indicators}{26}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Exponential Moving Average (EMA)}{26}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Relative Strength Index (RSI)}{27}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Average True Range (ATR)}{28}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}On-Balance Volume (OBV)}{28}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}Summary of Indicator Contribution}{29}{subsection.3.6.5}%
-\contentsline {section}{\numberline {3.7}Windowing Strategy}{29}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Model Training and Validation}{29}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Prediction and Deployment Pipeline}{30}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Experimental Setup}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview}{31}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Hardware Configuration}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Software Stack}{32}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Dataset Preparation}{32}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Train-Test Split Strategy}{32}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Hyperparameter Configuration}{33}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Model-Specific Training Setup}{33}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}LSTM And GRU Models}{33}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}CNN-LSTM Model}{33}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Transformer Model}{34}{subsection.4.7.3}%
-\contentsline {section}{\numberline {4.8}Evaluation Metrics}{34}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Deployment Testing}{34}{section.4.9}%
-\contentsline {chapter}{\numberline {5}Model Details}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gated Recurrent Unit (GRU) Models}{35}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Introduction to GRU Architecture}{35}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Why GRUs Are Used in Time-Series Forecasting}{36}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Mathematical Model for GRU}{36}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Advantages and Disadvantages of GRUs Category Details}{37}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Role of GRU in This Project}{37}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}Trained GRU Model Configurations}{37}{subsection.5.1.6}%
-\contentsline {subsubsection}{Model 1 — GRU with Only Stock Data (No Indicators)}{37}{section*.21}%
-\contentsline {subsubsection}{Model 2 — GRU with Technical Indicators}{38}{section*.23}%
-\contentsline {subsection}{\numberline {5.1.7}Summary of GRU Model Performance}{40}{subsection.5.1.7}%
-\contentsline {section}{\numberline {5.2}Long Short-Term Memory (LSTM) Model}{41}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Introduction to LSTM Architecture}{41}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Why LSTM Is Used for Time-Series Forecasting}{42}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Mathematical Model for LSTM}{42}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Advantages and Disadvantages of LSTM}{43}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Role of LSTM in This Project}{43}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Trained LSTM Model Configurations}{44}{subsection.5.2.6}%
-\contentsline {subsubsection}{LSTM Model Without Indicators}{44}{section*.28}%
-\contentsline {subsubsection}{LSTM Model With Indicators}{45}{section*.30}%
-\contentsline {subsection}{\numberline {5.2.7}Performance Summary}{46}{subsection.5.2.7}%
-\contentsline {section}{\numberline {5.3}Transformer Model}{47}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Introduction to the Transformer Architecture}{47}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Motivation for Using Transformers in Time-Series Forecasting}{47}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Mathematical Model for Transformer Encoder}{48}{subsection.5.3.3}%
-\contentsline {paragraph}{Self-Attention Mechanism}{48}{section*.34}%
-\contentsline {paragraph}{Transformer Encoder Layer}{48}{section*.35}%
-\contentsline {subsection}{\numberline {5.3.4}Advantages and Disadvantages of Transformers}{50}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Role of Transformers in This Project}{50}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Trained Transformer Model Configurations Transformer Model Without Indicators}{51}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Performance Summary}{51}{subsection.5.3.7}%
-\contentsline {section}{\numberline {5.4}Conv1D + LSTM Hybrid Model}{53}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Introduction to the Hybrid Architecture}{53}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Motivation for Using a Hybrid Model in Time-Series Forecasting}{53}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Advantages and Disadvantages of the Hybrid Model}{54}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Role of the Hybrid Model in This Project}{54}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Trained Configurations of the Hybrid Model}{55}{subsection.5.4.5}%
-\contentsline {subsubsection}{Hybrid Model Without Indicators}{55}{section*.43}%
-\contentsline {subsubsection}{Hybrid Model With Indicators}{55}{section*.45}%
-\contentsline {subsection}{\numberline {5.4.6}Performance Summary}{56}{subsection.5.4.6}%
-\contentsline {chapter}{\numberline {6}Results and Analysis}{57}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Overview}{57}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Training and Validation Behavior}{57}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Single Company Data Used}{61}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Quantitative Evaluation Results}{64}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}Effect of Feature Engineering vs. Raw OHLCV Inputs}{64}{section.6.4}%
-\contentsline {section}{\numberline {6.5}CNN-LSTM Feature Set Performance}{69}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Indicators tested and their purpose}{71}{subsection.6.5.1}%
-\contentsline {section}{\numberline {6.6}Generalization vs. Specialization Behavior}{72}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Deployment and Practical Evaluation}{73}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{74}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Work and Key Contributions}{74}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Problem Statement and Solution}{74}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Major Findings and Significance}{75}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Limitations of the Study}{76}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Future Work}{76}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Conclusion}{77}{section.7.6}%
+\contentsline {section}{\numberline {1.11}Scope, Limitations, and Assumptions}{7}{section.1.11}%
+\contentsline {section}{\numberline {1.12}Novelty and Contributions}{8}{section.1.12}%
+\contentsline {chapter}{\numberline {2}Literature Review}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Foundations of Stock Market Forecasting and Technical Analysis}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Introduction}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Classical Forecasting Techniques}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Technical Indicators and Traditional Trading Strategies}{10}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Traditional Machine Learning Models in Stock Forecasting}{11}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Summary}{11}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Emerging Trends in AI-Driven Stock Forecasting}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Deep Learning Approaches}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Hybrid Models Combining Technical Indicators and ML}{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Reinforcement Learning Approaches}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Comparison Between different Model and research}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Key Findings, Strengths, and Limitations}{17}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Evaluation Challenges, Research Gaps and Inconsistencies}{19}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Alignment with the Present Research}{19}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Methodology}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}System Workflow}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Data Acquisition}{22}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Data Preprocessing}{22}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Handling Missing Values}{22}{subsection.3.4.1}%
+\contentsline {subsubsection}{Handling Non-Trading Days}{23}{section*.9}%
+\contentsline {subsubsection}{Missing Volume Replacement}{23}{section*.10}%
+\contentsline {subsubsection}{Indicator-Related Missing Rows}{23}{section*.11}%
+\contentsline {subsubsection}{Rationale for the Missing Data Strategy}{24}{section*.12}%
+\contentsline {subsection}{\numberline {3.4.2}Normalization}{24}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Feature Engineering}{24}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Raw Feature Selection}{25}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Temporal Windowing}{25}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Lagged Variables}{25}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Scaling and Normalization}{26}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Train-Test Structuring}{26}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Summary of Feature Engineering Process}{26}{subsection.3.5.6}%
+\contentsline {section}{\numberline {3.6}Technical Indicators}{27}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Exponential Moving Average (EMA)}{27}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Relative Strength Index (RSI)}{28}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Average True Range (ATR)}{29}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}On-Balance Volume (OBV)}{29}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}Summary of Indicator Contribution}{30}{subsection.3.6.5}%
+\contentsline {section}{\numberline {3.7}Windowing Strategy}{30}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Model Training and Validation}{30}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Prediction and Deployment Pipeline}{31}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Experimental Setup}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Hardware Configuration}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Software Stack}{33}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Dataset Preparation}{33}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Train-Test Split Strategy}{33}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Hyperparameter Configuration}{34}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Model-Specific Training Setup}{34}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}LSTM And GRU Models}{34}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}CNN-LSTM Model}{34}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Transformer Model}{35}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}Evaluation Metrics}{35}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Deployment Testing}{35}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Model Details}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gated Recurrent Unit (GRU) Models}{36}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Introduction to GRU Architecture}{36}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Why GRUs Are Used in Time-Series Forecasting}{37}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Mathematical Model for GRU}{37}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Advantages and Disadvantages of GRUs Category Details}{38}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Role of GRU in This Project}{38}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Trained GRU Model Configurations}{38}{subsection.5.1.6}%
+\contentsline {subsubsection}{Model 1 — GRU with Only Stock Data (No Indicators)}{38}{section*.21}%
+\contentsline {subsubsection}{Model 2 — GRU with Technical Indicators}{39}{section*.23}%
+\contentsline {subsection}{\numberline {5.1.7}Summary of GRU Model Performance}{41}{subsection.5.1.7}%
+\contentsline {section}{\numberline {5.2}Long Short-Term Memory (LSTM) Model}{42}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Introduction to LSTM Architecture}{42}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Why LSTM Is Used for Time-Series Forecasting}{43}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Mathematical Model for LSTM}{43}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Advantages and Disadvantages of LSTM}{44}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Role of LSTM in This Project}{44}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Trained LSTM Model Configurations}{45}{subsection.5.2.6}%
+\contentsline {subsubsection}{LSTM Model Without Indicators}{45}{section*.28}%
+\contentsline {subsubsection}{LSTM Model With Indicators}{46}{section*.30}%
+\contentsline {subsection}{\numberline {5.2.7}Performance Summary}{47}{subsection.5.2.7}%
+\contentsline {section}{\numberline {5.3}Transformer Model}{48}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Introduction to the Transformer Architecture}{48}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Motivation for Using Transformers in Time-Series Forecasting}{48}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Mathematical Model for Transformer Encoder}{49}{subsection.5.3.3}%
+\contentsline {paragraph}{Self-Attention Mechanism}{49}{section*.34}%
+\contentsline {paragraph}{Transformer Encoder Layer}{49}{section*.35}%
+\contentsline {subsection}{\numberline {5.3.4}Advantages and Disadvantages of Transformers}{51}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Role of Transformers in This Project}{51}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Trained Transformer Model Configurations Transformer Model Without Indicators}{52}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Performance Summary}{52}{subsection.5.3.7}%
+\contentsline {section}{\numberline {5.4}Conv1D + LSTM Hybrid Model}{54}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Introduction to the Hybrid Architecture}{54}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Motivation for Using a Hybrid Model in Time-Series Forecasting}{54}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Advantages and Disadvantages of the Hybrid Model}{55}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Role of the Hybrid Model in This Project}{55}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Trained Configurations of the Hybrid Model}{56}{subsection.5.4.5}%
+\contentsline {subsubsection}{Hybrid Model Without Indicators}{56}{section*.43}%
+\contentsline {subsubsection}{Hybrid Model With Indicators}{56}{section*.45}%
+\contentsline {subsection}{\numberline {5.4.6}Performance Summary}{57}{subsection.5.4.6}%
+\contentsline {chapter}{\numberline {6}Results and Analysis}{58}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Overview}{58}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Training and Validation Behavior}{58}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Single Company Data Used}{62}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Quantitative Evaluation Results}{65}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}Effect of Feature Engineering vs. Raw OHLCV Inputs}{65}{section.6.4}%
+\contentsline {section}{\numberline {6.5}CNN-LSTM Feature Set Performance}{70}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Indicators tested and their purpose}{72}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.6}Generalization vs. Specialization Behavior}{73}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Deployment and Practical Evaluation}{74}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{75}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Work and Key Contributions}{75}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Problem Statement and Solution}{75}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Major Findings and Significance}{76}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Limitations of the Study}{77}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Future Work}{77}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Conclusion}{78}{section.7.6}%

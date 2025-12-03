@@ -1,37 +1,37 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Summary of Existing Machine Learning, Deep Learning, and Hybrid Approaches in Stock Market Forecasting}}{14}{table.2.1}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Comparison of machine learning, hybrid deep learning, and emerging AI approaches for stock market prediction.}}{16}{table.2.2}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Summary of Existing Machine Learning, Deep Learning, and Hybrid Approaches in Stock Market Forecasting}}{15}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Comparison of machine learning, hybrid deep learning, and emerging AI approaches for stock market prediction.}}{17}{table.2.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset Categorization Based on Usage and Scope}}{21}{table.caption.8}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset Categorization Based on Usage and Scope}}{22}{table.caption.8}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Recommended Hardware Specifications}}{31}{table.caption.14}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Project Technology Stack}}{32}{table.caption.15}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Dataset Splitting Strategy}}{33}{table.caption.16}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Model Hyperparameters}}{33}{table.caption.17}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Model Evaluation Metrics}}{34}{table.caption.18}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Recommended Hardware Specifications}}{32}{table.caption.14}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Project Technology Stack}}{33}{table.caption.15}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Dataset Splitting Strategy}}{34}{table.caption.16}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Model Hyperparameters}}{34}{table.caption.17}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Model Evaluation Metrics}}{35}{table.caption.18}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Key Notations for Gated Recurrent Unit (GRU) Equations}}{37}{table.5.1}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Assessment of Model Characteristics (likely GRU/Simple RNN variant)}}{38}{table.caption.20}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Model Architecture Summary}}{39}{table.caption.22}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Summary of Technical Indicators}}{39}{table.caption.24}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Stacked GRU Model Architecture Summary}}{39}{table.caption.25}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Key notations and equations for the Long Short-Term Memory (LSTM) network}}{43}{table.5.6}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Assessment of LSTM Model Characteristics}}{44}{table.caption.27}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Stacked LSTM Model Architecture Summary}}{45}{table.caption.29}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of GRU vs. LSTM Architectures}}{45}{table.caption.31}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Stacked LSTM Model Architecture Summary}}{45}{table.caption.32}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Key notations and equations for the Transformer encoder layer used in this project}}{50}{table.5.11}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Analysis of a Deep Learning Model (Likely Transformer/Self-Attention-based) for Time Series Prediction}}{50}{table.caption.36}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Model Architecture Summary}}{51}{table.caption.37}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Model Architecture Summary}}{52}{table.caption.38}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Comparison of Recurrent Neural Network (RNN) Architectures}}{52}{table.caption.39}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Analysis of a Hybrid Deep Learning Model (Likely CNN-LSTM)}}{54}{table.caption.41}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Model Architecture Summary}}{55}{table.caption.44}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces Model Architecture Summary (Likely CNN-LSTM)}}{56}{table.caption.46}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Key Notations for Gated Recurrent Unit (GRU) Equations}}{38}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Assessment of Model Characteristics (likely GRU/Simple RNN variant)}}{39}{table.caption.20}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Model Architecture Summary}}{40}{table.caption.22}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Summary of Technical Indicators}}{40}{table.caption.24}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Stacked GRU Model Architecture Summary}}{40}{table.caption.25}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Key notations and equations for the Long Short-Term Memory (LSTM) network}}{44}{table.5.6}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Assessment of LSTM Model Characteristics}}{45}{table.caption.27}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Stacked LSTM Model Architecture Summary}}{46}{table.caption.29}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of GRU vs. LSTM Architectures}}{46}{table.caption.31}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Stacked LSTM Model Architecture Summary}}{46}{table.caption.32}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Key notations and equations for the Transformer encoder layer used in this project}}{51}{table.5.11}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Analysis of a Deep Learning Model (Likely Transformer/Self-Attention-based) for Time Series Prediction}}{51}{table.caption.36}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Model Architecture Summary}}{52}{table.caption.37}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Model Architecture Summary}}{53}{table.caption.38}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Comparison of Recurrent Neural Network (RNN) Architectures}}{53}{table.caption.39}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Analysis of a Hybrid Deep Learning Model (Likely CNN-LSTM)}}{55}{table.caption.41}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Model Architecture Summary}}{56}{table.caption.44}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Model Architecture Summary (Likely CNN-LSTM)}}{57}{table.caption.46}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Comparative Model Performance Across Datasets}}{64}{table.caption.58}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Feature Set Performance Comparison}}{69}{table.caption.67}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Strengths and Measures of Technical Indicator Sets}}{71}{table.caption.72}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Summary of Technical Indicator Sets}}{71}{table.caption.73}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparative Model Performance Across Datasets}}{65}{table.caption.58}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Feature Set Performance Comparison}}{70}{table.caption.67}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Strengths and Measures of Technical Indicator Sets}}{72}{table.caption.72}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Summary of Technical Indicator Sets}}{72}{table.caption.73}%
 \addvspace {10\p@ }

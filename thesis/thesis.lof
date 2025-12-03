@@ -1,37 +1,37 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces System Flow}}{20}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture of Data Flow.}}{30}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Flow}}{21}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture of Data Flow.}}{31}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Architecture of the GRU block.}}{35}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture of the LSTM block.}}{41}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Architecture of the Transformer block.}}{47}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Architecture of the CNN + LSTM block.}}{53}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Conceptual Diagram of a CNN-LSTM Model Architecture}}{55}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Architecture of the GRU block.}}{36}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture of the LSTM block.}}{42}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Architecture of the Transformer block.}}{48}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Architecture of the CNN + LSTM block.}}{54}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Conceptual Diagram of a CNN-LSTM Model Architecture}}{56}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces GRU without Indicators}}{58}{figure.caption.47}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces GRU with Indicators Validation Behaviour}}{58}{figure.caption.48}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces LSTM without Indicators Validation Behaviour}}{59}{figure.caption.49}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces LSTM with Indicators Validation Behaviour}}{59}{figure.caption.50}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Transformers without Indicators Validation Behaviour}}{60}{figure.caption.51}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Transformers with Indicators Validation Behaviour}}{60}{figure.caption.52}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Regression Models on Single Company Data}}{61}{figure.caption.53}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Regression Models on Single Company Data With Indicators}}{62}{figure.caption.54}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Regression Models Compared Without Indicators Included}}{62}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Regression Models Compared with Indicators Included}}{63}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Prediction Errors for Regression Models on Single Company Data}}{63}{figure.caption.57}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces GRU with stock data}}{65}{figure.caption.59}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}}{65}{figure.caption.60}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces LSTM with stock data}}{66}{figure.caption.61}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{66}{figure.caption.62}%
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Transformers with stock data}}{67}{figure.caption.63}%
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Transformers with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{67}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.18}{\ignorespaces CNN-LSTM with stock data}}{68}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.19}{\ignorespaces CNN-LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{68}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.20}{\ignorespaces CNN-LSTM with Indicators (Close, MA5, MA20)}}{69}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.21}{\ignorespaces CNN-LSTM with Indicators (Close, EMA10, STD5)}}{69}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.22}{\ignorespaces CNN-LSTM with Indicators (Close, Return, STD20)}}{70}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.23}{\ignorespaces CNN-LSTM with Indicators Validation Loss Comparisons}}{70}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces GRU without Indicators}}{59}{figure.caption.47}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces GRU with Indicators Validation Behaviour}}{59}{figure.caption.48}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces LSTM without Indicators Validation Behaviour}}{60}{figure.caption.49}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces LSTM with Indicators Validation Behaviour}}{60}{figure.caption.50}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Transformers without Indicators Validation Behaviour}}{61}{figure.caption.51}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Transformers with Indicators Validation Behaviour}}{61}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Regression Models on Single Company Data}}{62}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Regression Models on Single Company Data With Indicators}}{63}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Regression Models Compared Without Indicators Included}}{63}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Regression Models Compared with Indicators Included}}{64}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Prediction Errors for Regression Models on Single Company Data}}{64}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces GRU with stock data}}{66}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces GRU with Indicators included (EMA (12, 26), RSI (14), ATR (14), OBV)}}{66}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces LSTM with stock data}}{67}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{67}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Transformers with stock data}}{68}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Transformers with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{68}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces CNN-LSTM with stock data}}{69}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces CNN-LSTM with Indicators (EMA (12, 26), RSI (14), ATR (14), OBV)}}{69}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces CNN-LSTM with Indicators (Close, MA5, MA20)}}{70}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.21}{\ignorespaces CNN-LSTM with Indicators (Close, EMA10, STD5)}}{70}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.22}{\ignorespaces CNN-LSTM with Indicators (Close, Return, STD20)}}{71}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.23}{\ignorespaces CNN-LSTM with Indicators Validation Loss Comparisons}}{71}{figure.caption.71}%
 \addvspace {10\p@ }

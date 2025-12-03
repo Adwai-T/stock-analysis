@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.29)  2 DEC 2025 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.29)  2 DEC 2025 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,12 +963,12 @@ Chapter 1.
 (sections/introduction.tex [1
 
 
-] [2] [3] [4] [5] [6]) [7]
+] [2] [3] [4] [5] [6] [7]) [8]
 Chapter 2.
-(sections/literature.tex [8
+(sections/literature.tex [9
 
 
-] [9] [10] [11] [12]
+] [10] [11] [12] [13]
 Underfull \hbox (badness 1454) in paragraph at lines 90--90
 []|\OT1/lmr/bx/n/10.95 (+20) Study / Ref-er-
  []
@@ -1038,7 +1038,7 @@ Overfull \hbox (28.6592pt too wide) in alignment at lines 95--133
  [] [] [] 
  []
 
-[13] [14] [15]
+[14] [15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 158--158
 []|\OT1/lmr/bx/n/10.95 (+20) Study /
  []
@@ -1280,19 +1280,19 @@ Underfull \hbox (badness 1270) in paragraph at lines 208--208
 \OT1/lmr/m/n/10.95 (+20) and port-fo-lio op-ti-miza-
  []
 
-[16
+[17
 
-] [17{H:/MiKTex/fonts/enc/dvips/lm/lm-mathsy.enc}]) [18
+] [18{H:/MiKTex/fonts/enc/dvips/lm/lm-mathsy.enc}]) [19
 
-] [19]
+] [20]
 Chapter 3.
 (sections/methodology.tex
-<Images/methodology/MLPipeline.png, id=961, 587.796pt x 207.77625pt>
+<Images/methodology/MLPipeline.png, id=965, 587.796pt x 207.77625pt>
 File: Images/methodology/MLPipeline.png Graphic file (type png)
 <use Images/methodology/MLPipeline.png>
 Package pdftex.def Info: Images/methodology/MLPipeline.png  used on input line 12.
 (pdftex.def)             Requested size: 431.28667pt x 152.4553pt.
- [20
+ [21
 
 
  <./Images/methodology/MLPipeline.png>]
@@ -1315,63 +1315,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []\OT1/lmr/m/n/10.95 (+20) Transformer-based ar-chi-tec-
  []
 
-[21
+[22
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 77.
  (H:\MiKTex\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [22{H:/MiKTex/fonts/enc/dvips/lm/lm-mathit.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-mathex.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}] [23] [24] [25] [26] [27] [28] [29]
-<Images/methodology/dataFlow.png, id=1029, 501.67426pt x 107.2005pt>
+) [23{H:/MiKTex/fonts/enc/dvips/lm/lm-mathit.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-mathex.enc}{H:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}] [24] [25] [26] [27] [28] [29] [30]
+<Images/methodology/dataFlow.png, id=1034, 501.67426pt x 107.2005pt>
 File: Images/methodology/dataFlow.png Graphic file (type png)
 <use Images/methodology/dataFlow.png>
 Package pdftex.def Info: Images/methodology/dataFlow.png  used on input line 362.
 (pdftex.def)             Requested size: 431.28667pt x 92.16118pt.
-) [30 <./Images/methodology/dataFlow.png>]
+) [31 <./Images/methodology/dataFlow.png>]
 Chapter 4.
-(sections/experimentalSetup.tex [31
+(sections/experimentalSetup.tex [32
 
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32] [33]) [34]
+[33] [34]) [35]
 Chapter 5.
 (sections/modelDetails.tex
-<Images/methodology/gru.png, id=1051, 578.16pt x 289.08pt>
+<Images/methodology/gru.png, id=1055, 578.16pt x 289.08pt>
 File: Images/methodology/gru.png Graphic file (type png)
 <use Images/methodology/gru.png>
 Package pdftex.def Info: Images/methodology/gru.png  used on input line 10.
 (pdftex.def)             Requested size: 431.28667pt x 215.64053pt.
- [35
+ [36
 
 
- <./Images/methodology/gru.png>] [36]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[37]
+ <./Images/methodology/gru.png>] [37]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] [39] [40
+[38]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39] [40] [41
 
 ]
-<Images/methodology/lstmBlk.png, id=1082, 963.6pt x 659.46375pt>
+<Images/methodology/lstmBlk.png, id=1086, 963.6pt x 659.46375pt>
 File: Images/methodology/lstmBlk.png Graphic file (type png)
 <use Images/methodology/lstmBlk.png>
 Package pdftex.def Info: Images/methodology/lstmBlk.png  used on input line 233.
 (pdftex.def)             Requested size: 431.28667pt x 295.15599pt.
- [41
+ [42
 
- <./Images/methodology/lstmBlk.png>] [42]
+ <./Images/methodology/lstmBlk.png>] [43]
 Underfull \hbox (badness 1237) in paragraph at lines 311--312
 []\OT1/lmr/m/n/12 (+20) Stable train-ing dy-nam-ics for multi-stock
  []
@@ -1379,13 +1379,13 @@ Underfull \hbox (badness 1237) in paragraph at lines 311--312
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43] [44] [45] [46]
-<Images/methodology/transformer.png, id=1111, 596.2275pt x 125.268pt>
+[44] [45] [46] [47]
+<Images/methodology/transformer.png, id=1115, 596.2275pt x 125.268pt>
 File: Images/methodology/transformer.png Graphic file (type png)
 <use Images/methodology/transformer.png>
 Package pdftex.def Info: Images/methodology/transformer.png  used on input line 451.
 (pdftex.def)             Requested size: 431.28667pt x 90.61339pt.
- [47
+ [48
 
  <./Images/methodology/transformer.png>]
 Overfull \hbox (0.90921pt too wide) in alignment at lines 502--506
@@ -1412,12 +1412,12 @@ Overfull \hbox (0.90921pt too wide) in alignment at lines 519--542
  [] [] 
  []
 
-[48] [49]
+[49] [50]
 Overfull \hbox (2.29198pt too wide) in paragraph at lines 566--566
 [][]| 
  []
 
-[50]
+[51]
 Overfull \hbox (1.4219pt too wide) in paragraph at lines 580--580
 []\OT1/lmr/bx/n/14.4 (-20) Trained Trans-former Model Con-fig-u-ra-tions Trans-former
  []
@@ -1458,13 +1458,13 @@ Underfull \hbox (badness 1005) in paragraph at lines 662--662
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[51] [52]
-<Images/methodology/cnnLstm.png, id=1142, 616.704pt x 237.2865pt>
+[52] [53]
+<Images/methodology/cnnLstm.png, id=1146, 616.704pt x 237.2865pt>
 File: Images/methodology/cnnLstm.png Graphic file (type png)
 <use Images/methodology/cnnLstm.png>
 Package pdftex.def Info: Images/methodology/cnnLstm.png  used on input line 689.
 (pdftex.def)             Requested size: 431.28667pt x 165.94733pt.
- [53
+ [54
 
  <./Images/methodology/cnnLstm.png>]
 Overfull \hbox (7.58363pt too wide) in paragraph at lines 727--727
@@ -1481,16 +1481,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 727--728
 \OT1/lmr/m/n/12 (+20) NIFTY50/NIFTY200 datasets due to lim-
  []
 
-[54]
-<Images/methodology/cnn_lstm_model_diagram.jpg, id=1153, 605.26125pt x 101.178pt>
+[55]
+<Images/methodology/cnn_lstm_model_diagram.jpg, id=1157, 605.26125pt x 101.178pt>
 File: Images/methodology/cnn_lstm_model_diagram.jpg Graphic file (type jpg)
 <use Images/methodology/cnn_lstm_model_diagram.jpg>
 Package pdftex.def Info: Images/methodology/cnn_lstm_model_diagram.jpg  used on input line 747.
 (pdftex.def)             Requested size: 431.28667pt x 72.09624pt.
- [55 <./Images/methodology/cnn_lstm_model_diagram.jpg>]) [56]
+ [56 <./Images/methodology/cnn_lstm_model_diagram.jpg>]) [57]
 Chapter 6.
 (sections/results.tex
-<Images/results/GRUdirectTvVLoss.png, id=1164, 505.89pt x 339.669pt>
+<Images/results/GRUdirectTvVLoss.png, id=1168, 505.89pt x 339.669pt>
 File: Images/results/GRUdirectTvVLoss.png Graphic file (type png)
 <use Images/results/GRUdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/GRUdirectTvVLoss.png  used on input line 15.
@@ -1499,7 +1499,7 @@ Package pdftex.def Info: Images/results/GRUdirectTvVLoss.png  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/GRUIndicatorsTvVLoss.png, id=1165, 511.6716pt x 339.669pt>
+<Images/results/GRUIndicatorsTvVLoss.png, id=1169, 511.6716pt x 339.669pt>
 File: Images/results/GRUIndicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/GRUIndicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/GRUIndicatorsTvVLoss.png  used on input line 22.
@@ -1507,7 +1507,7 @@ Package pdftex.def Info: Images/results/GRUIndicatorsTvVLoss.png  used on input 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMdirectTvVLoss.png, id=1166, 623.6901pt x 395.3169pt>
+<Images/results/LSTMdirectTvVLoss.png, id=1170, 623.6901pt x 395.3169pt>
 File: Images/results/LSTMdirectTvVLoss.png Graphic file (type png)
 <use Images/results/LSTMdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/LSTMdirectTvVLoss.png  used on input line 29.
@@ -1515,7 +1515,7 @@ Package pdftex.def Info: Images/results/LSTMdirectTvVLoss.png  used on input lin
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMindicatorsTvVLoss.png, id=1167, 511.6716pt x 339.669pt>
+<Images/results/LSTMindicatorsTvVLoss.png, id=1171, 511.6716pt x 339.669pt>
 File: Images/results/LSTMindicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/LSTMindicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/LSTMindicatorsTvVLoss.png  used on input line 36.
@@ -1523,7 +1523,7 @@ Package pdftex.def Info: Images/results/LSTMindicatorsTvVLoss.png  used on input
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformerdirectTvVLoss.png, id=1168, 617.9085pt x 395.3169pt>
+<Images/results/TransformerdirectTvVLoss.png, id=1172, 617.9085pt x 395.3169pt>
 File: Images/results/TransformerdirectTvVLoss.png Graphic file (type png)
 <use Images/results/TransformerdirectTvVLoss.png>
 Package pdftex.def Info: Images/results/TransformerdirectTvVLoss.png  used on input line 43.
@@ -1531,7 +1531,7 @@ Package pdftex.def Info: Images/results/TransformerdirectTvVLoss.png  used on in
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformersIndicatorsTvVLoss.png, id=1169, 505.89pt x 339.669pt>
+<Images/results/TransformersIndicatorsTvVLoss.png, id=1173, 505.89pt x 339.669pt>
 File: Images/results/TransformersIndicatorsTvVLoss.png Graphic file (type png)
 <use Images/results/TransformersIndicatorsTvVLoss.png>
 Package pdftex.def Info: Images/results/TransformersIndicatorsTvVLoss.png  used on input line 50.
@@ -1539,28 +1539,28 @@ Package pdftex.def Info: Images/results/TransformersIndicatorsTvVLoss.png  used 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[57
+[58
 
 
 ]
 
-LaTeX Warning: Text page 58 contains only floats.
-
-[58 <./Images/results/GRUdirectTvVLoss.png> <./Images/results/GRUIndicatorsTvVLoss.png>]
-
 LaTeX Warning: Text page 59 contains only floats.
 
-[59 <./Images/results/LSTMdirectTvVLoss.png> <./Images/results/LSTMindicatorsTvVLoss.png>]
+[59 <./Images/results/GRUdirectTvVLoss.png> <./Images/results/GRUIndicatorsTvVLoss.png>]
 
 LaTeX Warning: Text page 60 contains only floats.
 
-[60 <./Images/results/TransformerdirectTvVLoss.png> <./Images/results/TransformersIndicatorsTvVLoss.png>]
-<Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1193, 892.83563pt x 471.26062pt>
+[60 <./Images/results/LSTMdirectTvVLoss.png> <./Images/results/LSTMindicatorsTvVLoss.png>]
+
+LaTeX Warning: Text page 61 contains only floats.
+
+[61 <./Images/results/TransformerdirectTvVLoss.png> <./Images/results/TransformersIndicatorsTvVLoss.png>]
+<Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1197, 892.83563pt x 471.26062pt>
 File: Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png Graphic file (type png)
 <use Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>
 Package pdftex.def Info: Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png  used on input line 74.
 (pdftex.def)             Requested size: 431.28667pt x 227.64789pt.
-<Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1194, 1082.6046pt x 570.933pt>
+<Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png, id=1198, 1082.6046pt x 570.933pt>
 File: Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png Graphic file (type png)
 <use Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png>
 Package pdftex.def Info: Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png  used on input line 81.
@@ -1569,7 +1569,7 @@ Package pdftex.def Info: Images/results/DifferentRegressionModelsTrainedOnSingle
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/NoIndicatorsRegressionmodelsCompared.png, id=1195, 630.1944pt x 325.9377pt>
+<Images/results/NoIndicatorsRegressionmodelsCompared.png, id=1199, 630.1944pt x 325.9377pt>
 File: Images/results/NoIndicatorsRegressionmodelsCompared.png Graphic file (type png)
 <use Images/results/NoIndicatorsRegressionmodelsCompared.png>
 Package pdftex.def Info: Images/results/NoIndicatorsRegressionmodelsCompared.png  used on input line 88.
@@ -1577,7 +1577,7 @@ Package pdftex.def Info: Images/results/NoIndicatorsRegressionmodelsCompared.png
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/RegressionmodelsCompared.png, id=1196, 623.6901pt x 325.9377pt>
+<Images/results/RegressionmodelsCompared.png, id=1200, 623.6901pt x 325.9377pt>
 File: Images/results/RegressionmodelsCompared.png Graphic file (type png)
 <use Images/results/RegressionmodelsCompared.png>
 Package pdftex.def Info: Images/results/RegressionmodelsCompared.png  used on input line 95.
@@ -1585,7 +1585,7 @@ Package pdftex.def Info: Images/results/RegressionmodelsCompared.png  used on in
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/SingleCompanyDatapredictionError.png, id=1197, 850.67813pt x 447.92343pt>
+<Images/results/SingleCompanyDatapredictionError.png, id=1201, 850.67813pt x 447.92343pt>
 File: Images/results/SingleCompanyDatapredictionError.png Graphic file (type png)
 <use Images/results/SingleCompanyDatapredictionError.png>
 Package pdftex.def Info: Images/results/SingleCompanyDatapredictionError.png  used on input line 102.
@@ -1593,7 +1593,7 @@ Package pdftex.def Info: Images/results/SingleCompanyDatapredictionError.png  us
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[61 <./Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>] [62 <./Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png> <./Images/results/NoIndicatorsRegressionmodelsCompared.png>] [63 <./Images/results/RegressionmodelsCompared.png> <./Images/results/SingleCompanyDatapredictionError.png>]
+[62 <./Images/results/DirectDifferentRegressionModelsTrainedOnSingleCompanyData.png>] [63 <./Images/results/DifferentRegressionModelsTrainedOnSingleCompanyData.png> <./Images/results/NoIndicatorsRegressionmodelsCompared.png>] [64 <./Images/results/RegressionmodelsCompared.png> <./Images/results/SingleCompanyDatapredictionError.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 117--117
 []\OT1/lmr/bx/n/12 (+20) Single-Company
  []
@@ -1613,20 +1613,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
 \OT1/lmr/m/n/12 (+20) not bet-ter than
  []
 
-[64
+[65
 
 ]
-<Images/results/GRUdirect.png, id=1219, 628.0263pt x 339.669pt>
+<Images/results/GRUdirect.png, id=1223, 628.0263pt x 339.669pt>
 File: Images/results/GRUdirect.png Graphic file (type png)
 <use Images/results/GRUdirect.png>
 Package pdftex.def Info: Images/results/GRUdirect.png  used on input line 149.
 (pdftex.def)             Requested size: 431.28667pt x 233.2679pt.
-<Images/results/GRUIndicators.png, id=1220, 620.7993pt x 339.669pt>
+<Images/results/GRUIndicators.png, id=1224, 620.7993pt x 339.669pt>
 File: Images/results/GRUIndicators.png Graphic file (type png)
 <use Images/results/GRUIndicators.png>
 Package pdftex.def Info: Images/results/GRUIndicators.png  used on input line 156.
 (pdftex.def)             Requested size: 431.28667pt x 235.98375pt.
-<Images/results/LSTMdirect.png, id=1221, 732.8178pt x 395.3169pt>
+<Images/results/LSTMdirect.png, id=1225, 732.8178pt x 395.3169pt>
 File: Images/results/LSTMdirect.png Graphic file (type png)
 <use Images/results/LSTMdirect.png>
 Package pdftex.def Info: Images/results/LSTMdirect.png  used on input line 164.
@@ -1635,7 +1635,7 @@ Package pdftex.def Info: Images/results/LSTMdirect.png  used on input line 164.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/LSTMIndicators.png, id=1222, 620.7993pt x 339.669pt>
+<Images/results/LSTMIndicators.png, id=1226, 620.7993pt x 339.669pt>
 File: Images/results/LSTMIndicators.png Graphic file (type png)
 <use Images/results/LSTMIndicators.png>
 Package pdftex.def Info: Images/results/LSTMIndicators.png  used on input line 171.
@@ -1643,10 +1643,10 @@ Package pdftex.def Info: Images/results/LSTMIndicators.png  used on input line 1
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[65
+[66
 
  <./Images/results/GRUdirect.png> <./Images/results/GRUIndicators.png>]
-<Images/results/Transformerdirect.png, id=1229, 732.8178pt x 395.3169pt>
+<Images/results/Transformerdirect.png, id=1234, 732.8178pt x 395.3169pt>
 File: Images/results/Transformerdirect.png Graphic file (type png)
 <use Images/results/Transformerdirect.png>
 Package pdftex.def Info: Images/results/Transformerdirect.png  used on input line 179.
@@ -1655,7 +1655,7 @@ Package pdftex.def Info: Images/results/Transformerdirect.png  used on input lin
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/TransformersIndicators.png, id=1230, 620.7993pt x 339.669pt>
+<Images/results/TransformersIndicators.png, id=1235, 620.7993pt x 339.669pt>
 File: Images/results/TransformersIndicators.png Graphic file (type png)
 <use Images/results/TransformersIndicators.png>
 Package pdftex.def Info: Images/results/TransformersIndicators.png  used on input line 186.
@@ -1663,31 +1663,31 @@ Package pdftex.def Info: Images/results/TransformersIndicators.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[66 <./Images/results/LSTMdirect.png> <./Images/results/LSTMIndicators.png>] [67 <./Images/results/Transformerdirect.png> <./Images/results/TransformersIndicators.png>]
-<Images/results/CNNLSTMWithoutIndicators.png, id=1244, 859.2903pt x 426.393pt>
+[67 <./Images/results/LSTMdirect.png> <./Images/results/LSTMIndicators.png>] [68 <./Images/results/Transformerdirect.png> <./Images/results/TransformersIndicators.png>]
+<Images/results/CNNLSTMWithoutIndicators.png, id=1248, 859.2903pt x 426.393pt>
 File: Images/results/CNNLSTMWithoutIndicators.png Graphic file (type png)
 <use Images/results/CNNLSTMWithoutIndicators.png>
 Package pdftex.def Info: Images/results/CNNLSTMWithoutIndicators.png  used on input line 194.
 (pdftex.def)             Requested size: 431.28667pt x 214.00925pt.
-<Images/results/CNNLSTMIndicators.png, id=1245, 609.9588pt x 325.9377pt>
+<Images/results/CNNLSTMIndicators.png, id=1249, 609.9588pt x 325.9377pt>
 File: Images/results/CNNLSTMIndicators.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicators.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicators.png  used on input line 201.
 (pdftex.def)             Requested size: 431.28667pt x 230.46745pt.
- [68
+ [69
 
  <./Images/results/CNNLSTMWithoutIndicators.png> <./Images/results/CNNLSTMIndicators.png>]
-<Images/results/CNNLSTMIndicatorsMA20.png, id=1252, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsMA20.png, id=1256, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsMA20.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsMA20.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsMA20.png  used on input line 237.
 (pdftex.def)             Requested size: 431.28667pt x 162.92987pt.
-<Images/results/CNNLSTMIndicatorsSTD5.png, id=1253, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsSTD5.png, id=1257, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsSTD5.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsSTD5.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD5.png  used on input line 244.
 (pdftex.def)             Requested size: 431.28667pt x 162.92987pt.
-<Images/results/CNNLSTMIndicatorsSTD20.png, id=1254, 715.473pt x 270.2898pt>
+<Images/results/CNNLSTMIndicatorsSTD20.png, id=1258, 715.473pt x 270.2898pt>
 File: Images/results/CNNLSTMIndicatorsSTD20.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsSTD20.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD20.png  used on input line 251.
@@ -1696,7 +1696,7 @@ Package pdftex.def Info: Images/results/CNNLSTMIndicatorsSTD20.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/results/CNNLSTMIndicatorsValidationLossComparison.png, id=1255, 735.7086pt x 395.3169pt>
+<Images/results/CNNLSTMIndicatorsValidationLossComparison.png, id=1259, 735.7086pt x 395.3169pt>
 File: Images/results/CNNLSTMIndicatorsValidationLossComparison.png Graphic file (type png)
 <use Images/results/CNNLSTMIndicatorsValidationLossComparison.png>
 Package pdftex.def Info: Images/results/CNNLSTMIndicatorsValidationLossComparison.png  used on input line 258.
@@ -1704,9 +1704,9 @@ Package pdftex.def Info: Images/results/CNNLSTMIndicatorsValidationLossCompariso
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[69
+[70
 
- <./Images/results/CNNLSTMIndicatorsMA20.png> <./Images/results/CNNLSTMIndicatorsSTD5.png>] [70 <./Images/results/CNNLSTMIndicatorsSTD20.png> <./Images/results/CNNLSTMIndicatorsValidationLossComparison.png>]
+ <./Images/results/CNNLSTMIndicatorsMA20.png> <./Images/results/CNNLSTMIndicatorsSTD5.png>] [71 <./Images/results/CNNLSTMIndicatorsSTD20.png> <./Images/results/CNNLSTMIndicatorsValidationLossComparison.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\OT1/lmr/m/n/12 (+20) EMA10: weighted
  []
@@ -1771,21 +1771,21 @@ Overfull \hbox (13.9824pt too wide) in paragraph at lines 288--299
  [][] 
  []
 
-[71
+[72
 
-] [72
+] [73
 
-]) [73
+]) [74
 
 ]
 Chapter 7.
-(sections/summary.tex [74
+(sections/summary.tex [75
 
 
-] [75]) [76] [77] [78
+] [76]) [77] [78] [79
 
 
-] [79] (thesis.aux)
+] [80] (thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1797,17 +1797,17 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24817 strings out of 474485
- 436797 string characters out of 5760145
- 1951542 words of memory out of 5000000
+ 24818 strings out of 474485
+ 436804 string characters out of 5760145
+ 1952542 words of memory out of 5000000
  46117 multiletter control sequences out of 15000+600000
  654781 words of font info for 234 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,131p,1190b,1670s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <H:/MiKTex/fonts/type1/public/lm/lmbx10.pfb><H:/MiKTex/fonts/type1/public/lm/lmbx12.pfb><H:/MiKTex/fonts/type1/public/lm/lmbxi10.pfb><H:/MiKTex/fonts/type1/public/lm/lmex10.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi12.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi6.pfb><H:/MiKTex/fonts/type1/public/lm/lmmi8.pfb><H:/MiKTex/fonts/type1/public/lm/lmr10.pfb><H:/MiKTex/fonts/type1/public/lm/lmr12.pfb><H:/MiKTex/fonts/type1/public/lm/lmr6.pfb><H:/MiKTex/fonts/type1/public/lm/lmr8.pfb><H:/MiKTex/fonts/type1/public/lm/lmri12.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy10.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy6.pfb><H:/MiKTex/fonts/type1/public/lm/lmsy8.pfb><H:/MiKTex/fonts/type1/public/lm/lmtt12.pfb><H:/MiKTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (92 pages, 2934598 bytes).
+Output written on thesis.pdf (93 pages, 2937446 bytes).
 PDF statistics:
- 1463 PDF objects out of 1728 (max. 8388607)
- 350 named destinations out of 1000 (max. 500000)
+ 1467 PDF objects out of 1728 (max. 8388607)
+ 351 named destinations out of 1000 (max. 500000)
  50753 words of extra memory for PDF output out of 51595 (max. 10000000)
 
