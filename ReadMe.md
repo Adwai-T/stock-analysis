@@ -8,7 +8,7 @@
 
 ### Downloads
 
-1. For Scripts - `pip install pandas numpy requests tensorflow`
+1. For Scripts - `pip install pandas numpy requests tensorflow kiteconnect`
 2. 
 
 ### File Structure

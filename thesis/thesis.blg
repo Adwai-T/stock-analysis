@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'thesis.blg'
-[169] biber-MSWIN64:340> INFO - === 
-[223] Biber.pm:419> INFO - Reading 'thesis.bcf'
-[401] Biber.pm:979> INFO - Found 28 citekeys in bib section 0
-[426] Biber.pm:4419> INFO - Processing section 0
-[446] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
-[521] bibtex.pm:1713> INFO - LaTeX decoding ...
-[569] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[806] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[806] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[806] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[807] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[833] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[852] bbl.pm:763> INFO - Output to thesis.bbl
+[317] biber-MSWIN64:340> INFO - === 
+[415] Biber.pm:419> INFO - Reading 'thesis.bcf'
+[798] Biber.pm:979> INFO - Found 28 citekeys in bib section 0
+[853] Biber.pm:4419> INFO - Processing section 0
+[898] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[987] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1066] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1584] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1584] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1584] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1585] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1639] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[1681] bbl.pm:763> INFO - Output to thesis.bbl
