@@ -1,69 +1,74 @@
-\section{Summary of Work and Key Contributions}
+\section{Summary of Work}
 
-Edited summary test
+In this project I have tried to reseach the Indian stock market behavior and tried to build a stock analysis system that would work for in accordance with the Indian stocks. This project focuses on building forecasting models that are specifically designed to understand and learn patterns from the Indian stock market.
 
-The primary objective of this research was to build an automated system capable of predicting the next-day closing stock price of Indian market equities using machine learning techniques informed by technical analysis. The project successfully developed and evaluated multiple models including GRU, LSTM, CNN-LSTM, and Transformer architecture using real historical data retrieved through the Kite Connect API.
+For this I have tried to retrieve the most recent data for the Indain companies. To limit the scope of the project and make it comparable I chose NSE as the exchange and equity as the point of focus.
 
-In its final form, the project demonstrates that meaningful predictive performance can be achieved using deep learning–based time series modeling and that model behavior varies significantly depending on dataset size, architecture, and feature design. A complete working prototype system was also built, integrating live data retrieval, preprocessing, inference, and visual chart-based validation.
+I used Kite connect API for it affordable price and generous limits on usage to get the most recent 2 years of data for all equities listed on NSE. This data was then used to train  models. It is also used to get day to day data so that it could be added to the existing data of any stock in consideration and then train stock specific models on them.
+
+And Finally a working demonstration of the complete project is created in python and the dashboard for visualization of the results is created in HTML and JS without using any farmwork.
 
 \section{Problem Statement and Solution}
 
-Stock market forecasting is challenging due to volatility, noise, and nonlinear dependencies that traditional statistical and manual technical analysis struggle to model. Prior research often lacked experimentation across dataset scales, did not evaluate generalization capability, or relied only on accuracy without deployment validation.
-
-This project addressed these gaps by:
+Problem Statement
 
 \begin{itemize}
-  \item Comparing multiple model families rather than a single architecture
-  \item Evaluating performance across single-company training, index-based datasets, and full-market datasets
-  \item Testing models both with raw OHLCV inputs and with engineered technical indicator feature sets
-  \item Implementing a live deployment and visualization pipeline for real-time inference
+  \item Create a stock market forecasting application, by training models on data available form Indian companies and compare the results with traditional statistical and manual technical analysis tools.
+  \item Then validate these models on on their accuracy, generalizable, and scalining ability, to find the best models possible for each usecase.
 \end{itemize}
 
-This systematic comparison framework provided insight into which models are best suited for various dataset conditions and use cases.
-
-\section{Major Findings and Significance}
-
-The experiments revealed several meaningful insights:
+Gaps addressed by the Project
 
 \begin{itemize}
-  \item GRU models performed best when trained on data from a single company, offering fast training and strong prediction accuracy even without engineered indicators.
-  \item LSTM models were the most stable and generalizable architecture, performing well both on individual stock datasets and on NIFTY50/NIFTY200 multi-stock sets.
-  \item Feature engineering did not universally improve results. For small datasets, raw OHLCV inputs often outperformed engineered features, likely due to reduced noise and decreased overfitting risk.
-  \item Complex architectures like Transformers and CNN-LSTM models required large datasets to perform competitively. When trained only on index-level datasets, they underperformed simpler RNN models. However, when trained using all available NSE data, their performance improved significantly, approaching that of LSTM models.
-  \item The best-performing feature combination for CNN-LSTM was Close, MA5, and MA20, suggesting that simple trend-focused transformations are more effective than volatile or mathematically dense indicators.
-\end{itemize}  
-
-The significance of these findings lies in demonstrating that deep learning approaches remain highly promising for stock forecasting but must be matched appropriately to dataset scale and complexity. This work provides a practical roadmap for model selection and tuning in real-world financial prediction systems.
-
-\section{Limitations of the Study}
-
-While the project achieved its intended goals, several limitations remain:
-
-\begin{itemize}
-  \item The dataset consisted only of daily closing data, excluding intra-day signals or volume profile dynamics.
-  \item Technical indicators used were selected manually and were not optimized using automated feature selection or genetic search.
-  \item The model evaluation period was limited, and live deployment testing did not incorporate transaction costs, execution slippage, or trading constraints.
-  \item Only price-based data was used; no sentiment, macroeconomic, or alternative data sources were included.
-  \item The real-time evaluation was observational and not connected to an automated trading engine.
+  \item Study and compare models on India specific dataset.
+  \item Compare multiple different types of time series and hybrid models.
+  \item Evaluate models on different size of data sets.
+  \item Consider the impact of Indicators on the overall models performance
+  \item Implement a demo to showcase the use of these models in trading.
 \end{itemize}
 
-These limitations do not diminish the results but highlight the complexity of building a fully production-ready forecasting system.
+\section{Findings and thier Significance}
+
+\begin{itemize}
+  \item GRU models worked best when they were trained on limited data, mostly considering single company's data without using any indicators.
+  \item This estabilished the ability of GRU models to specalize well but they lack when it comes to generalizing well to large datasets.
+  \item LSTM models showed the ability to train well on larger and smaller datasets, making them extremly versatile. They out performed most GRU, transformers and CNN LSTM in most cases.
+  \item Transfomer models even though gave good results when were trained on engineered features and large datasets, still did not give significantly high improvement over LSTM model trained on the same data.
+  \item CNN-LSTM models out performed the LSTM models in very large data sets and when used with indicators but lacked with smaller datasets.
+  \item CNN-LSTM models were exceptional in understanding local patterns as well as remembering the long term temporal patterns.
+  \item Feature Engineering with indicators proved useful in enhancing the patterns when it was used with larger datasets.
+  \item Indicators did not make a large difference when were considered with Raw features to train smaller models with GRU and LSTM especailly for single company data.
+  \item NIFTY50 made of larger compnaies that are mostly stable and do not have extreme volatility and thus models trained with them did not generalize as well to the overall market patterns.
+  \item NIFTY200 is composed of a diverse set of industries and companies and hence models trained with them got a large enought dataset that captured the overall market patterns much better.
+  \item Models trained with all companies data performed well and generalized to the overall market behaviour but lacked as compared to specialized models trained on that companies data.
+\end{itemize}
+
+\section{Limitations of the Project}
+
+\begin{itemize}
+  \item To limit the scope of the project limited data set was considered.
+  \item Only daily data for past two years was considered.
+  \item This project does not go into training for specific industries.
+  \item Technincal indicators were kept constant and were not selected based on models or industries for optimal training.
+  \item The models were only trained to predict next days closing and not trends.
+  \item The models do not take into consideration any fundamental data or sentimental data.
+  \item The project only focused on showing the prediction, but did not connect it to any automation system for re-enforcement learning
+\end{itemize}
 
 \section{Future Work}
 
 Several opportunities exist to extend this research:
 
 \begin{itemize} 
-  \item Incorporate more diverse data sources, including sentiment data, financial news feeds, and macroeconomic indicators.
-  \item Improve feature engineering, potentially using automated selection methods such as SHAP, PCA, or feature importance ranking.
-  \item Expand model scope to intraday prediction and real-time streaming data.
-  \item Refine hybrid architectures, including improved Transformer variants (e.g., Informer, FEDformer, or Time-Series Transformers).
-  \item Develop a full backtesting and trading engine with portfolio simulation metrics such as maximum drawdown, Sharpe ratio, and profit factor.
-  \item Extend generalization evaluation across sectors, volatility regimes, and economic conditions.
+  \item Create models that are industry specific.
+  \item Train models based on the company size, clubbing companies together based on their size.
+  \item Increase the number of engineered features and indicators.
+  \item Include models that are trained on and can predict values on Intraday trading.
+  \item Refine hybrid models and find the best combinations and usecases for them.
+  \item include Fundamentals of the company while training compnay specific models.
+  \item Train models to understand fundamentals of the companies and use that as an input for stock prediction time series model.
 \end{itemize}
-
-These improvements would help transition the model from a research prototype to a sophisticated decision support or automated execution system.
 
 \section{Conclusion}
 
-In conclusion, the research demonstrates that machine learning-driven technical analysis can offer valuable improvements in short-term stock price forecasting and lays the groundwork for more advanced predictive and automated trading systems. The insights gained regarding model performance, data scale sensitivity, and feature behavior contribute meaningfully to ongoing work in financial machine learning and provide a strong foundation for future advancements in intelligent stock market modelling.
+To conclude this project and research undertook and was successful in determining the best time series models that could be trained on stock data for forecasting next days closing price. It also successfully demonstrates the use of and limitations of technical indicators that could be used as features for training models. As data from Indian companies was used, it also demonstrates the effectiveness of the models and indicators when it applies to the Indian stock market. I was also able to create a dash board that is useful as a tool to be used while trading, and also created a starting point for future improvement and feature additions.

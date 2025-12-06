@@ -1,82 +1,51 @@
-\section{Foundations of Stock Market Forecasting and Technical Analysis}
+\section{Stock Market Forecasting and Technical Analysis}
 
 \subsection{Introduction}
 
-Stock market forecasting has historically been grounded in rule-based trading systems derived from technical analysis and classical econometric forecasting. Before the rise of machine learning, traders relied on visually interpreted price patterns, trend signals, and moving averages to make investment decisions. Early academic research, such as that by Brock, Lakonishok, and LeBaron (1992) \cite{Brock1992TA}, provided one of the first systematic evaluations of technical analysis, demonstrating that rules such as Moving Average crossovers produced statistically significant returns under certain market conditions. 
+Before the advent of machines and computers for visualization the technical analysis of stocks was limited to rule based trading systems derived from classical economic forecasting. Later with the rise of computer age and availability of data visualization trades started to rely on visual interpretation of price patterns and trends.  Signals and moving averages to make investment decisions.
 
-However, the non-linear, chaotic, and non-stationary nature of financial markets limits the consistency of purely rule-based forecasting \cite{Lo2000AdaptiveMarkets}. Over time, research shifted towards formal computational modeling to improve predictive stability, reduce human subjectivity in rule interpretation, and incorporate broader feature sets including volatility, momentum, and behavioral signals. The literature shows a gradual transition from statistical forecasting models to technical indicator engineered systems, and eventually to machine learning-based predictive pipelines \cite{Fama1970EMH} \cite{Tsitsiklis2004StochasticControl}. 
-
-Despite advancements, traditional forecasting approaches remain foundational and widely referenced in modern quantitative research.
+Brock, Lakonishok, and LeBaron (1992) [1], decisions provided the first systematic evaluation of technical analysis that demonstrated that rules such as Moving Average crossovers had statistical significance and could give significant returns in right market conditions. Rule Based forecasting [2]. is however limited by chaotic, non linear and non stationary nature of Stock markets. As time and technology progressed the research in technical analysis moved from rule based systems to more computational modelling to improve predictive stability and reduce human error and bias. This also increased the scope of Technical Analysis by including different indicators for volatility, momentum and behavioural signals. In the following Literature Review I will try to show the gradual shift from traditional methods the modern techniques using machine learning and deep learning for market forecasting. [3] [4]
 
 \subsection{Classical Forecasting Techniques}
 
-Early forecasting models in financial time-series analysis relied on deterministic and statistical frameworks such as Moving Averages (MA), Autoregressive Integrated Moving Average (ARIMA), and Holt Winters exponential smoothing. Moving Averages served as a baseline tool for trend smoothing and regime detection but were limited by their lag and inability to adjust to structural breaks \cite{Brock1992TA}. 
+Older or classical Forecasting of time series data relied on deterministic and statistical framework such as Simple Moving Average, or Auto Regressive Integrated Moving Average (ARIMA). Moving averages. They severed as the baseline tool for detecting a trend and smoothing it for better understanding and visualization. But these indicators are limited by lag and inability to adjust to extreme volatility. [1]
 
-ARIMA, formalized by Box and Jenkins (1970) \cite{BoxJenkins1970ARIMA}, introduced a systematic approach to time-series modeling incorporating autoregression, differencing, and noise smoothing. Despite its widespread adoption, ARIMA requires strong assumptions of stationarity and linear structure conditions rarely satisfied in equity markets \cite{Tsay2010Analysis}. Seasonal extensions such as SARIMA and volatility-aware extensions such as GARCH further improved predictive realism but still struggled to model nonlinear market interactions \cite{Engle1982ARCH}.
+ARIMA, introduced by Box and Jenkins (1970) [5], is a systematic approach to time series modelling that takes into consideration autoregression, differencing and noise smoothing. ARIMA assumes stationarity and linear structure conditions, which is rarely the case with stock markets. [6] There were improvements to ARIMA such as Seasonal ARIMA and volatility aware extension like GARCH that further improved the predictions that could be made but still struggled to accurately capture the market movement. [7]
 
-Similarly, the Holt Winters method demonstrated success in modeling trend and seasonality, particularly in longer horizon forecasting, yet its performance declines during shocks, rapid trend reversals, or momentum-driven price spikes \cite{Chatfield1989Forecasting}. These limitations motivated the shift toward approaches capable of capturing nonlinear dependencies and adaptive real-time dynamics.
+In the case of Long term horizon forecasting Holt Winter method was significantly more successful in modelling trends and seasonality. Still it had it limitations during rapid spikes in trends, or reversals, or significant movement driven spikes.[8]. These limitations lead to shift towards approaches that could capture nonlinear and adaptive Realtime dynamic dependencies.
 
-\subsection{Technical Indicators and Traditional Trading Strategies}
+\subsection{Traditional Trading Strategies}
 
-Technical indicators evolved as systematic computational representations of market structure, behavioral sentiment, and trend dynamics. Early research by Murphy (1999) \cite{Murphy1999TechnicalAnalysis} and Achelis (2001) \cite{Achelis2001TA} formalized indicator taxonomies, classifying them into trend-following (SMA, EMA, MACD), momentum-based (RSI, Stochastic Oscillator, Williams \%R), volatility-based (ATR, Bollinger Bands), and volume-based (OBV, Chaikin Money Flow) categories.
+Research by Murphy(1999) [9] and Achelis (2001) [10] brought indicators taxonomies and classified them into Trend Following like Simple Moving Average (SMA), Exponential Moving Average (EMA),  Moving Average Convergence Divergence (MACD), Momentum based (RSI, Stochastic Oscillators, Williams \%R), Volatility based (ART, Bollinger Bands), and volume based (OBV) categories.
 
-Academic studies confirmed that these indicators filter market noise, expose turning points, and help quantify relative market strength. Brock et al. (1992) \cite{Brock1992TA} demonstrated that moving average breakout and support-resistance rules could generate abnormal returns relative to random-walk baselines. Likewise, Neely et al. (2014) \cite{Neely2014TAandExchange} showed that RSI and MACD exhibited predictive validity in foreign exchange markets, outperforming random walk hypothesis assumptions \cite{Fama1970EMH}. 
+Brock et al. (1992) [1], shows that moving average breakout and support resistance rules generate abnormal returns when compared with random walk baseline. Similarly Neely et al. (2014) [11], has shown that RSI and MACD exhibit validity in market and repeatedly out performed as compared to random walk hypothesis assumptions [3].
+ 
+Park and Irwin's meta-study (2007) [12] established that multi-indicators system could consistently outperform any single rule strategy. This was especially true in volatile environments.
 
-Later work emphasized indicator combinations rather than single-rule trading. Park and Irwin’s meta-study (2007) \cite{ParkIrwin2007Review} found that multi-indicator systems consistently outperform single-rule strategies, especially in volatile or trending environments. This finding aligns with modern feature engineering practice, where technical indicators act as domain-encoded signals rather than standalone trading logic.
+\subsection{Traditional Machine Learning models in Forecasting}
 
-\subsection{Traditional Machine Learning Models in Stock Forecasting}
+Traditional machine learning techniques started to be used for forecasting with the advent of computer age and availability of powerful hardware to train these models. Early machine learning models addressed the issue of bridging the gap between rule based trading and structural statistical forecasting.
 
-As financial modeling research evolved, traditional machine learning techniques emerged to bridge the gap between rule-based trading and structural statistical forecasting. Support Vector Machines (SVM), Random Forests (RF), Decision Trees (DT), and Naïve Bayes were among the earliest models applied to market prediction tasks because of their ability to capture nonlinear interactions and feature relationships.
+Support Vector Machine (SVM), Random Forest (RF), Decision Tree (DT) and Naïve Bayes formed the foundation of the machine learning models during this time. SVM was used in directional prediction and showed good results when trained with technical indicators. Combining Bollinger Band, moving average, stochastic Oscillator, RSI and Aroon Oscillator gave an accuracy of 77.8\% on volatile dataset. [13]. Krenel-based SVM are still used frequently due to their ability to model non linear boundaries, even with smaller datasets.
 
-Support Vector Machines demonstrated promising results in directional prediction when trained with technical indicator features. Studies combining Bollinger Bands, Moving Averages, Stochastic Oscillator, RSI, and Aroon Oscillator achieved accuracies up to 77.8\% on volatile equity datasets \cite{Huang2022PredictiveModeling}. Kernel-based SVM approaches remain widely used due to their ability to model nonlinear class boundaries and robustness with smaller datasets.
+Similarly Decision tree based models were traditionally used to due to their interpretability that is very important in stock market as money is involved. Studies have also applied multiple indicators to NSE equities reporting an accuracy upwards of 80\%, showing that simpler models can outperform complex models when used with indicators in certain environments. [14].
 
-Decision Tree based models also gained traction for their interpretability, an important requirement in financial regulation and explainable AI contexts. A notable study applying multiple indicators to National Stock Exchange (NSE) equities reported an accuracy of 80.08\%, surpassing Random Forest (78.8\%) and Naïve Bayes (73.8\%), showing that model simplicity can outperform ensemble complexity in structured indicator-driven environments \cite{Smarte2021ReviewOfMachineLearning}.
+\section{AI Driven Stock Forecasting}
 
-Random Forest and Gradient Boosting extensions later improved performance stability across multiple market conditions, though interpretability trade-offs remained. These models persisted in industry applications due to their balance between predictive performance, transparency, and modest computational cost.
+As the technology and especially the advent of extremely good computers with very high compulational ability, there was use of Machine leanring in every field. Stock forecasting was no different with infact one of the most profit driven use of Machine leaarning. And hence a lot of bit financal institues became interested in the use of ML. They worked on diverse datasets and including as many features and aspects of the financial space.
 
-\subsection{Summary}
+Machine learning studies such as Huang et al. \cite{Huang2022PredictiveModeling} demonstrated that supervised learning techniques could capture price dynamics more effectively than rule-based or traditional indicators based models. Even so they were often limited by feature dependence and also poor generalization. They are also extremely sensitive to non-stationary behavior.
 
-The progression from rule-based trading to statistical modeling and then to traditional machine learning reflects the increasing need to adapt forecasting methods to market noise, nonlinearity, and regime change. Classical forecasting approaches provide important theoretical foundations, while technical indicators remain integral to feature engineering pipelines. Traditional ML models represent a key transitional stage toward more advanced predictive systems and continue to offer interpretability, stability, and practical value in financial analytics.
 
-\section{Emerging Trends in AI-Driven Stock Forecasting}
+Introduction of RNN was already a huge leap forward in creating model that need to consider temporal data. Hochreiter and Schmidhuber's foundational Long Short-Term Memory model \cite{Hochreiter1997LSTM} made it possible to retain long-term dependencies in sequential data, and also addressed the vanishing gradient limitations that is very common in RNNs.
 
-Research on stock market prediction has progressed through several distinct eras, beginning with classical statistical approaches and eventually transitioning into deep learning and, more recently, transformer-based and language-model-driven architectures. Early machine learning-based studies such as Huang et al. \cite{Huang2022PredictiveModeling} demonstrated that supervised learning techniques could capture price dynamics more effectively than rule-based or econometric models, although they were often limited by feature dependence, poor generalization, and sensitivity to non-stationary behavior.
+Cho et al. \cite{Cho2014GRU} introduced the Gated Recurrent Unit (GRU), created a simplified gating mechanism while retaining temporal memory properties. GRUs are extremely efficient and hence became immediate favourite in financial forecasting. It also helps that they can generalize and converge well with limited amount of data as compared to LSTM.
 
-A major shift occurred with the introduction of recurrent neural network (RNN) variants. Hochreiter and Schmidhuber’s foundational Long Short-Term Memory model \cite{Hochreiter1997LSTM} established a mechanism to retain long-term dependencies in sequential data, overcoming vanishing gradient limitations common in classical RNNs. Building on this, Cho et al. \cite{Cho2014GRU} introduced the Gated Recurrent Unit (GRU), which simplified the gating mechanism while retaining temporal memory properties. GRUs have since become widely adopted in financial forecasting due to their computational efficiency, which is particularly beneficial when working with shorter sequences or limited historical stock data. This trend toward recurrent architectures is echoed in more recent survey-level works such as Smarte and Ho \cite{Smarte2021ReviewOfMachineLearning} and Zhu \cite{Zhu2025StockPredictionReview}, who note that RNN-based models remain one of the core architectural choices in quantitative finance research.
+This trend continues with Smarte and Ho \cite{Smarte2021ReviewOfMachineLearning} and Zhu \cite{Zhu2025StockPredictionReview}, who showed that RNNs remain one of the core part of financial forecasting and stock analysis.
 
-As deep learning matured, attention shifted toward hybrid and convolutional approaches. Convolutional Neural Networks (CNNs), originally introduced by LeCun et al. \cite{LeCun1998CNN}, demonstrated strong feature extraction capabilities in structured signal domains. Their extension into financial applications, including the study by Jin \cite{Jin2024CNNStockMarket}, showed that CNN-based temporal filters could enrich predictive learning by identifying micro-patterns and localized volatility structures present within stock price movement. Hybrid CNN-LSTM systems have been especially effective at combining short-term pattern mining with longer-term sequential modeling, a trend now frequently seen in algorithmic forecasting research.
+Convolutional Neural Networks (CNNs), introduced by LeCun et al. \cite{LeCun1998CNN}, used for feature extraction expectailly in structure domain.Jin \cite{Jin2024CNNStockMarket} included CNNs in the stock forcasting and stock data analysis.
 
-The most recent development in sequence modeling is the introduction of the Transformer architecture by Vaswani et al. \cite{Vaswani2017Attention}. Unlike recurrent models, Transformers rely solely on self-attention mechanisms to prioritize relevant time steps dynamically, enabling parallel computation and improved long-range dependency modeling. Their success in natural language processing has led to rapid adoption in finance, including applications such as sentiment-aware prediction \cite{Khanpuri2024SentimentAnalysis}, multimodal forecasting \cite{Huang2025DeepLearning}, and LLM-driven trading pipelines \cite{Cao2024LLMStock}. Industry perspectives such as Cilingiroglu \cite{Cilingiroglu2025SentimentChangingPrice} further highlight the growing influence of context and narrative sentiment in algorithmic trading environments, reinforcing the value of attention-based systems.
-
-Additional works such as Gupta \cite{Gupta2024RoleOfAI}, Mokhtari et al. \cite{Mokhtari2021ImpactOfAI}, and Lu \cite{Lu2024FinancialArchitecture} emphasize that contemporary AI-driven financial systems increasingly incorporate multimodal signals, real-time market feedback, and decentralized data sources indicating a broader shift from predictive modeling toward autonomous forecasting and strategy optimization systems.
-
-Overall, the literature demonstrates a clear methodological progression: from traditional machine learning techniques toward RNN-based deep learning, followed by hybrid convolutional-recurrent architectures, and most recently, fully attention-based and multimodal forecasting frameworks. This evolution aligns with the modeling progression explored in this project and reinforces the relevance of evaluating GRU, CNN-LSTM, and Transformer-based architectures for next-day stock price prediction under technical-analysis-driven feature frameworks.
-
-\section{Deep Learning Approaches}
-
-Deep learning models have become dominant due to their ability to capture temporal dependencies, non-linear relationships, and high-dimensional feature interactions. Among recurrent neural networks, LSTM architectures are the most widely adopted because they retain long-term memory and mitigate vanishing gradient issues. A study applying a four-layer LSTM on OHLC data combined with MACD, KD, RSI, and Williams \%R demonstrated 83.6\% prediction accuracy, with MACD performing best as an individual indicator at 76\%. 
-
-CNN-based financial forecasting is also gaining traction, especially for pattern extraction and high-frequency trading. Referenced study used a one-dimensional CNN trained on 130 features for intraday classification and demonstrated competitive efficiency and predictive power.
-
-Convolutional Neural Networks (CNNs), although originally designed for spatial pattern recognition, have been successfully adapted using 1-D filters to detect short-term sequence features. Research from Stanford applied CNNs to high-frequency intraday trading using 130 input features and demonstrated strong computational efficiency and predictive capability
-
-These findings highlight that deep learning outperforms traditional ML methods when sequence behavior and long-term dependencies are critical.
-
-\section{Hybrid Models Combining Technical Indicators and ML}
-
-A notable trend in the literature is the shift toward hybrid models that combine multiple ML or DL architectures. Hybrid CNN-LSTM models are the most prevalent approach, as they capture both short-term localized price movements (via CNN) and long-term sequential behavior (via LSTM). These hybrid models consistently outperform stand-alone LSTM or CNN architectures. 
-
-Research pushes hybrid integration further, incorporating additional layers such as bidirectional LSTM, attention mechanisms, and ensemble stacking. One cited Stacked CNN-LSTM Ensemble (SCLE) integrated 87 technical indicators with sentiment-based input and achieved 30\% improved prediction accuracy over sentiment-only systems, showing strong evidence that multimodal approaches yield superior results. 
-
-Reinforcement learning adds another dimension by focusing not onprediction accuracy but on portfolio profitability and Sharpe ratiooptimization.
-
-\section{Reinforcement Learning Approaches}
-
-Reinforcement Learning (RL) presents a fundamentally different approach by learning optimal trading strategies (buy/sell/hold) instead of predicting future prices. RL models are explicitly rewarded for profit-maximization under volatility and transaction constraints.
-
-A referenced study using Advantage Actor-Critic (A2C) demonstrated improved risk-adjusted performance with a Sharpe ratio of 0.13, outperforming the DJI index baseline with a negative Sharpe ratio. 
-
-Such results suggest that RL may resolve the disconnect between high statistical forecasting accuracy and actual trading profitability  one of the most critical challenges in ML-based stock prediction.
+Vaswani et al. \cite{Vaswani2017Attention} added Transformers to the mix of algorithms used in training forecasting models. The success of transformer in the natural language processing meant that they could be included in sentimental analysis for predicting stock prices based on the overall market temprament based on news as well as social media \cite{Khanpuri2024SentimentAnalysis}, multimodal forecasting \cite{Huang2025DeepLearning}, and LLM-driven trading pipelines \cite{Cao2024LLMStock}. Cilingiroglu \cite{Cilingiroglu2025SentimentChangingPrice} used transformers to create models for inter industrial patter recognition.
 
 \FloatBarrier
 \section{Comparison Between different Model and research}
@@ -139,15 +108,6 @@ Highlighted that technical-analysis-driven ML systems remain effective when pair
 
 \section{Key Findings, Strengths, and Limitations}
 \FloatBarrier
-Across surveyed research, key themes emerge:
-
-Dimension	Findings - Strengths	ML/DL models outperform statistical models, hybrid approaches produce superior results
-
-Insights	Technical indicators significantly enhance ML performance, multimodal data boosts accuracy
-
-Limitations -	Models often lack interpretability; accuracy does not always equate to profitability
-
-Additionally, many studies report performance solely through predictive accuracy, which does not account for slippage, transaction costs, or real-market risk exposure. Researchers now argue for financial evaluation metrics such as Sharpe ratio, max drawdown, and ROI.
 
 \begin{small}
 \begin{longtable}{|p{2.0cm}|p{3.3cm}|p{2.8cm}|p{4.2cm}|}
@@ -215,26 +175,14 @@ Demonstrated improved algorithmic trading performance when AI was integrated int
 
 \section{Evaluation Challenges, Research Gaps and Inconsistencies}
 
-Across reviewed studies, accuracy is the most reported metric; however, accuracy alone does not reliably reflect trading profitability. Multiple studies highlight the need for more holistic metrics such as annualized return, max drawdown, and Sharpe ratio to reflect real-world trading quality.
-
-Interpretability remains another challenge, especially in regulated sectors where explainable decision-making is critical. The literature emphasizes that opaque deep learning models face adoption barriers when their behavior cannot be justified. 
-
-Finally, overfitting remains persistent due to the chaotic and non-stationary properties of financial data, requiring adaptive retraining, rolling validation, and multi-market testing strategies.
-
-Despite progress, several gaps remain:
-
 \begin{itemize}
-    \item Overfitting persists due to non-stationary data.
-    \item Limited generalizability across markets, time periods, and asset classes.
-    \item Few models evaluate real trading performance rather than classification accuracy.
-    \item Indian markets remain underexplored relative to U.S.\ and Chinese datasets.
-    \item RL-based approaches are promising but still sparse and experimental.
+    \item Data consistency and ways to deal with data inconsistencies when it comes to stock data
+    \item Overfitting.
+    \item Limited generalizability.
+    \item Calrity and explanability of models
+    \item Indian stock exchanges remain unexplored for forecasting behavious.
+    \item Inconsistency in market trends caused due to India specific events such as government policy, overall impact of imports, and depends on other markets.
+    \item Different Indian industries are dependent on different factors that set their price trends. Capturing them is difficult as they are not consistent with each other.
+    \item Different industries in india is also dependent on different gio political regions and thus unstability in these regions causes different inpact on the trends experienced by the overall market.
+    \item Service industies remain one of the biggest contributers in the Indian stock market and have their own challanges.
 \end{itemize}
-
-\section{Alignment with the Present Research}
-
-The literature demonstrates a clear progression from classical technical analysis toward machine learning-driven forecasting systems. Traditional ML models offer interpretability, while deep learning models  especially hybrid CNN-LSTM architectures  provide superior predictive capability by capturing multi-dimensional patterns in historical price signals. Reinforcement learning represents the next frontier, enabling models not just to predict markets but to act intelligently within them.
-
-The works reviewed confirm that machine learning methods especially hybrid and deep learning-based approaches yield superior results when combined with carefully engineered technical indicators. However, the gap in generalizable, explainable, and India-focused ML-based forecasting highlights the need for a model specifically designed to work with Indian market behavior.
-
-This thesis positions itself at this intersection: applying modern ML techniques integrated with technical indicators, evaluating not only accuracy but also potential trading practicality on Indian market securities.

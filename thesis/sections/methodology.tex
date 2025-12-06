@@ -1,11 +1,11 @@
 \FloatBarrier
 \section{Overview}
 
-This chapter describes the methodological framework used to build, train, and evaluate machine learning models for predicting next-day closing prices of Indian stocks. The approach includes data acquisition, preprocessing, feature engineering using technical indicators, model architecture design, training procedures, and the final prediction and deployment pipeline. The modelling strategy includes both single-stock models and generalized multi-stock architectures to evaluate how model scope influences predictive performance.
+The chapter describes the framework used to build and train the models and then their use in the project. This following sections each describe the preprocessing methodology, the feature engineering used, the training procedures, precision as well as the front and back end of the software developed to use the models to make it more user friendly. The model training include training with both technical indicators and raw data. The following sections also describe the models training done with single company data and also with multi company data. I have also discussed the models architecture.
 
 \section{System Workflow}
 
-The overall methodology follows the structured workflow below:
+The following diagram shows an overview of the complete system. In the following section I will go in detail about each part of the system.
 
 \begin{figure}[h!]
     \centering
@@ -19,7 +19,7 @@ The overall methodology follows the structured workflow below:
 
 \section{Data Acquisition}
 
-Historical stock data is collected using the Kite Connect API, which provides daily OHLCV (Open, High, Low, Close, Volume) records for Indian equity markets. Three data scopes are utilized:
+While researching data acquisition there were several option that I had explored. Which included the free option like yahoo finance and other paid options. But finally I decided to go with Kite Connect API provided by Zerodha.
 
 \begin{table}[htbp]
 \centering
@@ -46,21 +46,29 @@ All available NSE-listed companies \\
 \end{tabular}
 \end{table}
 
-All datasets use two years of historical records, sampled at one trading day frequency. Missing trading days (holidays, suspensions) are handled by forward-fill as part of preprocessing.
+Kite Connect API provided the  best options when it came to the number of request, daily limits, overall availability of data and most importantly cost. Yahoo Finance, being free, still has questionable legal circumstance as yahoo does not officially support using the api in the way and is based on web scrapping for it's data. Kite Connect API on the other hand is completely supported by the company thus making it reliable.
+
+Kite Connect API provides Open, Close, High, Low, and Volume data in the JSON format for all companies listed on NSE and BSE stock exchanges.
+
+As Covid had impacted the markets in a major way, seeing a steep decline in price and than an unnatural rise in price as the market recovered, in this project to maintain consistency and I have considered data from the last two years. It captures the natural movement of market and thus helps to capture the patterns better than if covid period data was considered.
+
+While sampling data for training, each days data is considered, and period of 20 days is treated as a set. Saturday, Sunday and other Holidays when the stock market was closed for trading are skipped as they do not impact the data.
 
 \section{Data Preprocessing}
 
-Preprocessing ensures consistency, numeric uniformity, and suitability for machine learning. Key steps include:
+Preprocessing data is an important step in training a model as it determines the accuracy of the trained model. The data should be consistent without outliers as they could skew the overall results. Similarly missing data should also be handled.
 
 \subsection{Handling Missing Values}
 
-Financial time-series datasets often contain missing or irregular values due to weekends, market holidays, low liquidity periods, or interruptions in data collection. Since machine learning models require complete and continuous input sequences to learn temporal dependencies, the preprocessing stage included systematic handling of missing and inconsistent data. The goal of this step was to preserve the chronological structure of the dataset while minimizing artificial distortion of historical behavior.
+Holidays when stock markets remain closed do not produce any data and is automatically handled by the Kite Connect API as it skips those days from the data it sends. As while preparing data the dates are only considered to maintain the series, it does not need to be handled separately.
 
-Missing values encountered in this project were primarily associated with two scenarios: (1) non-trading days where the market was closed and no new data entries existed, and (2) occasional missing volume entries resulting from low-activity sessions or incomplete API retrieval.
+Missing Data issue is mostly encountered for smaller companies that do not consistently train and can have skewed data for the days when there is huge movement seen in the stocks. These stocks are completely skipped during training for the models trained on All stock data.
 
 \subsubsection{Handling Non-Trading Days}
 
-Since stock markets do not operate during weekends and public holidays, gaps naturally appear in raw historical price data. Instead of removing these entries or artificially inserting synthetic timestamps, a forward-fill strategy was applied to maintain consistency within the time index. Forward filling ensures that the most recent available market value is propagated to the next missing observation, formalized as:
+Market does not operate on Saturday and Sundays as well as on public holidays. Thus we have missing data for those days.
+
+Forward feeding could be used in this case as that does not effect or impact the temporal properties and pattern of the data.
 
 \begin{equation}
 x_t =
@@ -70,63 +78,67 @@ x_{t-1}, & \text{otherwise}
 \end{cases}
 \end{equation}
 
-This approach preserves trend continuity without introducing computational artifacts. Since the forecasting window is daily and does not rely on intraday variation, forward filling provided a stable and contextually accurate method for gap handling.
-
 \subsubsection{Missing Volume Replacement}
 
-In rare instances, isolated gaps in the \texttt{Volume} field were detected. Volume values play an important role in financial modeling, as they reflect market participation and liquidity. Removing or forward filling volume may obscure meaningful behavioral dynamics, particularly during sudden price swings driven by abnormal trading pressure. To address this, missing volume values were replaced using a 7-day rolling mean:
+There were rare instance where the volume data was missing. Volume is one of the most important feature in the training the model to understand the market dynamics as it reflects market participation and thus liquidity. Removing or replacing the value with forward filling could impact overall behaviour that was suppose to be learnt by the model.
+
+The missing volume values were replaced with 7 days rolling average that takes into consideration a larger span of time than just forward filling.
 
 \begin{equation}
 Volume_t = \frac{1}{7} \sum_{i=1}^{7} Volume_{t-i}
 \end{equation}
 
-This method ensured a smooth and context-aware replacement rather than assigning an arbitrary constant or repeating prior values. The rolling mean preserves short-term variability while avoiding sudden artificial spikes.
+This method I found was much better than removing data, or replacing with complete data average or repeating prior values, in preserving the overall context. Thus preventing sudden change that could be introduced by other methods, but also preserves the overall movement that is expected for that time.
 
-\subsubsection{Indicator-Related Missing Rows}
+\subsubsection{Missing Indicator Rows}
 
-Some derived feature calculations, such as moving averages or volatility estimators, require a minimum historical window before a valid output can be produced. This results in initial rows of the dataset lacking values for engineered features. Instead of performing interpolation or backfilling—which could introduce bias—these incomplete rows were removed entirely:
+Some Indicators are calculated considering the past few days data such as Moving Average, or Volatility estimators. Thus they could need a minimum amount of past data to calculate for the set window. In Most cases the values are interpolated or could be entirely skipped.
 
 \begin{equation}
 D_{clean} = \{x \in D \mid \text{all features at } t \text{ are non-null}\}
 \end{equation}
 
-Since dataset length remained sufficient after removal and no temporal leakage was introduced, this approach ensured data consistency during feature modeling and training.
+\subsubsection{Rational for Missing Data Strategy}
 
-\subsubsection{Rationale for the Missing Data Strategy}
+Using different approaches for different data like missing base features, skipping companies with extreme volatility, rolling average for volume data ensures that the essence of the market behaviour can be learned by the model.
 
-The combined approach of forward filling, rolling mean substitution, and removal of incomplete engineered rows was selected to:
+Following were the points considered while selecting the techniques used to overcome missing data.
 
 \begin{itemize}
-    \item preserve authentic historical trends,
-    \item prevent artificial volatility distortions,
-    \item avoid information leakage,
-    \item maintain training stability,
-    \item ensure that the sequential nature of the dataset remained intact.
+    \item Help preserve historical trends
+    \item Prevent artificially creating volatility or distortion in data.
+    \item As using Time series model, ensure that the sequential nature of the data is maintained.
 \end{itemize}
 
-In time-series forecasting, the quality of preprocessing directly affects model convergence and accuracy. The strategies implemented in this project ensured continuity of data without introducing artificial dynamics or modifying underlying market behavior patterns, thereby supporting more reliable model learning during subsequent stages.
+While training any machine learning model, and especially for time series model where sequential data is used there is a huge impact of data preprocessing on model accuracy and training convergence.
 
-\subsection{Normalization}
+\subsection{Scaling and Normalization}
 
-Since machine learning models operate more effectively on normalized sequences, the following scaling methods are used:
-
-Min-Max scaling for time-dependent features:
+While training with multiple it is important that the data is normalised as the price can vary hugely between companies. The goal of training a time series model on for stock is to capture the  different pattern and use this pattern to predict the next days closing. Normalisation ensures that the specific companies price are not considered, just the movement of price from day to day is considered.
 
 \begin{equation}
 x_{\text{scaled}} = \frac{x - \min(x)}{\max(x) - \min(x)}
 \end{equation}
 
-Target variable (next closing price) scaled using the same transformer to maintain data consistency.
+During inference the min max of the that companies data is considered. Thus once the normalised result are inferred, that min max can then be used to calculate the scaled closing value.
 
-Each company's scaling parameters are stored individually to allow inverse transformation during inference.
+Simple Min Max scaling is used to Normalise data in this project. The following formula is used for the time dependant features.
+
+\begin{equation}
+x' = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
+\end{equation}
 
 \section{Feature Engineering}
 
-Feature engineering plays a crucial role in preparing financial time-series data for machine learning models. Raw stock market data contains valuable information; however, it is not always presented in a form suitable for model learning. The purpose of feature engineering is to transform raw values into structured inputs that enhance pattern recognition and improve predictive performance. In this project, feature engineering focused on restructuring historical price and volume data into supervised learning format, generating lagged dependencies, scaling features for training stability, and preparing the data for sequence-based neural network architectures.
+I in this project have tried to compare the effectiveness of Feature Engineering vs the Raw Stock data. Thus feature engineering is a major part of this project.
+
+Raw stock data considers valuable information, it can be prominently see in candle stick data, which has been used since a long time and is one of the foundational Technical analysis tools used. But for a machine learning model, especially those considering time series data, it could be helpful to consider other technical analysis indicators which could enhance the existing patterns in the data.
+
+In this project I have tried to consider the combinations of Technical indicators that consider historical pricing and volume together so both are given equal importance. Technical Indicators transform raw values into structured input that enhance the pattern learning and thus improve the predictive performance of the model.
 
 \subsection{Raw Feature Selection}
 
-The raw data retrieved consisted of daily Open, High, Low, Close, and Volume (OHLCV) values for each stock. These values represent the fundamental inputs required to characterize market movement. In this project, these five variables were selected as the baseline feature set because they directly correspond to observable trading activity and remain consistent across companies and time periods.
+The raw data retrieved from Kite Connect API for each company contains the Open, High, Low, Close and Volume information for each day. These form the base features of the stock data that is used to train the models.
 
 The feature set is defined as:
 
@@ -134,65 +146,54 @@ The feature set is defined as:
 X_t = \{Open_t, High_t, Low_t, Close_t, Volume_t\}
 \end{equation}
 
-This ensured a uniform representation of stock behavior and provided the foundational structure upon which additional transformations were applied.
+The consistency of base features between companies provides a solid base on which additional features can be calculated.
 
-\subsection{Temporal Windowing}
+\subsection{Windowing Strategy}
 
-Since stock market data is sequential, the learning task was reframed from a single-point prediction to a supervised time-series problem. A sliding window mechanism was introduced to create input-output pairs, where multiple past observations are used to forecast the next value:
+As all the models trained in this project are time series models such as LSTM, GRU, Transformers and CNN-LSTM, it is important to maintain consistency between the windowing strategy that will work for all models so the results can be effectively compared.
 
 \begin{equation}
 X = [X_{t-n}, X_{t-n+1}, ..., X_{t-1}] \rightarrow y = Close_t
 \end{equation}
 
-In this project, a window size of 20 trading days was selected based on empirical testing and industry practice. This window length allowed the model to observe short-term trend formation and volatility behavior without inducing excessive computational load or overfitting risk.
+\begin{align*}
+    X &= [\text{features for days } t-19 \text{ to } t] \\
+    y &= \text{closing price at day } t+1
+\end{align*}
 
-\subsection{Lagged Variables}
+Sliding window strategy is chosen for dividing data into sets. The window size of 20 is used throughout the project to maintain consistency and also maintain the scope of the project. I found that this window size was large enough that the model could observe short term trends and volatility behaviour but is not computationally as intensive due to the limitation of my hardware used in this project.
 
-Lag-based values were implicitly generated through the windowing process. By exposing the model to historical values as ordered sequences, the neural architectures were able to infer temporal relationships such as:
+\subsection{Training Test Validation Structuring}
 
-\begin{itemize}
-    \item Price acceleration or deceleration
-    \item Recent volatility conditions
-    \item Volume shifts related to market sentiment
-\end{itemize}
+Dividing data into Training and Test is an important final step in feature engineering. It is important that the training as well as test data maintains the temporal order. Unlike other machine learning model training and testing where the data might be shuffled, time series model require that the data preserves its order both while it is used for training and then while testing.
 
-This sequence representation helped the models learn time-dependent structure in the data more effectively than using only the most recent price.
-
-\subsection{Scaling and Normalization}
-
-Financial data often varies significantly in magnitude across stocks due to differences in sector, price range, liquidity, and volatility regimes. To ensure numerical stability and improve gradient behavior during training, Min-Max scaling was applied:
-
-\begin{equation}
-x' = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
-\end{equation}
-
-Scaling was performed independently for each stock to preserve relative relationships within a sequence. The inverse transformation was retained to enable final predictions to be mapped back to real currency values during model evaluation and deployment.
-
-\subsection{Train-Test Structuring}
-
-The final step in feature engineering involved restructuring the processed dataset into training and testing segments while maintaining temporal order. Unlike shuffled machine learning tasks, stock prediction requires chronological integrity to prevent target leakage. Therefore, the data was divided as:
+Data is divided as follows :
 
 \begin{equation}
 D = D_{\text{train}} \cup D_{\text{test}}, \quad \text{with } t_{\text{train}} < t_{\text{test}}
 \end{equation}
 
-This ensured that only historical values contributed to model training, aligning the process with realistic forecasting constraints.
+Validation method uses time series split without any shuffling.
 
-\subsection{Summary of Feature Engineering Process}
+The callback method is used for early stopping and learning rate reduction. After 6 epochs of training without improvement in validation error, the training is stopped early so compute could be saved and training time could be reduced.
 
-Through the combination of raw feature selection, temporal restructuring, scaling, and preparation into supervised sequential format, the dataset was transformed into a suitable structure for neural network modeling. These engineered features enabled the models to better recognize temporal dependencies, smoothing patterns, and sequential price dynamics essential for short-term stock prediction.
+Loss curve and predictions are generated after training using training data set. This is an important visual representation in comparing the models.
+
+\subsection{Indices Used}
+
+Stock indices from NSE and BSE have been used as solid reflection of the overall health of market. Segment indices as well as the top stock are maintained by both BSE and NSE. In this project I have used the indices from NSE like NIFTY50, NIFTY100 and NIFTY200 as they give the best combination of the stable bigger companies of India in NIFTY50 and bit more diverse companies in NIFTY200.
 
 \section{Technical Indicators}
 
-Technical indicators are mathematical transformations of historical price and volume data used to extract meaningful market patterns and assist in short-term forecasting. In financial modeling, indicators may help reveal momentum, volatility, or market sentiment, which is often not directly observable from raw price values. In this project, a select group of widely used indicators was implemented and evaluated to determine whether engineered financial signals improve model learning and predictive stability.
+Technical Indicators are mathematical transformation of raw features of historical price and volume data that are used to enhance and extract meaningful market patterns and thus help models learn the patterns better. Raw data can be combined to reveal information such as volatility, momentum, or even market sentiment which is not always directly visible or interpretable from raw features.
 
-The indicators used fall into four major categories: trend-based, momentum-based, volatility-based, and volume-based indicators. The following subsections describe each indicator mathematically and conceptually, along with its motivations, advantages, limitations, and observed relevance within this project's modeling framework.
+In this project I have tried to use the most widely used Technical Indicators that will help capture the trend, momentum, volatility and volume. The following sections I will discuss in detail the Technical indicators used and the purpose they serve in combination with other indicators. I will also discuss the advantages and disadvantages and if there are ways to mitigate the limitations while using them.
 
 \subsection{Exponential Moving Average (EMA)}
 
-The Exponential Moving Average (EMA) is a trend-following indicator that assigns more weight to recent price values, making it more responsive to recent movements compared to a simple moving average. In this project, two commonly used EMAs, with window lengths 12 and 26, were included.
+The Exponential moving average is a derivative of Simple moving average that gives more weight to recent price values, thus making it more responsive to recent movement. Both Simple Moving Average and Exponential Moving average fall in the same category that they are used as trend indicators. Thus giving additional weight-age to recent data EMA reacts better and follows trends more closely than SMA.
 
-The EMA is defined as:
+Exponential Moving Average is defined by the following formula.
 
 \begin{equation}
 EMA_t = \alpha \cdot P_t + (1 - \alpha) \cdot EMA_{t-1}
@@ -207,25 +208,30 @@ where:
 
 \textbf{Advantages:}
 \begin{itemize}
-    \item Reacts faster to trend changes than simple moving averages
-    \item Helps highlight market direction and momentum
-    \item Can provide meaningful structure when used with machine learning features
+    \item Main advantage of this indicator is that it reacts faster to the trend changes than Simple moving average.
+    \item It helps indicate the market direction and momentum.
+    \item It can be used to enhance trends while being used for training.
 \end{itemize}
 
 \textbf{Limitations:}
 \begin{itemize}
-    \item May introduce noise during volatile market periods
-    \item Requires calibrated window lengths depending on market characteristics
+    \item As it reacts to recent changes more than SMA, it might introduce noise during high market volatility.
+    \item Is very market dependent and needs to have the window to be decided accordingly
 \end{itemize}
 
 \textbf{Role in This Project:}  
-The EMA was intended to help the models detect smoother directional patterns compared to raw price sequences. In practice, the EMA contributed most effectively in larger datasets, where its smoothing characteristics complemented the learning process of more complex models like LSTM and CNN-LSTM.
+
+In this project I have choosen EMA as the trend indicator. It helps smooth out the directional patterns ompared to just raw price squence that could vary wildly on some days. This is highly effective when considering large datasets.
+
+The soothing of these irregularities also help with better learning of the model as it complements how models like LSTM and CNN-LSTM work underneath.
 
 \subsection{Relative Strength Index (RSI)}
 
-The Relative Strength Index (RSI) is a momentum oscillator used to measure the speed and magnitude of recent price changes and identify potential overbought or oversold conditions.
+The Relative Strength Index (RSI) is traditioanlly used to understand if a stock is overbought or oversold.
 
-The RSI is computed as:
+RSI indicates the price momentum, meaning the speed at which the price changes. This can be an effective indicator of petential buying or selling signal.
+
+The RSI is calculated as:
 
 \begin{equation}
 RS = \frac{\text{Average Gain}}{\text{Average Loss}}
@@ -235,26 +241,30 @@ RS = \frac{\text{Average Gain}}{\text{Average Loss}}
 RSI = 100 - \left( \frac{100}{1 + RS} \right)
 \end{equation}
 
-where gains and losses are smoothed using an exponential approach over a default 14-day period.
-
 \textbf{Advantages:}
 \begin{itemize}
-    \item Captures short-term momentum and reversal behavior
-    \item Useful for detecting buying or selling pressure
+    \item Captures short-term momentum
+    \item Indicate reversal behavior
+    \item Detecting buying or selling pressure
 \end{itemize}
 
 \textbf{Limitations:}
 \begin{itemize}
-    \item Can produce false signals during trend-driven markets
-    \item Highly sensitive to short-term volatility
+    \item They can be susceptible to false indicators especially in trend driven markets.
+    \item Extremely sensitive to short term volatility.
 \end{itemize}
 
 \textbf{Role in This Project:}  
-RSI helped introduce oscillatory behavior into the feature space, offering counterbalance to trend-heavy predictors. While effective for larger and diverse datasets, its influence was limited in single-stock training where raw OHLC patterns already contained equivalent momentum signals.
+
+RSI are used as a counterbalance to the trend heavy indicators such as EMA. It bring oscillatory behavior to the overall learning.
+
+It is very effective when considering larger data sets, but can fail especially in saller data sets such as when considering single company data. In those small data sets the RAW features already contain enough momentum information.
 
 \subsection{Average True Range (ATR)}
 
-The Average True Range (ATR) is a volatility indicator designed to measure the degree of price range expansion or contraction over time. It is computed using the True Range (TR), defined as:
+The Average True Range (ATR) is a volatility indicator.
+
+It is designed to measure the degree of price range expansion or contraction over time.
 
 \begin{equation}
 TR_t = \max \left(
@@ -266,30 +276,28 @@ H_t - L_t, \\
 \right)
 \end{equation}
 
-The ATR is calculated using:
-
 \begin{equation}
 ATR_t = EMA(TR_t, 14)
 \end{equation}
 
 \textbf{Advantages:}
 \begin{itemize}
-    \item Helps quantify market volatility
-    \item Adds information not present in raw closing values
+    \item Quantify market volatility
 \end{itemize}
 
 \textbf{Limitations:}
 \begin{itemize}
-    \item Does not indicate price direction
-    \item Can amplify noise when used in small datasets
+    \item Price direction is not represented.
+    \item Could emplify noise, especially in smaller dataset.
 \end{itemize}
 
 \textbf{Role in This Project:}  
-ATR was included to expose volatility dynamics to the prediction models. The indicator was most beneficial when used in larger datasets, although its contribution was minimal in single-stock regression tasks.
+
+ATR is used to indicate volatility dynamic to the feature set. The indicator was especially useful when used with larger datasets. It was detremental to the training when used with smaller dataset as it could introducte a lot of noise.
 
 \subsection{On-Balance Volume (OBV)}
 
-On-Balance Volume (OBV) is a cumulative volume-based indicator designed to track buying and selling pressure.
+On-Balance Volume (OBV) is a volume-based indicator that can be used to track buying and selling pressure.
 
 \begin{equation}
 OBV_t = 
@@ -300,47 +308,25 @@ OBV_{t-1}, & \text{otherwise}
 \end{cases}
 \end{equation}
 
-where $V_t$ represents the traded volume.
+$V_t$ - traded volume.
 
 \textbf{Advantages:}
 \begin{itemize}
-    \item Captures volume shifts preceding price movement
-    \item Can reveal accumulation or distribution patterns
+    \item Volume shifts preceding price movement
+    \item Helps reveal accumulation or distribution patterns
 \end{itemize}
 
 \textbf{Limitations:}
 \begin{itemize}
-    \item Highly sensitive to volume spikes
-    \item May not generalize well across low-liquidity stocks
+    \item Is very Sensitive to volume spikes
+    \item Does not work well with low liquidity stocks
 \end{itemize}
-
-\textbf{Role in This Project:}  
-OBV served as a complementary feature for models trained across multiple companies, providing volume dynamics that pure price-based features could not convey.
 
 \subsection{Summary of Indicator Contribution}
 
-In this project, indicator-based feature sets provided mixed results. While they improved model generalization in larger datasets, simpler raw OHLCV features performed better for single-stock forecasting tasks. This outcome suggests that engineered indicators have higher value when the training scope involves diverse or multi-instrument learning rather than narrow market contexts.
+Indicator based features are used in training, both in larger as well as smaller models. The single stock data do not benifit as much from the stock indicators, but multi company models trained with features that include the Indicators show significanlty better results. This is beause in larger datasets they enhance the existing patterns, that they represent.
 
-\section{Windowing Strategy}
-
-Since predictions are based on sequential input, a sliding window approach is applied:
-
-Input window: 20 most recent trading days
-
-Output horizon: Next-day closing price (single-step forecasting)
-
-This creates training pairs of the form:
-
-\begin{align*}
-    X &= [\text{features for days } t-19 \text{ to } t] \\
-    y &= \text{closing price at day } t+1
-\end{align*}
-
-This ensures the model learns short-term memory patterns relevant to near-term forecasting.
-
-\section{Model Training and Validation}
-
-Training is carried out with:
+\section{Model Training and Validation Datasets}
 
 Train/Test split: 80\% / 20\%
 
@@ -348,21 +334,83 @@ Validation method: time-series split (no shuffling)
 
 Callbacks: early stopping and learning rate reduction
 
-Loss curves and prediction visualizations are generated for model comparison.
-
 \section{Prediction and Deployment Pipeline}
 
-Once trained, models are exported and integrated into a lightweight prediction service.
+Following are the different steps and data flow in the Project.
 
-Deployment flow:
+\begin{table}[h!]
+    \centering
+    \caption{Dataset Splitting Strategy}
+    \label{tab:data_split}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Dataset Type} & \textbf{Split} \\
+        \hline
+        Training Set & 80\% of historical sequence \\
+        \hline
+        Testing Set & Remaining 20\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Architecture diagram of data flow}
 
 \begin{figure}[h!]
     \centering
-    % Only need the internal path now:
     \includegraphics[width=\textwidth]{Images/methodology/dataFlow.png} 
     \caption{Architecture of Data Flow.}
     \label{fig:Data Flow}
 \end{figure}
 
-Predictions are plotted alongside the last 3 months of market data for visual validation.
+\begin{itemize}
+    \item Historical data for all symbols available on NSE was collected at once and then updated as the company symbol is searched in the interface.
+    \item If kite connect API is not available then this historial data is used.
+    \item While training bigger models it is important that all the data is available at once, as failure to retrieve data from API could fail the training.
+    \item Every time a user searches for a symbol in the interface new data for that symbol till date is fetched and then used to train the models specific for that company and also used for inference with the larger models.
+    \item Once live data is fetched, test data set is created with the last 90 days of data and is used to plot predictions against actual price. This graph gives a visual representation of the effective ness of that model for that specific companies stock data.
+    \item Finally all the model predictions are calculated and graphs of test as well as the complete history of that company over the past 2 years is plotted.
+\end{itemize}
 
+\section{Hyperparameter Configuration}
+
+\begin{table}[h!]
+    \centering
+    \caption{Model Hyperparameters}
+    \label{tab:hyperparameters}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Parameter} & \textbf{Value / Range} \\
+        \hline
+        Epochs & 50--200 (early stopping applied) \\
+        \hline
+        Batch Size & 32--64 \\
+        \hline
+        Optimizer & Adam \\
+        \hline
+        Learning Rate & 0.001 (adaptive reduction on plateau) \\
+        \hline
+        Loss Function & Mean Squared Error (MSE) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Evaluation Metrics}
+
+\begin{table}[h!]
+    \centering
+    \caption{Model Evaluation Metrics}
+    \label{tab:metrics}
+    \begin{tabular}{|l|p{7cm}|}
+        \hline
+        \textbf{Metric} & \textbf{Description} \\
+        \hline
+        MAE & Measures average magnitude of error (Mean Absolute Error) \\
+        \hline
+        RMSE & Penalizes larger errors more heavily (Root Mean Squared Error) \\
+        \hline
+        MAPE & Expresses prediction error as a percentage (Mean Absolute Percentage Error) \\
+        \hline
+        R$^2$ Score & Measures goodness of fit (Coefficient of Determination) \\
+        \hline
+    \end{tabular}
+\end{table}

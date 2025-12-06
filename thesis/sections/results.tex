@@ -1,12 +1,17 @@
 \section{Overview}
 
-This chapter presents the results obtained from evaluating multiple machine learning architectures for forecasting next-day closing prices of Indian stock market equities. The models were assessed on both single-company datasets and broader market-level datasets to understand how input size, model complexity, and feature engineering influence predictive accuracy. Evaluation includes quantitative error metrics, visual prediction comparison, convergence behavior, and model generalization characteristics.
+In this chapter I would like to present all the result that I have collected from all the models that were trained for this project. This includes all the chartes and observations that were collected and any interesting observations that I found for any particular models.
+
+I have evaluated multiple machine learning architectures for forcasting next day closing prices of Indian stock market equities trading. The below mentioned models were assessed on both Raw Features as well as on combination of raw and engineered features. Evaluation of these models were done with error metrices and there are a lot of visual graphs that I have included for comparisons.
 
 \section{Training and Validation Behavior}
 
-Across experiments, all models showed decreasing loss curves during training, confirming the ability to learn meaningful temporal dependencies. However, their learning dynamics differed based on dataset scope and model capacity.
-
-Even when just using the closing price overtime of the stocks shows great learning potential and thus confirms the ability of models to give insight on market movement.
+\begin{itemize}
+    \item All models show loss curve decreasing during training.
+    \item Confirming the ability to lean patterns in a meaningful way.
+    \item How fast they converge depends on the dataset and features included.
+    \item Using even basic features like only close data for stocks shows great impact on prediction showing the learning and pattern recognition ability of these models.
+\end{itemize}
 
 \FloatBarrier
 
@@ -57,7 +62,7 @@ Even when just using the closing price overtime of the stocks shows great learni
 \FloatBarrier
 \section{Single Company Data Used}
 
-Key findings from training Models with Single Compnay data and it's analysis include:
+Following are the observation that I got from training different models on single company data. These include both with and without indicator features used.
 
 \begin{itemize}
     \item For single-company datasets, \textbf{GRU and LSTM models} converged fastest and most consistently, likely due to their lower parameter count relative to Transformers and CNN-LSTM networks.
@@ -304,29 +309,18 @@ This indicates that simple, trend-focused moving averages outperform more volati
 \FloatBarrier
 \section{Generalization vs. Specialization Behavior}
 
-Another major insight from these experiments is that:
-
 \begin{itemize}
-  \item Models trained on a single company become highly specialized, fitting well to patterns unique to that stock but failing to generalize across companies.
-  \item Models trained on larger aggregated datasets show better generalization, but require feature engineering and larger architectures to extract meaningful predictive structure.
+  \item GRU and LSTM models that were trained on single company data, specialized very well to that companies prediction, but did lack in generalizing as other companies patterns could not be learnt.
+  \item Models trained on larger data set containing many companies generalized extremly well but lacked in capturing the properties and patterns that any particular company's stock might exibit.
+  \item Models trained with NIFTY50 and NIFTY200 generalized well enoght to the patterns of the bigger and more stable companies, but lacked when it came to pattern exibited by smaller companies that could be more volatile.
+  \item So a tradeoff it observed where smaller company specific models can perform well for that company and largers can capture the market patter overall.
+  \item Thus I observed that having models according to the companies segment gives best result for that segment and cannot always be compared to other segments.
+  \item This is also try for different industires like Banking, IT, manudacturing and others.
+  \item It also means that each country's companies also behave in a different way to global events and how resistant thier market is to external factors.
+  \item Thus country specific research is necessary when it comes to training models for that particular country.
 \end{itemize}
 
-This reflects a trade-off:
-
-\begin{itemize}
-  \item Single-company models = accuracy in isolation
-  \item Multi-stock models = robustness and scalability
-\end{itemize}
 \FloatBarrier
 
 \clearpage
 \FloatBarrier
-\section{Deployment and Practical Evaluation}
-
-When deployed into live prediction with recent 3-month price windows:
-
-\begin{itemize}
-  \item LSTM and GRU showed stable point-wise forecasts suitable for short-term use.
-  \item Transformer and CNN-LSTM predictions improved only when trained on very large multi-company datasets.
-  \item Simpler models responded more smoothly, while complex architectures reacted more sharply to volatility.
-\end{itemize}

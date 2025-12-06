@@ -1,11 +1,10 @@
-
 \section{Overview}
 
-This chapter presents the experimental setup used to train, evaluate, and compare the machine learning models designed for next-day stock closing price prediction. It includes details about the computing environment, software dependencies, dataset configuration, training parameters, performance metrics, and model validation strategy. The goal of the experimental setup is to ensure consistency across all experiments and provide a reproducible framework for future extensions.
+In this section I will try to give an overview of the complete experimental setup including both Software and hardware used to train, evaluate and compare the machine learning model that have been designed to give next day predictions.
 
 \section{Hardware Configuration}
 
-All experiments were conducted on a system equipped with the following hardware:
+All experiments were performed on my personal PC. The following table contains the details of the machine used during the complete duration of the project.
 
 \begin{table}[h!]
     \centering
@@ -26,11 +25,15 @@ All experiments were conducted on a system equipped with the following hardware:
     \end{tabular}
 \end{table}
 
-While basic models such as LSTM and GRU can run efficiently on CPU, GPU acceleration significantly reduced training time for larger models such as the Transformer and CNN-LSTM hybrid.
+The hardware specifications become important as the libraries used and thus the training time can be heavily impacted by the hardware being used. In my case as I was using AMD RX580 as the GPU which is not supported by tensorflow that is used in this project as library for training and most other popular libraries with good support, all the training was mostly completed on the CPU.
+
+Even though most training could use CPU, GPU could speed up training time significantly in most cases by many times. This becomes especially significant when larger  models, like transformer or CNN LSTM models trained on all companies data, it took significant time upwards of hours to complete. Where as if GPU acceleration were used with the CUDA cores of Nvdia, it could have been significantly reduced.
 
 \section{Software Stack}
 
-The implementation was performed using the following software tools:
+All the experiments and training was completed on a Windows machine. The complete project uses Tensorflow as the main library/framework used for building models. Tensorflow was choosen due to its industrial importance and robustness as well as excellent support available online, making it a proven framework used for machine learning. Scikit-learn is used for quick experimentation due to its ease of use and great support for academic processes.
+
+Following table gives a more complete list of software being used.
 
 \begin{table}[h!]
     \centering
@@ -57,128 +60,168 @@ The implementation was performed using the following software tools:
     \end{tabular}
 \end{table}
 
-\section{Dataset Preparation}
+\section{Kite Connect API}
 
-The dataset consists of two years of daily historical stock data for companies included in the NIFTY50, NIFTY200, and broader NSE universe. Data preprocessing steps included:
+Zerodha provides the Kite Connect API as a tool for developer to build custom trading applications. It offers real time order exectuttion and portfolio management. But more important to this project, they provide live stock market data streaming for equities, commodities and MF's.
 
-\begin{itemize}
-    \item Forward-filling missing values for non-trading days
-    \item Normalizing features using Min-Max scaling
-    \item Computing technical indicators
-    \item Structuring the final dataset into supervised learning format
-\end{itemize}
+Their api can be implemented directly as HTTP API requests with any language of choice but in this case I have used the opensource API helper that is provied by Zerodha for python that helps directly pull data from thier APIs.
 
-A sliding window of the previous 20 trading days was used as input to predict the next day closing value.
+\begin{lstlisting}[language=bash, caption=Installing KiteConnect, basicstyle=\ttfamily\small]
+pip install kiteconnect
+\end{lstlisting}
 
-\section{Train-Test Split Strategy}
+The complete documntation for this could be found at 
 
-To preserve chronological order and prevent data leakage, random shuffling was avoided.
+\begin{lstlisting}[language={}, caption=KiteConnect GitHub Repository URL]
+https://github.com/zerodha/pykiteconnect
+\end{lstlisting}
 
-\begin{table}[h!]
-    \centering
-    \caption{Dataset Splitting Strategy}
-    \label{tab:data_split}
-    \begin{tabular}{|l|c|}
-        \hline
-        \textbf{Dataset Type} & \textbf{Split} \\
-        \hline
-        Training Set & 80\% of historical sequence \\
-        \hline
-        Testing Set & Remaining 20\% \\
-        \hline
-    \end{tabular}
-\end{table}
+\subsection{Developer Account}
 
-Validation was managed via a time-series validation approach rather than k-fold cross validation.
+A developer account needs to be setup for a user to access the API.
 
-\section{Hyperparameter Configuration}
-
-Multiple models were trained using consistent baseline hyperparameters with fine-tuning performed through iterative experimentation. The following table summarizes the core parameters:
-
-\begin{table}[h!]
-    \centering
-    \caption{Model Hyperparameters}
-    \label{tab:hyperparameters}
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{Parameter} & \textbf{Value / Range} \\
-        \hline
-        Epochs & 50--200 (early stopping applied) \\
-        \hline
-        Batch Size & 32--64 \\
-        \hline
-        Optimizer & Adam \\
-        \hline
-        Learning Rate & 0.001 (adaptive reduction on plateau) \\
-        \hline
-        Loss Function & Mean Squared Error (MSE) \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Activation functions consisted of ReLU for hidden dense layers and linear activation for the output layer.
-
-\section{Model-Specific Training Setup}
-
-Each model required additional configuration:
-
-\subsection{LSTM And GRU Models}
+The developer account lets users create an app in the zerodha kite connect API dashboard that will help the user get a api key and api secret that is used to authenticate users and then authorize any changes.
 
 \begin{itemize}
-  \item Sequential input with shape (20 timesteps * features)
-  \item Single hidden recurrent layer with dropout to reduce overfitting
+    \item Create Developer Account
+    \item App Creation
+    \item Set Redirect URL
+    \item Get API Keys
 \end{itemize}
 
-\subsection{CNN-LSTM Model}
+\section{Authentication process}
 
+In this program that I have created I have used a python script that help go through the authentication process which will generate a request token.
+
+The request token is used to authorize any changes to the users account and his portfolio.
+
+Running \texttt{\textbf{\textit{python scripts/generate\_access\_token.py}}} to generate Access Token that needs to be refereshed everyday. This is then stored in credentials file in the root of the project and can be used for further requests.
+
+It is important to make sure that this file is not shared online and does not get included in the github repo so should be excluded as it contains sensitive information about the kite connect account that could to make unwanted transactions.
+
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\small, caption=API Credentials Configuration]
+{
+  "API_KEY": "",
+  "API_SECRET": "",
+  "ACCESS_TOKEN": "",
+  "REQUEST_TOKEN": ""
+}
+\end{lstlisting}
+
+\clearpage
+\FloatBarrier
+\section{Getting Historical Data}
+
+I used a script that would get each companies stock historical data and store in the data folder so that it could be used later in any combination to train models as needed.
+
+Following are the different configuration of paramenter that could be used with the Kite Connect API
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Type} & \textbf{Endpoint} & \textbf{Description} \\
+\hline
+GET & /instruments/historical/:instrument\_token/:interval & Retrieve historical candle records for a given instrument. \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Parameter} & \textbf{Description and Possible Values} \\
+\hline
+\textbf{:instrument\_token} & Identifier for the instrument whose historical records you want to fetch. This is obtained with the \texttt{instrument list} API. \\
+\hline
+\textbf{:interval} & The candle record interval. Possible values are:
 \begin{itemize}
-  \item Initial convolution layer for local pattern extraction
-  \item LSTM layer for temporal sequence learning
-\end{itemize}
+    \item minute
+    \item day
+    \item 3minute
+    \item 5minute
+    \item 10minute
+    \item 15minute
+    \item 30minute
+    \item 60minute
+\end{itemize} \\
+\hline
+\end{tabular}
 
-\subsection{Transformer Model}
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Parameter} & \textbf{Description} \\
+\hline
+\textbf{from} & A \texttt{yyyy-mm-dd hh:mm:ss} formatted date indicating the \textbf{start date} of records. \\
+\hline
+\textbf{to} & A \texttt{yyyy-mm-dd hh:mm:ss} formatted date indicating the \textbf{end date} of records. \\
+\hline
+\textbf{continuous} & Accepts \textbf{0} or \textbf{1}. Pass \textbf{1} to get continuous data. \\
+\hline
+\textbf{oi} & Accepts \textbf{0} or \textbf{1}. Pass \textbf{1} to get \textbf{Open Interest (OI)} data. \\
+\hline
+\end{tabular}
 
-\begin{itemize}
-  \item Multi-head self-attention layers
-  \item Positional encoding to preserve temporal structure
-\end{itemize}
+\subsection{Stock Data Example}
 
-Transformer models required the longest training time due to complexity.
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\small, caption=KiteConnect Candle Data Response, breaklines=true]
+{
+  "status": "success",
+  "data": {
+    "candles": [
+      [
+        "2019-12-04T09:15:00+0530",
+        12009.9,
+        12019.35,
+        12001.25,
+        12001.5,
+        163275,
+        13667775
+      ],
+      [
+        "2019-12-04T09:16:00+0530",
+        12001,
+        12003,
+        11998.25,
+        12001,
+        105750,
+        13667775
+      ],
+      [
+        "2019-12-04T09:17:00+0530",
+        12001,
+        12001,
+        11995.1,
+        11998.55,
+        48450,
+        13758000
+      ],
+      [
+        "2019-12-04T09:18:00+0530",
+        11997.8,
+        12002,
+        11996.25,
+        12001.55,
+        52875,
+        13758000
+      ],
+      [
+        "2019-12-04T09:19:00+0530",
+        12002.35,
+        12007,
+        12001.45,
+        12007,
+        52200,
+        13758000
+      ],
+      [
+        "2019-12-04T09:20:00+0530",
+        12006.95,
+        12009.25,
+        11999.6,
+        11999.6,
+        65325,
+        13777050
+      ]
+    ]
+  }
+}
+\end{lstlisting}
 
-\section{Evaluation Metrics}
-
-The following regression metrics were used to evaluate model performance:
-
-\begin{table}[h!]
-    \centering
-    \caption{Model Evaluation Metrics}
-    \label{tab:metrics}
-    \begin{tabular}{|l|p{7cm}|}
-        \hline
-        \textbf{Metric} & \textbf{Description} \\
-        \hline
-        MAE & Measures average magnitude of error (Mean Absolute Error) \\
-        \hline
-        RMSE & Penalizes larger errors more heavily (Root Mean Squared Error) \\
-        \hline
-        MAPE & Expresses prediction error as a percentage (Mean Absolute Percentage Error) \\
-        \hline
-        R$^2$ Score & Measures goodness of fit (Coefficient of Determination) \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Additionally, prediction plots were generated to visually compare predicted vs. actual closing prices.
-
-\section{Deployment Testing}
-
-After training, the best-performing models were integrated into a lightweight deployment pipeline. Real-time prediction testing involved:
-
-\begin{itemize}
-  \item Fetching latest daily closing values through Kite API
-  \item Preprocessing the data using stored scaling and feature generation rules
-  \item Running inference using trained models
-  \item Overlaying predictions on front-end interactive charts
-\end{itemize}
-
-A rolling evaluation over the last three months of data was also performed to simulate real-world model behavior.
+\FloatBarrier

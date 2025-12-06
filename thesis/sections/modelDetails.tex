@@ -1,9 +1,11 @@
-\section{Gated Recurrent Unit (GRU) Models}
+\section{Gate Recurrent Unit (GRU) Models}
 
 \FloatBarrier
 \subsection{Introduction to GRU Architecture}
 
-The Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) designed to process sequential or time-dependent data by retaining useful temporal patterns during training. Unlike feed-forward neural networks, GRUs maintain memory across input steps, making them suitable for tasks where the past influences the future—such as financial time-series forecasting. GRUs achieve this by using gating mechanisms that determine how much historical information should be retained or forgotten during sequence processing.
+The Gated Recurrent Unit is a type of Recurrent Neural Network that is designed to process time series sequential data by retaining temporal patterns during training. While neural networks can produce impressive results by learning patterns, time series models such as GRU are specifically designed to consider sequential data, and maintain memory of the past that will then influence the future training.
+
+GRU uses gating mechanism to determine how much historical information should be retained and what can be forgotten during the sequence processing. The following diagram shows the internal architecture of GRU.
 
 \begin{figure}[h!]
     \centering
@@ -13,26 +15,14 @@ The Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) desig
 \end{figure}
 
 
-GRUs contain two primary gates:
+There are two main or primary gates of GRU :
 
 \begin{itemize}
-  \item Update Gate: Controls how much of the past information should remain relevant for the next output.
-  \item Reset Gate: Decides how much of the previous memory should be ignored when integrating new input signals.
+  \item Update Gate – It controls how much of the past information is retained so it remains relevant for the next output.
+  \item Reset Gate – It determines how much of the previous memory should be ignored while it integrates the new input signal.
 \end{itemize}
 
-This gated mechanism allows GRUs to learn long-term dependencies efficiently while avoiding vanishing or exploding gradients commonly seen in standard RNNs.
-
-\subsection{Why GRUs Are Used in Time-Series Forecasting}
-
-GRUs are widely used for sequential modeling due to their ability to:
-\begin{itemize}
-  \item Generalize well with shorter sequences and limited training samples
-  \item Capture temporal relationships in noisy or irregular data
-  \item Model nonlinear patterns without manually engineered lag features
-\end{itemize}
-
-In stock price forecasting, this is particularly useful because market patterns evolve gradually, yet abrupt fluctuations occur. GRUs strike a balance between memory and responsiveness, making them suitable for short-term prediction tasks such as next-day closing price forecasting.
-\FloatBarrier
+This gated mechanism helps GRU avoid the common problem of vanishing gradient and exploding gradient commonly seen in the standard RNN and thus allows GRU to learn long term dependencies efficiently.
 
 \FloatBarrier
 \subsection{Mathematical Model for GRU}
@@ -117,19 +107,21 @@ Category	Details}
     \label{tab:model_assessment}
 \end{table}
 
-\subsection{Role of GRU in This Project}
+\subsection{Use of GRU in Project}
 
-GRU models were selected as a baseline and performance benchmark for stock prediction in this project. Since the dataset per individual company consists of approximately two years of daily values, the model size and structure had to balance complexity with generalization ability.
+I wanted a baseline model that was better than RNNs but was simple, fast to train and could give good results with limited data available, such as training a model form a single companies data. GRU fulfils this role in spades. It generalises well on smaller dataset, but also learns patterns of that specific smaller dataset making it extremely capable. It also converges faster making training time smaller especially for the real-time nature of training that is required for the application. GRU gives perfect balance between model size, complexity and generalisation ability.
 
-GRUs performed particularly well when trained using only raw OHLCV data. In this case, the model adapted efficiently to the stock's behavioral characteristics and produced stable and accurate predictions. However, this also made the model highly stock-specific, meaning generalization to unseen companies was limited.
+GRU also performs particularly well when trained with just the Raw features of stock data, Open High Low Close and Volume. Models trained as such produce stable and accurate predictions for that particular dataset. This also makes the model highly specific to that stock data, sacrificing generalisation for pattern learning and accuracy for that specific stock.
 
-When trained on broader datasets such as NIFTY50 or NIFTY200, the GRU model benefited from the additional variability but showed slight performance degradation unless tuned with regularization methods such as dropout.
+When GRU is trained on broader dataset such as NIFTY50 OR NIFTY200 the model definitely benefits from the broader dataset and variability, but it still lacks behind in performance as compared to models trained with LSTM, as LSTM is able to capture patterns better as it retains more of the past effecting the overall training.
 
-\subsection{Trained GRU Model Configurations}
+\subsection{GRU Model training Configuration}
 
-\subsubsection{Model 1 — GRU with Only Stock Data (No Indicators)}
+\subsubsection{Model 1 - Only Raw Stock Features (No Indicators)}
 
-This version used only the raw OHLCV features as input and trained for 60 epochs. It consisted of a single GRU layer followed by dropout and dense layers to generate the output.
+This is the model that is trained on just the raw stock data for a single company that is the lightest model used in this Project. This light structure produces faster convergence and strong performance when considered for a single stock data, making it a strong choice when the data is limited.
+
+It consist of a single GRU layer, followed by dropout and dense layers to generate outputs. It is trained for 60 epochs with early stopping when the validation error stops improving.
 
 \begin{table}[h]
     \centering
@@ -151,11 +143,11 @@ This version used only the raw OHLCV features as input and trained for 60 epochs
     \label{tab:model_summary_3}
 \end{table}
 
-This lightweight structure allowed fast convergence and produced strong performance for individual stock prediction, especially when dataset size was limited.
+\subsubsection{Model 2 – Technical Indicators included with Raw Stock Features}
 
-\subsubsection{Model 2 — GRU with Technical Indicators}
+In the second configuration that I used in this project I trained GRU model with engineered features that capture trend, volatility, and volume.
 
-The second configuration incorporated engineered features, including trend, momentum, volatility, and volume-based indicators:
+To maintain consistency between models and make them comparable, the same Engineered Features are used as shown in the following table
 
 \begin{table}[h]
     \centering
@@ -177,7 +169,9 @@ The second configuration incorporated engineered features, including trend, mome
     \label{tab:tech_indicators}
 \end{table}
 
-This version used a deeper architecture with two stacked GRU layers. It was also trained for 60 epochs.
+In this configuration, two GRU layers, each followed by a dropout layer is used, then followed by 2 dense layers to bring it all together. Similar to earlier model, it is also trained to 60 epochs, with early stopping if the validation error stops improving.
+
+In most cases I found that even though the GRU model trained with indicators performed better when considering stock data from multiple companies, say using NIFTY50, but underperformed when it was trained on a single companies data. This could mostly be attributed to being not enough data and too many features to consider making the model over fit and unstable.
 
 \begin{table}[h]
     \centering
@@ -203,30 +197,28 @@ This version used a deeper architecture with two stacked GRU layers. It was also
     \label{tab:stacked_gru_summary}
 \end{table}
 
-Although the model improved generalization in multi-stock settings, it occasionally underperformed the non-indicator version for single-stock forecasting. This suggests that engineered indicators can introduce noise or redundancy when training data is limited.
-
 \FloatBarrier
 
-\subsection{Summary of GRU Model Performance}
+\subsection{Summary of GRU model Performance}
 
 Key takeaways from the GRU experimentation include:
 
 \begin{itemize}
-  \item GRU models offer the best speed-to-accuracy balance among tested architectures.
-  \item Using only raw OHLCV values yielded surprisingly strong results, especially for stock-specific forecasting.
-  \item With technical indicators included, GRUs generalized better across multiple stocks but required careful tuning.
-  \item GRUs represent a stable baseline model and provide a practical starting point for stock market forecasting.
+    \item GRU offered the best performance and quickest convergence as compared with other time series models.
+    \item It worked best when trained with minimum features when used with a smaller data set, as was done when using only a single companies stock data.
+    \item When technical indicators were used it best generalised when larger data set say NIFTY50, NIFTY200 were used.
+    \item GRU thus become the baseline model against which other models could be compared for stock market forecasting.
 \end{itemize}
 
 \clearpage
 \FloatBarrier
 \section{Long Short-Term Memory (LSTM) Model}
 
-\subsection{Introduction to LSTM Architecture}
+\subsection{Overview of LSTM Architecture}
 
-The Long Short-Term Memory (LSTM) network is an extension of recurrent neural networks designed to effectively learn patterns in sequential data while avoiding the vanishing and exploding gradient limitations present in standard RNNs. LSTMs achieve this through a gated structure consisting of input, forget, and output gates, which regulate how information flows forward through time and how much past information is retained.
+LSTM is considered one of the most popular extension of Recurrent Neural Networks (RNNs), which addresses the biggest issue with RNNs of vanishing and exploding gradient. It is designed to effectively learn patterns in time series data. Like GRU, LSTM achieves it through gated structures, specifically input gate, forget gate and output gate. These gated structures regulate how data flows forward through time and how past data is retained.
 
-The LSTM cell introduces an internal memory state (cell state) that stores useful information across longer time spans than traditional RNNs or even GRUs in some cases. This makes LSTM particularly suitable for financial time-series forecasting, where historical patterns and gradual momentum shifts can influence short-term price outcomes.
+A new Memory state or Cell State is introduced in LSTM that stores useful past information across longer time span than RNNs and also GRU. This makes LSTM the choice for larger stock data, and training of models that generalise well and can learn historical patterns in financial time series forecasting. This makes them adaptable to short term gradual momentum shifts as well as long term historical patterns observed.
 
 \begin{figure}[h!]
     \centering
@@ -236,9 +228,11 @@ The LSTM cell introduces an internal memory state (cell state) that stores usefu
 \end{figure}
 \FloatBarrier
 
-\subsection{Why LSTM Is Used for Time-Series Forecasting}
+\subsection{Why Use LSTM in time series forecasting}
 
-LSTM networks are widely adopted in forecasting applications because they are capable of learning temporal dependencies, handling non-linear input behavior, and capturing longer patterns in data such as trend formation and reversal sequences. In the context of stock prediction, price movement is rarely independent from its history; trends, oscillations, and volatility cycles evolve over time. LSTM models are designed to retain this form of information and are therefore an appropriate choice for next-day price forecasting.
+LSTM networks are capable of learning temporal dependencies very well and are thus used in time series forecasting application such as in this case Stock Market Forecasting. They are capable of learning longer patterns in data such as trend formations, and reversal patterns as well as handle non linear input.
+
+In stock forecasting it is often said, History repeats itself, and the whole concept of Stock Forecasting based on Technical Analysis is based on this principle. LSTM models specialise in retaining information such as trends, oscillations and volatility cycle over time and are therefore one of the best choice in predicting next days closing price when the model is trained with sufficiently large dataset.
 
 \FloatBarrier
 \subsection{Mathematical Model for LSTM}
@@ -330,21 +324,21 @@ $\odot$    & Hadamard (element-wise) product between two vectors or matrices. \\
     \label{tab:lstm_assessment}
 \end{table}
 
-\subsection{Role of LSTM in This Project}
+\subsection{Role of LSTM in this Project}
 
-LSTM models were included to evaluate how memory-retaining architectures behave across different dataset scales and feature complexity. The LSTM models trained in this project showed strong results both in single-company and multi-company scenarios.
+LSTM models are included in this project as a larger model type than GRU that can retain more dense information and thus can generalise better, across different datasets and feature complexity. The LSTM models showed strong performance when trained with single company as well as multi company data, overall showing the most balanced behaviour.
 
-When trained on only OHLCV data, the LSTM model demonstrated smooth prediction behavior and closely followed price movements. Similar to the GRU model, this setup performed exceptionally well for stock-specific forecasting, although this accuracy partially stems from the model's capacity to memorize the stock's internal movement pattern.
+When the LSTM model was trained with raw features (OHLCV), the LSTM model prediction smoothly followed the price movement. This is very similar to GRU model even though GRU performed slightly better when only single company data was considered, and LSTM performed much better with larger datasets. This stems form the models capability of memorising the stocks internal movement patterns.
 
-When trained using additional technical indicators and broader datasets such as NIFTY50 and NIFTY200, the LSTM architecture generalized better than GRU, particularly in diverse market conditions. This suggests that the LSTM structure is better suited for representing multi-phase temporal patterns that occur across companies and industries.
+When trained with larger dataset such as NIFTY50, NIFTY200 and all companies data, and especially with additional engineered features, like technical indicators for trend and volatility the LSTM architecture allowed the model to generalise very well to diverse market conditions. This shows that the LSTM is better suited for multiphase temporal patterns that occur across companies.
 
 \subsection{Trained LSTM Model Configurations}
 
 \subsubsection{LSTM Model Without Indicators}
 
-The first LSTM configuration used only raw OHLCV inputs. The model consisted of two stacked LSTM layers followed by dropout and dense layers. It was trained for 60 epochs and performed strongly in single-stock forecasting, showing stable behavior during training and smooth response curves.
+This LSTM model that is trained only on raw features (OHLCV) input. It consist of 2 LSTM layers each followed by dropout layers and then 2 dense layers to bring the result together.
 
-Model Summary: LSTM Without Indicators
+It was trained to 60 epoch with early stopping when the validation error stops getting better waiting for 6 epoch before stopping.
 
 \begin{table}[h]
     \centering
@@ -372,7 +366,9 @@ Model Summary: LSTM Without Indicators
 
 \subsubsection{LSTM Model With Indicators}
 
-A second variation was trained using additional engineered features, aligning with the indicator set used in the GRU experiments. This configuration improved the model's ability to generalize across multiple stocks, particularly within NIFTY index datasets.
+The second LSTM model was trained with the technical indicators, engineered features that are consistent with those used in GRU model training.
+
+This configuration improves the model’s ability to generalise even better as the engineered features emphasise the patterns. This is especially apparent form performance achieved by the LSTM with engineered features trained on all companies data.
 
 \begin{table}[h]
     \centering
@@ -395,8 +391,6 @@ A second variation was trained using additional engineered features, aligning wi
     \caption{Comparison of GRU vs. LSTM Architectures}
     \label{tab:gru_lstm_comparison}
 \end{table}
-
-Model Summary: LSTM With Indicators
 
 \begin{table}[h]
     \centering
@@ -422,8 +416,6 @@ Model Summary: LSTM With Indicators
     \label{tab:lstm_architecture_3}
 \end{table}
 
-A comparative observation between the two configurations showed that:
-
 \begin{itemize}
   \item The indicator-based LSTM model generalized better when trained on multiple companies.
   \item The non-indicator model remained highly effective for a single company, especially when trained on two-year datasets.
@@ -432,19 +424,19 @@ A comparative observation between the two configurations showed that:
 
 \subsection{Performance Summary}
 
-The evaluation results demonstrated that the LSTM architecture provided a consistent balance between accuracy, generalization, and robustness. While GRU models trained faster and often matched performance on single-company prediction tasks, LSTM models achieved stronger results when scaling to larger datasets and incorporating additional features.
+LSTM models provide a balance between size of training data required, features that is can accommodate and training time, giving better generalisation and robustness as compared with GRU models. GRU models even though could be trained faster and on smaller dataset have the inherent flaw of not generalising as well, which by itself stems form smaller data set and thus fewer patterns to learn from.
 
-Overall, LSTM forms a key component of the modelling framework explored in this project and serves as a high-performing baseline against which more complex architectures such as CNN-LSTM and Transformer models were assessed.
+LSTM thus forms the foundation benchmark for other more complicated models, like CNN-LSTM model that I have explored later in this project. LSTM definitely showed better performance than the more complex models like transformers and CNN LSTM.
 
 \clearpage
 \FloatBarrier
 \section{Transformer Model}
 
-\subsection{Introduction to the Transformer Architecture}
+\subsection{Transformer Architecture}
 
-The Transformer architecture was originally introduced for sequence-to-sequence learning tasks in natural language processing, where capturing complex contextual relationships and long-range dependencies is essential. Unlike traditional recurrent neural network architectures, Transformers do not rely on sequential processing. Instead, they use self-attention mechanisms that allow the model to evaluate the importance of different time steps relative to one another within the input sequence.
+Transformers were originally introduced in natural language processing for sequence to sequence learning tasks, where long range dependencies and contextual relationship capturing as essential. Transformer unlike traditional RNNs and their derivatives do not rely on sequential processing. They instead use self attention mechanism that allow them to evaluate the importance of different time steps relative to one another within the input sequence.
 
-This mechanism enables the network to weigh which portions of the historical sequence are most relevant to the prediction task at any given time. Because attention is computed in parallel rather than iteratively, Transformers are computationally efficient at scale and capable of modeling longer temporal patterns than recurrent models without degradation in memory retention.
+This learning behaviour of transformers allow them to weigh which portion of the historical sequence are most relevant to the prediction task at any given time. Transformers are also extremely computationally efficient as the attention is computed in parallel rather than iteratively. This makes them capable of scaling and modelling longer temporal patterns than RNNs or LSTM models that degrade the memory overtime.
 
 \begin{figure}[h!]
     \centering
@@ -454,22 +446,20 @@ This mechanism enables the network to weigh which portions of the historical seq
 \end{figure}
 \FloatBarrier
 
-\subsection{Motivation for Using Transformers in Time-Series Forecasting}
+\subsection{Motivation for Using Transformer in this project}
 
-Transformers have recently gained adoption in financial forecasting because of their ability to:
+After trying out LSTM the next logical step was trying the training model with Transformer architecture. As transformer require larger data sets I did not try to train them on smaller dataset as they did not perform as well on them. They train better with larger data sets like all companies data and could be decent with NIFTY200.
 
 \begin{itemize}
-  \item Capture long-term dependencies without recursive backpropagation
-  \item Process sequences in parallel, improving learning efficiency
-  \item Adapt dynamically to context, allowing the model to automatically prioritize relevant historical points
+  \item Capture long term dependiencies
+  \item No recursive backpropagation
+  \item Process sequences in parallel
+  \item Adapt dynamically to context
+  \item Automatically prioritize relevant historical points
 \end{itemize}
-
-Stock movement patterns often depend on trends that evolve gradually, followed by sudden shifts triggered by market sentiment or volatility changes. The attention mechanism provides an analytical advantage because it allows the model to focus on these critical points rather than uniformly weighting past observations.
 
 \FloatBarrier
 \subsection{Mathematical Model for Transformer Encoder}
-
-For the Transformer encoder used in this project, the core computation is based on self-attention and position-wise feed-forward layers. Let $X \in \mathbb{R}^{T \times d_{\text{model}}}$ denote the input sequence of length $T$, after token/feature embedding and positional encoding.
 
 \paragraph{Self-Attention Mechanism}
 
@@ -479,7 +469,7 @@ For the Transformer encoder used in this project, the core computation is based 
     \text{SA}(X) &= A V && \text{Self-Attention Output}
 \end{align*}
 
-For multi-head self-attention with $H$ heads:
+Multi-head Self Attention with $H$ heads:
 
 \begin{align*}
     \text{head}_h &= \text{SA}(X W_Q^{(h)}, X W_K^{(h)}, X W_V^{(h)}) \\
@@ -488,15 +478,13 @@ For multi-head self-attention with $H$ heads:
 
 \paragraph{Transformer Encoder Layer}
 
-Each encoder layer consists of a multi-head attention block and a position-wise feed-forward network (FFN), with residual connections and layer normalization:
-
 \begin{align*}
     H'_1 &= \text{LayerNorm}\left(X + \text{MHA}(X)\right) && \text{Residual + Norm after MHA} \\
     \text{FFN}(H'_1) &= \phi(H'_1 W_1 + b_1) W_2 + b_2 && \text{Position-wise Feed-Forward} \\
     H_1 &= \text{LayerNorm}\left(H'_1 + \text{FFN}(H'_1)\right) && \text{Final Encoder Output for Layer}
 \end{align*}
 
-where $\phi(\cdot)$ is typically a ReLU or GELU activation.
+$\phi(\cdot)$ - ReLU or GELU activation.
 
 \begin{center}
 \begin{longtable}{|c|p{0.75\textwidth}|}
@@ -572,14 +560,15 @@ $H_1$ & Final output representation of the encoder layer after the second residu
 
 \subsection{Role of Transformers in This Project}
 
-Transformers were included to examine how modern attention-based architectures perform relative to RNN-based approaches in forecasting next-day closing prices. The evaluation focused on determining whether the architecture could uncover higher-level temporal structure across multiple stocks in the Indian market, especially when technical indicators were included.
+Transformers are the obvious next step to training with LSTM. Thus I wanted to check with this the effectiveness of transformers model in training for stock forecasting. 
 
-The experiments demonstrated that Transformers required significantly more data than recurrent architectures to obtain meaningful predictions. When trained using only raw OHLCV data or limited index-based datasets, the model typically underfit and produced weaker forecasting results. However, when trained on the full dataset containing multiple NSE-listed companies and additional features, the performance improved and moved closer to the accuracy produced by tuned LSTM models.
+As significantly more data is required to train transformers model I only used all company data and NIFTY 200 data to check the effectiveness of Transformers in stock forecasting.
 
-\subsection{Trained Transformer Model Configurations
-Transformer Model Without Indicators}
+\subsection{Trained Transformer Model Configurations}
 
-The first configuration used raw OHLCV features with a sequence length of 20 time steps. The model consisted of two stacked transformer encoder layers followed by a global pooling layer and fully connected output network. It was trained for 60 epochs using a batch size of 16.
+\subsubsection{Transformer Model Without Indicators}
+
+The first model I trained with transformer only used the Raw features without any calcuated indicators. It was trained with 60 epochs using batch size of 16.
 
 \begin{table}[h]
 \centering
@@ -610,11 +599,9 @@ dense\_7 (Dense) & (None, 1) & 65 \\
 \end{tabular}
 \end{table}
 
-Transformer Model With Indicators
+\subsubsection {Transformer Model With Indicators}
 
-A second configuration incorporated the same set of engineered features used in previous GRU and LSTM experiments. This increased the model’s input dimensionality and provided more structural information to the attention mechanism.
-
-The model architecture remained similar, with stacked encoder blocks and dropout regularization, but required more parameters due to the increased feature size. It was also trained for 60 epochs using a batch size of 16.
+The overall model remains the same as without indicators but the number of features are increased, as the engineered features are also used with raw features. It was also trained for 60 epochs using a batch size of 16.
 
 \begin{table}[h]
 \centering
@@ -664,25 +651,22 @@ Transformer & Handles long-range relations, scalable, parallelizable & Heavier, 
 \end{tabular}
 \end{table}
 
-The performance evaluation showed that Transformers demonstrated potential when data volume and feature diversity increased. While the architecture did not outperform the LSTM model in this project, the experiments confirmed the following trends:
-
 \begin{itemize}
-  \item Transformers benefit substantially from broader training examples across multiple companies.
-  \item Technical indicators improved stability and error consistency compared to using raw values alone.
-  \item The architecture performed best on the largest dataset tested but remained close in accuracy to LSTM rather than exceeding it.
+  \item Larger data sets are necessary for well generalized transformer model.
+  \item Inclusion of Engineered Features, technical indicators, improve the stability and overall effeciency of the model.
+  \item The model performs close to LSTM with indicators as the dataset used is still not as large that Transfomers could create the margin, but also not so large that LSTM would overfit.
 \end{itemize}
-
-These outcomes suggest that the Transformer architecture is viable for stock forecasting when sufficient data is available and can serve as a strong model candidate as future iterations incorporate sentiment analysis, intraday signals, or larger multi-stock sequencing.
 
 \clearpage
 \FloatBarrier
+
 \section{Conv1D + LSTM Hybrid Model}
 
 \subsection{Introduction to the Hybrid Architecture}
 
-The Conv1D + LSTM hybrid model combines the strengths of convolutional neural networks (CNNs) and recurrent architectures to model temporal structure in financial time-series data. The 1-Dimensional Convolutional layers act as feature extractors that identify local temporal patterns, such as small waveforms, trend shifts, or repeating microstructures found in price movements. These extracted temporal feature maps are then passed to an LSTM layer, which processes them sequentially to learn longer-term dependencies and temporal relationships.
+I wanted to combine the benefits of LSTM with the strengths of Convolutional neural networks (CNN) in time series forecasting.
 
-This layered design allows the model to benefit from both local pattern detection offered by CNNs and sequence-level learning achieved through recurrent memory. The architecture is well-suited for forecasting scenarios where short-term fluctuations accumulate into broader directional trends, a behavior frequently observed in equity price movement.
+The 1D CNN layer acts as a localized feature extrator similar to how humans try to find patterns in the candle stick data, such as hammer patterns, Doji, Inverted Hammer, Shootin Star etc. The CNN output can then be passed to LSTM that would convert them into temporal patterns.
 
 \begin{figure}[h!]
     \centering
@@ -694,16 +678,13 @@ This layered design allows the model to benefit from both local pattern detectio
 
 \subsection{Motivation for Using a Hybrid Model in Time-Series Forecasting}
 
-Pure sequential models such as LSTM or GRU tend to treat all time steps equally, which may dilute key short-term patterns—especially in financial data where recent movements and volatility surges may carry higher predictive weight. By contrast, convolutional layers selectively amplify short-term structures before passing them into the recurrent model.
-
 This hybrid design helps address:
 \begin{itemize}
-  \item Rapid fluctuation capture
-  \item Local trend compression
-  \item Feature smoothing before sequence modeling
+  \item Capture local stock pattern with CNN
+  \item Rapid fluctuation addressed
+  \item Local trend dampened
+  \item Smooth out features before they can be sent to LSTM
 \end{itemize}
-
-As a result, Conv1D + LSTM models can learn meaningful representations from noisy datasets, which aligns well with the nature of stock market signals.
 
 \subsection{Advantages and Disadvantages of the Hybrid Model}
 
@@ -730,15 +711,7 @@ As a result, Conv1D + LSTM models can learn meaningful representations from nois
 \end{tabular}
 \end{table}
 
-\subsection{Role of the Hybrid Model in This Project}
-
-The hybrid Conv1D + LSTM model was included to evaluate whether multi-stage temporal feature extraction improves forecasting performance compared to pure recurrent or attention-based architectures. The model aligned well with the goal of understanding the impact of structured feature extraction on prediction accuracy.
-
-The experiments showed that the hybrid architecture performed better when trained using multiple companies rather than single-company data. In single-stock configurations, the Conv1D layers often extracted redundant short-term behavior that the LSTM could already capture, providing little benefit. However, when the training dataset expanded to include a diverse range of stocks, the convolutional filters identified transferable short-term market dynamics, improving generalization stability.
-
 \subsection{Trained Configurations of the Hybrid Model}
-
-The hybrid model followed the structure:
 
 \begin{figure}[h]
     \centering
@@ -749,7 +722,7 @@ The hybrid model followed the structure:
 
 \subsubsection{Hybrid Model Without Indicators}
 
-The first version of the hybrid model used only OHLCV features as input. It performed well when trained on larger datasets and produced smoother and more stable predictions compared to Transformer models trained on the same data volume. The absence of indicators forced the convolutional layers to detect raw micro-patterns in the closing sequence and local relationships in open-high-low volume dynamics.
+The configration of Raw features remain the same as the other models.
 
 \begin{table}[h]
 \centering
@@ -778,9 +751,7 @@ dense\_11 (Dense) & (None, 1) & 33 \\
 
 \subsubsection{Hybrid Model With Indicators}
 
-A second version incorporated the engineered features used in earlier experiments. Including trend-based and volatility-based indicators expanded the dimensional richness of the input representation, providing additional structural cues for the convolutional filters. This configuration demonstrated improved generalization but required larger dataset scope to avoid overfitting.
-
-The evaluation showed that among the tested indicator combinations, the feature set Close, MA5, and MA20 produced the most consistent results. Simpler trend-based indicators appeared to complement the convolutional layers more effectively than more volatile constructs such as ATR or RSI.
+The same indicators are included similar to LSTM.
 
 \begin{table}[h]
 \centering
@@ -807,6 +778,8 @@ dense\_15 (Dense) & (None, 1) & 33 \\
 \end{tabular}
 \end{table}
 
-\subsection{Performance Summary}
+\subsubsection{Performance Summary}
 
-The Conv1D + LSTM hybrid model showed strong potential as a forecasting framework when sufficient training data was available. While the architecture did not surpass the LSTM model in single-stock configurations, it performed competitively when trained using large, multi-stock datasets and selected indicators. The results demonstrate that hybrid models can provide value in forecasting settings where both short-term fluctuations and broader momentum behaviors must be combined into a unified predictive structure.
+CNN LSTM models performed similarly to LSTM models in the most cases that I tested.
+
+But when larger dataset were considered they generalized better than LSTM and even transformers as they were able to capture short term patters and include them with the long term temporal patters as we combine CNN with LSTM.
