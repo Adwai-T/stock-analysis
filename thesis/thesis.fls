@@ -363,6 +363,16 @@ INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.t
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy7.tfm
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmri12.tfm
+INPUT .\plagarismReport.tex
+INPUT .\plagarismReport.tex
+INPUT plagarismReport.tex
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
+INPUT .\Images\plagarism\plag-report.png
 INPUT .\acknolodgment.tex
 INPUT .\acknolodgment.tex
 INPUT acknolodgment.tex
@@ -388,6 +398,7 @@ OUTPUT thesis.toc
 INPUT .\sections\introduction.tex
 INPUT .\sections\introduction.tex
 INPUT sections\introduction.tex
+INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT .\sections\literature.tex
 INPUT .\sections\literature.tex
 INPUT sections\literature.tex
@@ -399,7 +410,6 @@ INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
-INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT .\sections\methodology.tex
 INPUT .\sections\methodology.tex
 INPUT sections\methodology.tex
@@ -436,6 +446,7 @@ INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmtt10
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rmtt.enc
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmtk10.tfm
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmtko10.tfm
+INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT .\sections\modelDetails.tex
 INPUT .\sections\modelDetails.tex
 INPUT sections\modelDetails.tex
@@ -641,11 +652,16 @@ INPUT .\Images\results\CNNLSTMIndicatorsValidationLossComparison.png
 INPUT .\sections\summary.tex
 INPUT .\sections\summary.tex
 INPUT sections\summary.tex
+INPUT .\sections\annex.tex
+INPUT .\sections\annex.tex
+INPUT sections\annex.tex
 INPUT thesis.aux
 INPUT .\thesis.out
 INPUT .\thesis.out
 INPUT thesis.run.xml
 OUTPUT thesis.run.xml
+INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\adwai\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb

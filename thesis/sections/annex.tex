@@ -1,0 +1,198 @@
+% ===========================
+% ANNEX / APPENDIX
+% ===========================
+\appendix
+\chapter*{Annexure}
+\addcontentsline{toc}{chapter}{Annexure}
+
+This annex provides supplementary material related to the datasets, model configurations, implementation details, and additional observations that support the work presented in this thesis on hybrid AI model driven technical analysis for stock forecasting.
+
+\vspace{1em}
+
+% --------------------------------------------------
+\section*{A. Dataset and Preprocessing Summary}
+\addcontentsline{toc}{section}{A. Dataset and Preprocessing Summary}
+
+\subsection*{A.1 Datasets Used}
+
+\begin{itemize}
+    \item \textbf{Single-Company Dataset}\\
+    Used for detailed analysis of GRU, LSTM, Transformer, and CNN--LSTM performance on an individual stock. Data consists of daily OHLCV values and derived indicators over the most recent two-year window.
+
+    \item \textbf{Index-Based Datasets (NIFTY50, NIFTY200)}\\
+    Used to train global models that learn cross-stock structure. Each constituent stock contributes a time series of daily OHLCV data with engineered technical indicators. These datasets are primarily used for LSTM, Transformer, and CNN--LSTM models trained on multi-stock data.
+
+    \item \textbf{Broad NSE Universe Dataset}\\
+    Includes all available NSE-listed companies for which sufficient historical data is accessible. This dataset is mainly used for models that benefit from large-scale cross-sectional learning, such as Transformer and CNN--LSTM variants.
+\end{itemize}
+
+\subsection*{A.2 Preprocessing Pipeline (Summary)}
+
+The following steps summarize the data preprocessing pipeline implemented before training the models:
+
+\begin{enumerate}
+    \item \textbf{Data Cleaning and Ordering}
+    \begin{itemize}
+        \item Parsing timestamps into a consistent datetime format.
+        \item Sorting each stock's time series in chronological order.
+        \item Skipping non-trading days (weekends and exchange holidays).
+    \end{itemize}
+
+    \item \textbf{Missing Value Handling}
+    \begin{itemize}
+        \item Forward filling for base price fields in rare missing cases where it does not distort temporal structure.
+        \item Replacing missing volume values using a 7-day rolling average to better preserve liquidity patterns.
+        \item Skipping stocks with extremely sparse or irregular trading histories.
+    \end{itemize}
+
+    \item \textbf{Feature Engineering}
+    \begin{itemize}
+        \item Calculation of Exponential Moving Averages (EMA), Relative Strength Index (RSI), Average True Range (ATR), and On-Balance Volume (OBV).
+        \item Construction of lagged features and rolling volatility measures for capturing short-term memory and dispersion.
+    \end{itemize}
+
+    \item \textbf{Scaling and Normalization}
+    \begin{itemize}
+        \item Global Min--Max scaling applied per feature to enable multi-stock training.
+        \item De-normalization applied at inference time using symbol-specific min--max values to recover prices in original scale.
+    \end{itemize}
+
+    \item \textbf{Windowing Strategy}
+    \begin{itemize}
+        \item Sliding window with a fixed lookback length (e.g., 20--30 days) to produce input sequences.
+        \item The prediction target is the next-day closing price corresponding to each input window.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% --------------------------------------------------
+\section*{B. Model Configurations (Supplementary)}
+\addcontentsline{toc}{section}{B. Model Configurations (Supplementary)}
+
+This section summarizes the key configurations of the deep learning models used in the project. The details complement the architecture descriptions presented in the main chapters.
+
+\subsection*{B.1 Recurrent Models (GRU and LSTM)}
+
+\begin{itemize}
+    \item \textbf{Input Representation:} Sliding window of $T$ days, each with OHLCV values and selected technical indicators.
+    \item \textbf{GRU Model:}
+    \begin{itemize}
+        \item One or more stacked GRU layers with hidden units in the range of 32--64.
+        \item Optional dropout between recurrent layers for regularization.
+        \item Fully connected output layer predicting the normalized next-day close.
+    \end{itemize}
+    \item \textbf{LSTM Model:}
+    \begin{itemize}
+        \item Stacked LSTM layers with comparable hidden sizes to GRU.
+        \item Emphasis on capturing longer temporal dependencies.
+        \item Dense regression head (one or more dense layers) mapping hidden representation to a scalar price forecast.
+    \end{itemize}
+    \item \textbf{Optimization:} Adam optimizer with mean squared error (MSE) loss and early stopping based on validation loss.
+\end{itemize}
+
+\subsection*{B.2 Transformer-Based Model}
+
+\begin{itemize}
+    \item \textbf{Encoder-Style Architecture:}
+    \begin{itemize}
+        \item Input sequences projected to a fixed embedding dimension.
+        \item Multiple self-attention encoder blocks, each comprising multi-head attention, feed-forward network, residual connections, and layer normalization.
+    \end{itemize}
+    \item \textbf{Temporal Aggregation:}
+    \begin{itemize}
+        \item Global pooling across time (e.g., average pooling) to obtain a fixed-length representation of the input window.
+    \end{itemize}
+    \item \textbf{Prediction Head:}
+    \begin{itemize}
+        \item Dense layers with nonlinear activation.
+        \item Final linear layer outputting the normalized closing price for the next day.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{B.3 CNN--LSTM Hybrid Model}
+
+\begin{itemize}
+    \item \textbf{Convolutional Block:}
+    \begin{itemize}
+        \item One or more 1D convolutional layers to extract local patterns and short-term structures from the input sequence.
+        \item Convolution filters slide over time, operating jointly on all feature channels.
+    \end{itemize}
+    \item \textbf{Recurrent Block:}
+    \begin{itemize}
+        \item LSTM layers that process the convolved feature maps and integrate them over time.
+    \end{itemize}
+    \item \textbf{Output Layer:}
+    \begin{itemize}
+        \item Dense layer mapping the LSTM output to a single normalized closing price prediction.
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+% --------------------------------------------------
+\section*{C. Implementation and API Summary}
+\addcontentsline{toc}{section}{C. Implementation and API Summary}
+
+\subsection*{C.1 Software Stack and Environment}
+
+\begin{itemize}
+    \item \textbf{Backend:} Python for data acquisition, preprocessing, model training, and serving predictions.
+    \item \textbf{Deep Learning Framework:} TensorFlow/Keras for implementing GRU, LSTM, Transformer, and CNN--LSTM architectures.
+    \item \textbf{Frontend:} HTML and JavaScript used to visualize time-series charts, recent price tables, and model predictions via a lightweight web interface.
+    \item \textbf{Data Source:} Historical OHLCV data retrieved from exchange APIs and stored as CSV files organized by symbol.
+\end{itemize}
+
+\subsection*{C.2 Prediction and Evaluation Workflow}
+
+\begin{enumerate}
+    \item \textbf{Symbol Selection:}
+    \begin{itemize}
+        \item User selects a stock (e.g., from NIFTY50 or NIFTY200) via the web interface.
+        \item Backend loads the corresponding historical CSV file and applies the same preprocessing pipeline used during training.
+    \end{itemize}
+
+    \item \textbf{Model Selection:}
+    \begin{itemize}
+        \item The interface exposes a dropdown allowing selection among trained models (e.g., GRU, LSTM, Transformer, CNN--LSTM).
+        \item The backend routes the preprocessed sequence through the chosen model.
+    \end{itemize}
+
+    \item \textbf{Forecast Generation:}
+    \begin{itemize}
+        \item Next-day closing price is predicted in normalized space.
+        \item The prediction is then de-normalized back to the actual price scale for the chosen symbol.
+    \end{itemize}
+
+    \item \textbf{Visualization and Error Analysis:}
+    \begin{itemize}
+        \item The predicted and actual series for the recent evaluation window (e.g., last three months) are plotted together.
+        \item Error metrics such as Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) are computed and displayed.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{C.3 Practical Considerations}
+
+\begin{itemize}
+    \item \textbf{Training Stability:}
+    \begin{itemize}
+        \item Early stopping is used to prevent overfitting when validation loss stops improving.
+        \item Learning rates and batch sizes are chosen empirically based on stability and convergence speed.
+    \end{itemize}
+
+    \item \textbf{Generalization vs. Specialization:}
+    \begin{itemize}
+        \item Global models trained on multi-stock data (e.g., NIFTY200) capture common structural patterns across symbols.
+        \item Per-symbol models trained on a single company often specialize better for that stock but may not generalize to others.
+    \end{itemize}
+
+    \item \textbf{Limitations:}
+    \begin{itemize}
+        \item Performance can degrade during extreme market events or structural breaks not present in historical training data.
+        \item Models are trained purely on technical inputs; they do not account for macroeconomic variables or textual news sentiment in the current implementation.
+    \end{itemize}
+\end{itemize}
+
+\vspace{1em}
+
+This annex is intended to serve as a concise technical reference for the data, models, and implementation details underlying the experimental results presented in the main body of the thesis.

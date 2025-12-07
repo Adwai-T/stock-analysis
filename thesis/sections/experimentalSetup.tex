@@ -116,47 +116,58 @@ I used a script that would get each companies stock historical data and store in
 
 Following are the different configuration of paramenter that could be used with the Kite Connect API
 
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Type} & \textbf{Endpoint} & \textbf{Description} \\
-\hline
-GET & /instruments/historical/:instrument\_token/:interval & Retrieve historical candle records for a given instrument. \\
-\hline
-\end{tabular}
+\subsection{Historical Data Endpoint}
 
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Parameter} & \textbf{Description and Possible Values} \\
-\hline
-\textbf{:instrument\_token} & Identifier for the instrument whose historical records you want to fetch. This is obtained with the \texttt{instrument list} API. \\
-\hline
-\textbf{:interval} & The candle record interval. Possible values are:
-\begin{itemize}
-    \item minute
-    \item day
-    \item 3minute
-    \item 5minute
-    \item 10minute
-    \item 15minute
-    \item 30minute
-    \item 60minute
-\end{itemize} \\
-\hline
-\end{tabular}
+\begin{description}
+    \item[\textbf{Method}] GET
+    \item[\textbf{Endpoint}] \texttt{/instruments/historical/\{:instrument\_token\}/\{:interval\}}
+    \item[\textbf{Description}] Retrieve historical candle records for a specified financial instrument.
+\end{description}
 
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Parameter} & \textbf{Description} \\
-\hline
-\textbf{from} & A \texttt{yyyy-mm-dd hh:mm:ss} formatted date indicating the \textbf{start date} of records. \\
-\hline
-\textbf{to} & A \texttt{yyyy-mm-dd hh:mm:ss} formatted date indicating the \textbf{end date} of records. \\
-\hline
-\textbf{continuous} & Accepts \textbf{0} or \textbf{1}. Pass \textbf{1} to get continuous data. \\
-\hline
-\textbf{oi} & Accepts \textbf{0} or \textbf{1}. Pass \textbf{1} to get \textbf{Open Interest (OI)} data. \\
-\hline
-\end{tabular}
+
+\subsection{Path Parameters}
+
+\begin{description}
+    \item[\textbf{:instrument\_token}]  
+    Unique identifier of the financial instrument for which historical data is requested.  
+    This value is obtained using the \texttt{instrument list} endpoint.
+
+    \item[\textbf{:interval}]  
+    Specifies the time interval of each OHLCV candle record.  
+    Supported values include:
+    \begin{itemize}
+        \item \texttt{minute}
+        \item \texttt{day}
+        \item \texttt{3minute}
+        \item \texttt{5minute}
+        \item \texttt{10minute}
+        \item \texttt{15minute}
+        \item \texttt{30minute}
+        \item \texttt{60minute}
+    \end{itemize}
+\end{description}
+
+
+\subsection{Query Parameters}
+
+\begin{description}
+    \item[\textbf{from}]  
+    Defines the start of the historical window using  
+    the format \texttt{yyyy-mm-dd hh:mm:ss}.
+
+    \item[\textbf{to}]  
+    Defines the end of the historical window using  
+    the format \texttt{yyyy-mm-dd hh:mm:ss}.
+
+    \item[\textbf{continuous}]  
+    Accepts \textbf{0} or \textbf{1}.  
+    Set to \textbf{1} to retrieve continuous historical data streams.
+
+    \item[\textbf{oi}]  
+    Accepts \textbf{0} or \textbf{1}.  
+    When set to \textbf{1}, the response includes \textbf{Open Interest (OI)} data.
+\end{description}
+
 
 \subsection{Stock Data Example}
 

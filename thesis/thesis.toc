@@ -1,6 +1,6 @@
-\contentsline {chapter}{Abstract}{iii}{figure.caption.3}%
-\contentsline {chapter}{List of Figures}{iv}{figure.caption.3}%
-\contentsline {chapter}{List of Tables}{vi}{chapter*.4}%
+\contentsline {chapter}{Abstract}{iv}{figure.caption.4}%
+\contentsline {chapter}{List of Figures}{v}{figure.caption.4}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.5}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction and Background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Evolution of Technical Analysis}{1}{section.1.2}%
@@ -8,47 +8,47 @@
 \contentsline {section}{\numberline {1.4}Machine Learning as a Solution}{3}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Importance of Technical Indicators}{4}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Need for Hybrid Intelligent Systems}{5}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Identified Research Gap}{5}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Problem Statement}{6}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Research Objectives}{6}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Research Questions}{6}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Scope, Limitations, and Assumptions}{7}{section.1.11}%
-\contentsline {section}{\numberline {1.12}Novelty and Contributions}{8}{section.1.12}%
-\contentsline {chapter}{\numberline {2}Literature Review}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Stock Market Forecasting and Technical Analysis}{9}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Introduction}{9}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Classical Forecasting Techniques}{9}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Traditional Trading Strategies}{10}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Traditional Machine Learning models in Forecasting}{10}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}AI Driven Stock Forecasting}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Comparison Between different Model and research}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Key Findings, Strengths, and Limitations}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Evaluation Challenges, Research Gaps and Inconsistencies}{16}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}System Workflow}{17}{section.3.2}%
+\contentsline {section}{\numberline {1.7}Identified Research Gap}{6}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Problem Statement}{7}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Research Objectives}{7}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Research Questions}{8}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Scope, Limitations, and Assumptions}{8}{section.1.11}%
+\contentsline {section}{\numberline {1.12}Novelty and Contributions}{9}{section.1.12}%
+\contentsline {chapter}{\numberline {2}Literature Review}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Stock Market Forecasting and Technical Analysis}{10}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Introduction}{10}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Classical Forecasting Techniques}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Traditional Trading Strategies}{11}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Traditional Machine Learning models in Forecasting}{11}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}AI Driven Stock Forecasting}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Comparison Between different Model and research}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Key Findings, Strengths, and Limitations}{15}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Evaluation Challenges, Research Gaps and Inconsistencies}{17}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Methodology}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}System Workflow}{18}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Data Acquisition}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Data Preprocessing}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Data Preprocessing}{20}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Handling Missing Values}{20}{subsection.3.4.1}%
-\contentsline {subsubsection}{Handling Non-Trading Days}{20}{section*.9}%
-\contentsline {subsubsection}{Missing Volume Replacement}{20}{section*.10}%
-\contentsline {subsubsection}{Missing Indicator Rows}{21}{section*.11}%
-\contentsline {subsubsection}{Rational for Missing Data Strategy}{21}{section*.12}%
-\contentsline {subsection}{\numberline {3.4.2}Scaling and Normalization}{21}{subsection.3.4.2}%
+\contentsline {subsubsection}{Handling Non-Trading Days}{20}{section*.10}%
+\contentsline {subsubsection}{Missing Volume Replacement}{20}{section*.11}%
+\contentsline {subsubsection}{Missing Indicator Rows}{21}{section*.12}%
+\contentsline {subsubsection}{Rational for Missing Data Strategy}{21}{section*.13}%
+\contentsline {subsection}{\numberline {3.4.2}Scaling and Normalization}{22}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Feature Engineering}{22}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Raw Feature Selection}{22}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Windowing Strategy}{22}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.2}Windowing Strategy}{23}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Training Test Validation Structuring}{23}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Indices Used}{23}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.4}Indices Used}{24}{subsection.3.5.4}%
 \contentsline {section}{\numberline {3.6}Technical Indicators}{24}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Exponential Moving Average (EMA)}{24}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Relative Strength Index (RSI)}{25}{subsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.6.3}Average True Range (ATR)}{26}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}On-Balance Volume (OBV)}{26}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.4}On-Balance Volume (OBV)}{27}{subsection.3.6.4}%
 \contentsline {subsection}{\numberline {3.6.5}Summary of Indicator Contribution}{27}{subsection.3.6.5}%
 \contentsline {section}{\numberline {3.7}Model Training and Validation Datasets}{27}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Prediction and Deployment Pipeline}{27}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Architecture diagram of data flow}{27}{section.3.9}%
+\contentsline {section}{\numberline {3.9}Architecture diagram of data flow}{28}{section.3.9}%
 \contentsline {section}{\numberline {3.10}Hyperparameter Configuration}{28}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Evaluation Metrics}{28}{section.3.11}%
 \contentsline {chapter}{\numberline {4}Experimental Setup and Implementation}{30}{chapter.4}%
@@ -59,7 +59,10 @@
 \contentsline {subsection}{\numberline {4.4.1}Developer Account}{32}{subsection.4.4.1}%
 \contentsline {section}{\numberline {4.5}Authentication process}{32}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Getting Historical Data}{33}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Stock Data Example}{33}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.1}Historical Data Endpoint}{33}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Path Parameters}{33}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Query Parameters}{33}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Stock Data Example}{34}{subsection.4.6.4}%
 \contentsline {chapter}{\numberline {5}Model Details}{36}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Gate Recurrent Unit (GRU) Models}{36}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Introduction to GRU Architecture}{36}{subsection.5.1.1}%
@@ -67,8 +70,8 @@
 \contentsline {subsection}{\numberline {5.1.3}Advantages and Disadvantages of GRUs Category Details}{38}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Use of GRU in Project}{38}{subsection.5.1.4}%
 \contentsline {subsection}{\numberline {5.1.5}GRU Model training Configuration}{39}{subsection.5.1.5}%
-\contentsline {subsubsection}{Model 1 - Only Raw Stock Features (No Indicators)}{39}{section*.21}%
-\contentsline {subsubsection}{Model 2 – Technical Indicators included with Raw Stock Features}{39}{section*.23}%
+\contentsline {subsubsection}{Model 1 - Only Raw Stock Features (No Indicators)}{39}{section*.22}%
+\contentsline {subsubsection}{Model 2 – Technical Indicators included with Raw Stock Features}{39}{section*.24}%
 \contentsline {subsection}{\numberline {5.1.6}Summary of GRU model Performance}{40}{subsection.5.1.6}%
 \contentsline {section}{\numberline {5.2}Long Short-Term Memory (LSTM) Model}{41}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Overview of LSTM Architecture}{41}{subsection.5.2.1}%
@@ -77,29 +80,29 @@
 \contentsline {subsection}{\numberline {5.2.4}Advantages and Disadvantages of LSTM}{43}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Role of LSTM in this Project}{43}{subsection.5.2.5}%
 \contentsline {subsection}{\numberline {5.2.6}Trained LSTM Model Configurations}{45}{subsection.5.2.6}%
-\contentsline {subsubsection}{LSTM Model Without Indicators}{45}{section*.28}%
-\contentsline {subsubsection}{LSTM Model With Indicators}{45}{section*.30}%
+\contentsline {subsubsection}{LSTM Model Without Indicators}{45}{section*.29}%
+\contentsline {subsubsection}{LSTM Model With Indicators}{45}{section*.31}%
 \contentsline {subsection}{\numberline {5.2.7}Performance Summary}{46}{subsection.5.2.7}%
 \contentsline {section}{\numberline {5.3}Transformer Model}{47}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Transformer Architecture}{47}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Motivation for Using Transformer in this project}{47}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Mathematical Model for Transformer Encoder}{48}{subsection.5.3.3}%
-\contentsline {paragraph}{Self-Attention Mechanism}{48}{section*.34}%
-\contentsline {paragraph}{Transformer Encoder Layer}{48}{section*.35}%
+\contentsline {paragraph}{Self-Attention Mechanism}{48}{section*.35}%
+\contentsline {paragraph}{Transformer Encoder Layer}{48}{section*.36}%
 \contentsline {subsection}{\numberline {5.3.4}Advantages and Disadvantages of Transformers}{50}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}Role of Transformers in This Project}{50}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Trained Transformer Model Configurations}{50}{subsection.5.3.6}%
-\contentsline {subsubsection}{Transformer Model Without Indicators}{50}{section*.37}%
-\contentsline {subsubsection}{Transformer Model With Indicators}{51}{section*.39}%
+\contentsline {subsubsection}{Transformer Model Without Indicators}{50}{section*.38}%
+\contentsline {subsubsection}{Transformer Model With Indicators}{51}{section*.40}%
 \contentsline {subsection}{\numberline {5.3.7}Performance Summary}{51}{subsection.5.3.7}%
 \contentsline {section}{\numberline {5.4}Conv1D + LSTM Hybrid Model}{53}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Introduction to the Hybrid Architecture}{53}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Motivation for Using a Hybrid Model in Time-Series Forecasting}{53}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3}Advantages and Disadvantages of the Hybrid Model}{54}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.4.4}Trained Configurations of the Hybrid Model}{54}{subsection.5.4.4}%
-\contentsline {subsubsection}{Hybrid Model Without Indicators}{54}{section*.45}%
-\contentsline {subsubsection}{Hybrid Model With Indicators}{54}{section*.47}%
-\contentsline {subsubsection}{Performance Summary}{54}{section*.49}%
+\contentsline {subsubsection}{Hybrid Model Without Indicators}{54}{section*.46}%
+\contentsline {subsubsection}{Hybrid Model With Indicators}{54}{section*.48}%
+\contentsline {subsubsection}{Performance Summary}{54}{section*.50}%
 \contentsline {chapter}{\numberline {6}Results and Analysis}{56}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Overview}{56}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Training and Validation Behavior}{56}{section.6.2}%
@@ -116,3 +119,7 @@
 \contentsline {section}{\numberline {7.4}Limitations of the Project}{74}{section.7.4}%
 \contentsline {section}{\numberline {7.5}Future Work}{74}{section.7.5}%
 \contentsline {section}{\numberline {7.6}Conclusion}{75}{section.7.6}%
+\contentsline {chapter}{Annexure}{76}{appendix*.78}%
+\contentsline {section}{A. Dataset and Preprocessing Summary}{76}{section*.79}%
+\contentsline {section}{B. Model Configurations (Supplementary)}{78}{section*.82}%
+\contentsline {section}{C. Implementation and API Summary}{80}{section*.86}%

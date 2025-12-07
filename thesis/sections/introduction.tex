@@ -51,6 +51,71 @@ These indicators also reduce noise and fluctuation that might have been caused d
 
 \section{Need for Hybrid Intelligent Systems}
 
+\begin{longtable}{|p{2.5cm}|p{5.5cm}|p{5.5cm}|}
+\hline
+\textbf{Model Type} & \textbf{Strengths} & \textbf{Weaknesses} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Model Type} & \textbf{Strengths} & \textbf{Weaknesses} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+CNN (Convolutional Neural Networks) &
+Extract local patterns and micro-window features, detect volatility spikes, learn shape-based signals (e.g., candlestick formations, breakout patterns, momentum bursts). &
+Limited memory and poor capability in modeling long-term dependencies or sequential temporal relationships. \\
+\hline
+
+LSTM / GRU &
+Effectively captures long-term temporal relationships and sequential memory, especially useful for time-dependent and autocorrelated stock behavior. &
+Slow to learn high-frequency short-term patterns and may be sensitive to noise and rapid volatility shifts. \\
+\hline
+
+Transformers &
+Efficient at modeling global time dependencies and attending to the most relevant historical signals, enabling context-aware forecasting. &
+Requires large training data and is computationally expensive; weaker at extracting local high-frequency features without convolutional or embedded preprocessing. \\
+\hline
+
+\end{longtable}
+
+A hybrid model mitigates this issue by combining the strengths of multiple neural architectures.
+
+\begin{itemize}
+    \item \textbf{CNN $\rightarrow$ LSTM hybrids}  
+    First extract short-term patterns using convolutional filters and then feed the learned representations into an LSTM layer to capture longer temporal dependencies.
+
+    \item \textbf{Parallel CNN + LSTM models}  
+    Enable the network to independently learn both local feature patterns and long-term sequential structure before merging them at a later stage.
+
+    \item \textbf{Transformer-LSTM hybrids}  
+    Use self-attention mechanisms to selectively focus on the most relevant historical signals while preserving sequential memory through recurrent layers.
+
+    \item \textbf{CNN--Transformer--LSTM stacks}  
+    Model multi-scale temporal behavior by combining:
+    \begin{itemize}
+        \item noise-filtered short-term structure (via CNNs),
+        \item long-term dependencies (via LSTM),
+        \item dynamic context selection (via attention in Transformers).
+    \end{itemize}
+\end{itemize}
+
+Hybrid architectures improve prediction robustness as:
+
+\begin{itemize}
+    \item Reduce sensitivity to noise by distributing learning across complementary structures.
+    \item Capture multi-scale temporal dynamics rather than forcing one model to learn all patterns.
+    \item Improve generalization across stocks and varying market regimes, particularly in heterogeneous datasets such as broad index constituents.
+    \item More efficiently model non-linear interactions between price, volatility, volume, and technical indicators compared to standalone architectures.
+\end{itemize}
+
 
 
 \section{Identified Research Gap}
