@@ -31,7 +31,7 @@ BATCH_SIZE = 64
 EPOCHS = 20
 
 MODEL_PATH = MODEL_DIR / "transformer_nifty200_feature.h5"
-SCALER_PATH = MODEL_DIR / "transformer_nifty200_scaler_feature.npz"
+SCALER_PATH = MODEL_DIR / "transformer_nifty200_feature_scaler.npz"
 
 
 # ---------- FEATURE ENGINEERING ----------

@@ -272,6 +272,9 @@ def symbol_data(symbol):
         "prediction": prediction,
         "test_set": {
             "points": test_points
+        },
+        "all_model": {
+
         }
     })
     
