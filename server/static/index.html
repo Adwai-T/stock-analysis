@@ -18,17 +18,21 @@
           autocomplete="off"
         />
         <select id="modelSelect">
-          <option value="lstm_nifty200">LSTM NIFTY 200</option>
           <option value="lstm_nifty50">LSTM NIFTY 50</option>
-          <option value="lstm_nifty200_feature">LSTM NIFTY 200 with Features</option>
+          <option value="gru_nifty50">GRU NIFTY 50</option>
           <option value="lstm_nifty50_feature">LSTM NIFTY 50 with Features</option>
-          <option value="cnn_lstm_nifty200_features">CNN-LSTM NIFTY 200 with Features</option>
-          <option value="transformer_nifty200_scaler">Transformers NIFTY 200</option>
-          <option value="transformer_all">Transformers Complete</option>
-          <!-- <option value="cnn_lstm_deep_nifty200">CNN-LSTM Deep NIFTY 200</option>
-          <option value="parallel_lstm_cnn_nifty200">Parallel LSTM CNN NIFTY 200</option> -->
+          <option value="gru_nifty50_Features">GRU NIFTY 50 with Features</option>
+          <option value="lstm_nifty200">LSTM NIFTY 200</option>
+          <option value="gru_nifty200">GRU NIFTY 200</option>
+          <option value="cnn_lstm_nifty200">CNN LSTM NIFTY 200</option>
+          <option value="transformer_nifty200">Transformers NIFTY 200</option>
+          <option value="lstm_nifty200_feature">LSTM NIFTY 200 with Features</option>
+          <option value="gru_nifty200_feature">GRU NIFTY 200 with Features</option>
+          <option value="cnn_lstm_nifty200_feature">CNN LSTM NIFTY 200 with Features</option>
+          <option value="transformer_nifty200_feature">Transformers NIFTY 200 with Features</option>
         </select>
         <button id="searchButton">Search</button>
+        <button id="allModelsButton">All Models</button>
         <span id="statusMessage"></span>
       </div>
 
@@ -89,6 +93,21 @@
         </table>
       </section>
     </div>
+
+    <table id="allModelsTable" border="1" cellspacing="0" cellpadding="4">
+      <thead>
+        <tr>
+          <th>Model ID</th>
+          <th>Model Name</th>
+          <th>Next Date</th>
+          <th>Predicted Close</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
 
     <script src="script.js"></script>
   </body>

@@ -1,27 +1,33 @@
 import os
 from pathlib import Path
+from io import StringIO
 
 import numpy as np
 import pandas as pd
+import requests
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv1D, LSTM, Dense, Dropout
+from tensorflow.keras.layers import GRU, Dense   # <-- changed from LSTM to GRU
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 # ---------- PATHS & CONFIG ----------
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 ALLDATA_DIR = ROOT_DIR / "data" / "allData"
+META_DIR = ROOT_DIR / "data"
 MODEL_DIR = ROOT_DIR / "model"
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
+# NIFTY 50 constituents CSV
+NIFTY50_URL = "https://www.niftyindices.com/IndexConstituent/ind_nifty50list.csv"
+NIFTY50_LOCAL_PATH = META_DIR / "nifty50_list.csv"
+
 SEQ_LEN = 30          # days in input sequence
+YEARS = 2             # last 2 years per stock
 BATCH_SIZE = 64
-EPOCHS = 25
+EPOCHS = 20
 
-MODEL_PATH = MODEL_DIR / "cnn_lstm_all.h5"
-SCALER_PATH = MODEL_DIR / "cnn_lstm_all_scaler.npz"
-
-REQUIRED_COLS = ["date", "open", "high", "low", "close", "volume"]
+MODEL_PATH = MODEL_DIR / "gru_nifty50_feature.h5"              # <-- renamed
+SCALER_PATH = MODEL_DIR / "gru_nifty50_scaler_feature.npz"     # <-- renamed
 
 
 # ---------- FEATURE ENGINEERING ----------
@@ -77,52 +83,67 @@ def add_features(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# ---------- DATA LOADING & DATASET BUILDING ----------
+# ---------- HELPERS ----------
 
-def load_stock_df(path: Path) -> pd.DataFrame | None:
+def get_nifty50_symbols():
+    """
+    Return list of NIFTY 50 symbols (EQ series).
+    - Use local cached CSV if present.
+    - Else download from NSE Indices and cache.
+    - If download fails, return [] to fall back to "all files in allData".
+    """
+    if NIFTY50_LOCAL_PATH.exists():
+        df = pd.read_csv(NIFTY50_LOCAL_PATH)
+    else:
+        print("Downloading NIFTY 50 list...")
+        try:
+            headers = {
+                "User-Agent": "Mozilla/5.0",
+                "Referer": "https://www.niftyindices.com"
+            }
+            resp = requests.get(NIFTY50_URL, headers=headers, timeout=20)
+            resp.raise_for_status()
+            csv_text = resp.content.decode("utf-8")
+            df = pd.read_csv(StringIO(csv_text))
+            META_DIR.mkdir(parents=True, exist_ok=True)
+            df.to_csv(NIFTY50_LOCAL_PATH, index=False)
+            print(f"Saved NIFTY 50 list to {NIFTY50_LOCAL_PATH}")
+        except Exception as e:
+            print(f"Could not download NIFTY 50 list: {e}")
+            print("Falling back to: all symbols in data/allData")
+            return []
+
+    # CSV columns: Company Name, Industry, Symbol, Series, ISIN Code
+    df = df[df["Series"] == "EQ"]
+    return [s.strip().upper() for s in df["Symbol"].tolist()]
+
+
+def load_stock_df(path: Path):
     """
     Load one stock CSV from data/allData.
-    - Uses ALL rows in file (no time cutoff).
-    - Ensures required columns exist.
-    - Applies feature engineering.
-    Returns df with 'date' + features, or None if unusable.
+    Expected columns: date,open,high,low,close,volume,empty
+    Returns last `YEARS` years with engineered features, sorted by date.
     """
-    try:
-        df = pd.read_csv(path)
-    except Exception as e:
-        print(f"[SKIP] {path.name}: failed to read CSV ({e})")
-        return None
-
-    missing = [c for c in REQUIRED_COLS if c not in df.columns]
-    if missing:
-        print(f"[SKIP] {path.name}: missing columns {missing}")
-        return None
-
-    try:
-        df["date"] = pd.to_datetime(df["date"])
-    except Exception as e:
-        print(f"[SKIP] {path.name}: date parse error ({e})")
-        return None
-
+    df = pd.read_csv(path)
+    df["date"] = pd.to_datetime(df["date"])
     df = df.sort_values("date").reset_index(drop=True)
+
+    max_date = df["date"].max()
+    cutoff = max_date - pd.Timedelta(days=365 * YEARS)
+    df = df[df["date"] >= cutoff].reset_index(drop=True)
+
+    # Keep only the raw base columns first
     df = df[["date", "open", "high", "low", "close", "volume"]]
 
-    try:
-        df = add_features(df)
-    except Exception as e:
-        print(f"[SKIP] {path.name}: feature engineering failed ({e})")
-        return None
-
-    if len(df) <= SEQ_LEN + 1:
-        print(f"[SKIP] {path.name}: not enough rows after features (len={len(df)})")
-        return None
+    # Add engineered features
+    df = add_features(df)
 
     return df
 
 
 def build_dataset():
     """
-    Build X, y from ALL usable stocks in data/allData using full history.
+    Build X, y from all NIFTY 50 stocks present in data/allData using engineered features.
     X shape: (num_samples, SEQ_LEN, num_features)
     y shape: (num_samples,) -> next-day normalized close
     """
@@ -131,26 +152,45 @@ def build_dataset():
     if not all_files:
         raise RuntimeError(f"No CSV files found in {ALLDATA_DIR}")
 
-    stock_data = {}
-    all_features_list = []
+    nifty50_syms = set(get_nifty50_symbols())
 
+    selected_files = []
     for f in all_files:
         symbol = f.stem.upper()
+        if not nifty50_syms:
+            use_it = True   # fallback: use everything
+        else:
+            use_it = symbol in nifty50_syms
+
+        if use_it:
+            selected_files.append((symbol, f))
+
+    if not selected_files:
+        raise RuntimeError("No overlapping symbols between NIFTY50 and data/allData/*.csv")
+
+    print(f"Using {len(selected_files)} symbols for training")
+
+    # First pass: collect all features to compute global min/max
+    all_features_list = []
+    stock_data = {}
+
+    for symbol, f in selected_files:
         df = load_stock_df(f)
-        if df is None:
+        if len(df) <= SEQ_LEN + 1:
+            print(f"  {symbol}: too few rows after 2y + features, skipping")
             continue
 
+        # All feature columns except 'date'
         feature_cols = [c for c in df.columns if c != "date"]
         feats = df[feature_cols].values.astype("float32")
 
         stock_data[symbol] = (df, feature_cols)
         all_features_list.append(feats)
-        print(f"[OK]   {symbol}: using {len(df)} rows")
 
     if not all_features_list:
-        raise RuntimeError("No usable stocks found after filtering / feature engineering.")
+        raise RuntimeError("No stock had enough data to build sequences with features.")
 
-    # Global min/max per feature across all stocks
+    # Stack all rows from all symbols to get global min/max per feature
     all_features = np.vstack(all_features_list)
     feat_min = all_features.min(axis=0)
     feat_max = all_features.max(axis=0)
@@ -160,31 +200,27 @@ def build_dataset():
     print("Global feature mins:", feat_min)
     print("Global feature maxs:", feat_max)
 
-    X_list, y_list = [], []
+    # Second pass: build sequences
+    X_list = []
+    y_list = []
 
+    # 'close' index in feature_cols – assume it's still there
     for symbol, (df, feature_cols) in stock_data.items():
         feats = df[feature_cols].values.astype("float32")
         feats_norm = (feats - feat_min) / denom
 
+        # Where is 'close' in feature_cols?
         try:
             close_idx = feature_cols.index("close")
         except ValueError:
-            print(f"[WARN] {symbol}: 'close' not found in feature columns, skipping")
-            continue
+            raise RuntimeError("'close' not found in feature columns")
 
         n = len(feats_norm)
-        if n <= SEQ_LEN + 1:
-            print(f"[SKIP] {symbol}: not enough rows after norm (len={n})")
-            continue
-
         for i in range(n - SEQ_LEN - 1):
             window = feats_norm[i:i + SEQ_LEN]
             target = feats_norm[i + SEQ_LEN, close_idx]
             X_list.append(window)
             y_list.append(target)
-
-    if not X_list:
-        raise RuntimeError("No training sequences could be built from available data.")
 
     X = np.stack(X_list)
     y = np.array(y_list, dtype="float32")
@@ -192,40 +228,6 @@ def build_dataset():
     print(f"Built dataset with features: X shape = {X.shape}, y shape = {y.shape}")
     return X, y, feat_min, feat_max
 
-
-# ---------- CNN-LSTM MODEL ----------
-
-def build_cnn_lstm(seq_len: int, num_features: int):
-    """
-    CNN-LSTM:
-    Conv1D -> Conv1D -> LSTM -> Dense
-    """
-    model = Sequential([
-        Conv1D(
-            filters=64,
-            kernel_size=3,
-            activation="relu",
-            padding="causal",
-            input_shape=(seq_len, num_features),
-        ),
-        Conv1D(
-            filters=64,
-            kernel_size=3,
-            activation="relu",
-            padding="causal",
-        ),
-        LSTM(64),
-        Dense(32, activation="relu"),
-        Dropout(0.2),
-        Dense(1),
-    ])
-
-    model.compile(optimizer="adam", loss="mse")
-    model.summary()
-    return model
-
-
-# ---------- TRAINING ----------
 
 def train_model():
     X, y, feat_min, feat_max = build_dataset()
@@ -238,30 +240,35 @@ def train_model():
 
     print(f"Train samples: {len(X_train)}, Val samples: {len(X_val)}")
 
-    model = build_cnn_lstm(SEQ_LEN, num_features)
+    model = Sequential([
+        GRU(64, input_shape=(SEQ_LEN, num_features)),   # <-- GRU instead of LSTM
+        Dense(32, activation="relu"),
+        Dense(1)
+    ])
+
+    model.compile(optimizer="adam", loss="mse")
 
     checkpoint_cb = ModelCheckpoint(
         MODEL_PATH.as_posix(),
         monitor="val_loss",
         save_best_only=True,
-        verbose=1,
+        verbose=1
     )
     earlystop_cb = EarlyStopping(
         monitor="val_loss",
         patience=5,
         restore_best_weights=True,
-        verbose=1,
+        verbose=1
     )
 
-    print("Starting training (CNN-LSTM ALL DATA)...")
+    print("Starting training (NIFTY50, GRU + features)...")
     history = model.fit(
-        X_train,
-        y_train,
+        X_train, y_train,
         validation_data=(X_val, y_val),
         epochs=EPOCHS,
         batch_size=BATCH_SIZE,
         verbose=1,
-        callbacks=[checkpoint_cb, earlystop_cb],
+        callbacks=[checkpoint_cb, earlystop_cb]
     )
 
     model.save(MODEL_PATH.as_posix())

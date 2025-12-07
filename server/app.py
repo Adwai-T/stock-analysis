@@ -42,6 +42,23 @@ FEAT_COLS = ["open", "high", "low", "close", "volume"]
 # Cache: model_name -> (model, feat_min, feat_max, denom)
 _model_cache = {}
 
+# Models
+MODEL_FILES = {
+    "lstm_nifty200": "model/lstm_nifty200.h5",
+    "gru_nifty200": "model/gru_nifty200.h5",
+    "cnn_lstm_nifty200": "model/cnn_lstm_nifty200.h5",
+    "transformer_nifty200": "model/transformer_nifty200.h5",
+    "lstm_nifty50": "model/lstm_nifty50.h5",
+    "gru_nifty50": "model/gru_nifty50.h5",
+    "lstm_nifty200_feature": "model/lstm_nifty200_feature.h5",
+    "gru_nifty200_feature": "model/gru_nifty200_feature.h5",
+    "lstm_nifty50_feature": "model/lstm_nifty50_feature.h5",
+    "gru_nifty50_Features": "model/gru_nifty50_Features.h5",
+    "cnn_lstm_nifty200_feature": "model/cnn_lstm_nifty200_feature.h5",
+    "transformer_nifty200_feature": "model/transformer_nifty200_feature.h5",
+    # add any missing ones here…
+}
+
 # ---------- HELPERS ----------
 
 def load_symbol_df(symbol: str) -> pd.DataFrame:
